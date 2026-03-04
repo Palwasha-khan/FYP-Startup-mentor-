@@ -1,11 +1,22 @@
 import { AlertTriangle, Star, TrendingUp,FileText, Target, CheckCircle } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import jsPDF from "jspdf";
+import { useGetPredictionQuery } from "@/redux/api/predictionApi";
 
 const DashboardResults = () => {
+
+  const { ideaId } = useParams();
+
+  const { data, isLoading, error } = useGetPredictionQuery(ideaId);
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>Error loading prediction</p>; 
+  console.log("DATA:", data?.data);
+  console.log("ERROR:", error);
+  console.log("LOADING:", isLoading);
 
    const generatePDFReport = () => {
     const doc = new jsPDF();
@@ -88,15 +99,15 @@ const DashboardResults = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-4 rounded-xl bg-background/50 border border-border/50 text-center">
-              <div className="text-3xl font-bold text-cyan-500 mb-1">85%</div>
+              <div className="text-3xl font-bold text-cyan-500 mb-1">{data?.viabilityScore}%</div>
               <div className="text-sm text-muted-foreground">Viability Score</div>
             </div>
             <div className="p-4 rounded-xl bg-background/50 border border-border/50 text-center">
-              <div className="text-3xl font-bold text-purple-500 mb-1">72%</div>
+              <div className="text-3xl font-bold text-purple-500 mb-1">{data?.marketFit}%</div>
               <div className="text-sm text-muted-foreground">Market Fit</div>
             </div>
             <div className="p-4 rounded-xl bg-background/50 border border-border/50 text-center">
-              <div className="text-3xl font-bold text-pink-500 mb-1">90%</div>
+              <div className="text-3xl font-bold text-pink-500 mb-1">{data?.innovationScore}%</div>
               <div className="text-sm text-muted-foreground">Innovation Score</div>
             </div>
           </div>
@@ -112,18 +123,16 @@ const DashboardResults = () => {
           </div>
 
           <div className="space-y-4">
-            <div>
-              <h3 className="font-semibold mb-2">1. Competitors</h3>
-              <div className="p-4 rounded-xl bg-background/50 border border-border/50 text-muted-foreground">
-                Identify main competitors and their advantages
+            {data?.risks?.map((risk, index) => (
+              <div key={index}>
+                <h3 className="font-semibold mb-2">
+                  {index + 1}.
+                </h3>
+                <div className="p-4 rounded-xl bg-background/50 border border-border/50 text-muted-foreground">
+                  {risk}
+                </div>
               </div>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">2. Market Trends</h3>
-              <div className="p-4 rounded-xl bg-background/50 border border-border/50 text-muted-foreground">
-                Analyze current market trends and shifts
-              </div>
-            </div>
+            ))}
           </div>
         </Card>
 
@@ -137,19 +146,17 @@ const DashboardResults = () => {
           </div>
 
           <div className="space-y-4">
-            {[
-              "Focus on a niche market segment to reduce competition",
-              "Build MVP and test with early adopters before scaling",
-              "Consider strategic partnerships for faster market entry"
-            ].map((suggestion, num) => (
-              <div key={num}>
-                <h3 className="font-semibold mb-2">{num + 1}.</h3>
-                <div className="p-4 rounded-xl bg-gradient-to-r from-purple/10 to-pink/10 border border-purple/20 text-muted-foreground">
-                  {suggestion}
-                </div>
+          {data?.suggestions?.map((suggestion, num) => (
+            <div key={num}>
+              <h3 className="font-semibold mb-2">
+                {num + 1}.
+              </h3>
+              <div className="p-4 rounded-xl bg-gradient-to-r from-purple/10 to-pink/10 border border-purple/20 text-muted-foreground">
+                {suggestion}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
         </Card>
 
         {/* Action Buttons */}

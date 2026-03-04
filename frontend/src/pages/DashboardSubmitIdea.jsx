@@ -14,7 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useSubmitIdeaMutation } from "@/redux/api/ideaApi";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "@/hooks/use-toast"; 
 
 const categories = [
   'Technology', 'Health', 'Education', 'Finance','Food', 'Other'
@@ -34,14 +34,15 @@ const DashboardSubmitIdea = () => {
     e.preventDefault();
   
     try {
-      await submitidea({ title,category, location, description }).unwrap();
-  
+      const response=await submitidea({ title,category, location, description }).unwrap();
+       
+     console.log("Response from submitIdea:", response);
       toast({
         title: "Idea Submitted",
         description: "here's your Idea Prediction",
       });
   
-       navigate("/dashboard/results");
+       navigate(`/dashboard/results/${response.idea._id}`);
   
     } catch (error) {
       console.log("FULL ERROR:", error);

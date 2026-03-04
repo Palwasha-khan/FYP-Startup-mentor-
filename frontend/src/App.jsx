@@ -57,7 +57,7 @@ export default function App() {
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         
         <Route path="/dashboard/submit-idea" element={<ProtectedRoute><DashboardSubmitIdea /></ProtectedRoute>} />
-        <Route path="/dashboard/results" element={<ProtectedRoute><DashboardResults /></ProtectedRoute>} />
+        <Route path="/dashboard/results/:ideaId" element={<ProtectedRoute><DashboardResults /></ProtectedRoute>} />
         <Route path="/dashboard/feedback" element={<ProtectedRoute><DashboardFeedback /></ProtectedRoute>} /> 
         <Route path="/dashboard/faqs" element={<ProtectedRoute><DashboardFaqs /></ProtectedRoute>} />
         <Route path="/dashboard/profile" element={<ProtectedRoute><DashboardProfile /></ProtectedRoute>} />

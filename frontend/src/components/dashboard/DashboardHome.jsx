@@ -13,33 +13,6 @@ import { Button } from "@/components/ui/button";
 import { useGetideasQuery } from "@/redux/api/ideaApi";
 import { useSelector } from "react-redux";
 
-const previousIdeas = [
-  {
-    id: 1,
-    title: "AI-Powered Learning Platform",
-    category: "EdTech",
-    date: "Dec 25, 2024",
-    score: 85,
-    status: "analyzed",
-  },
-  {
-    id: 2,
-    title: "Sustainable Food Delivery",
-    category: "FoodTech",
-    date: "Dec 22, 2024",
-    score: 72,
-    status: "analyzed",
-  },
-  {
-    id: 3,
-    title: "Remote Team Wellness App",
-    category: "HealthTech",
-    date: "Dec 18, 2024",
-    score: 90,
-    status: "analyzed",
-  },
-];
-
 const DashboardHome = () => {
 
  const { user } = useSelector((state) => state.auth);
@@ -122,7 +95,7 @@ console.log("LOADING:", isLoading);
 
         <div className="space-y-4">
           {data?.data?.map((idea) => (
-            <Link key={idea.id} to="/dashboard/results">
+            <Link key={idea.id} to={`/dashboard/results/${idea._id}`}>
               <div className="p-4 rounded-xl bg-background/50 border border-border/50 hover:border-purple-600/30 hover:bg-background/80 transition-all cursor-pointer group">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
