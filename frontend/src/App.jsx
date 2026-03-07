@@ -21,6 +21,7 @@ import { setUser, setIsAuthenticated, setLoading } from './redux/features/userSl
 import { useEffect } from "react";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
+import DashboardAllResult from "./pages/DashboardAllResult";
 
 
 export default function App() { 
@@ -58,6 +59,7 @@ export default function App() {
         
         <Route path="/dashboard/submit-idea" element={<ProtectedRoute><DashboardSubmitIdea /></ProtectedRoute>} />
         <Route path="/dashboard/results/:ideaId" element={<ProtectedRoute><DashboardResults /></ProtectedRoute>} />
+        <Route path="/dashboard/results" element={<ProtectedRoute><DashboardAllResult/></ProtectedRoute>} />
         <Route path="/dashboard/feedback" element={<ProtectedRoute><DashboardFeedback /></ProtectedRoute>} /> 
         <Route path="/dashboard/faqs" element={<ProtectedRoute><DashboardFaqs /></ProtectedRoute>} />
         <Route path="/dashboard/profile" element={<ProtectedRoute><DashboardProfile /></ProtectedRoute>} />
