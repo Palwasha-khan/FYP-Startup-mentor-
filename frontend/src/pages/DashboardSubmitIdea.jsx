@@ -25,6 +25,7 @@ const DashboardSubmitIdea = () => {
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
   const [title, setTitle] = useState("");
+  const [funding, setFunding] = useState("");
   const navigate = useNavigate();
   const { toast } = useToast();
   
@@ -34,9 +35,8 @@ const DashboardSubmitIdea = () => {
     e.preventDefault();
   
     try {
-      const response=await submitidea({ title,category, location, description }).unwrap();
-       
-     console.log("Response from submitIdea:", response);
+      await submitidea({ title,category, location, description,funding }).unwrap();
+  
       toast({
         title: "Idea Submitted",
         description: "here's your Idea Prediction",
@@ -116,6 +116,19 @@ const DashboardSubmitIdea = () => {
                 className="bg-background/50 border-border/50"
               />
             </div>
+          </div>
+
+          <div className="mb-6">
+            <label className="flex items-center gap-2 text-sm font-medium mb-2">
+              <Sparkles className="w-4 h-4 text-purple-500" />
+              Idea Funding
+            </label>
+             <Input
+                placeholder="Your's Startup Funding"
+                value={funding}
+                onChange={(e) => setFunding(e.target.value)}
+                className="bg-background/50 border-border/50"
+              />
           </div>
 
           <div className="mb-6">

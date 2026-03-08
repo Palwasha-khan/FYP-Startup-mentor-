@@ -10,6 +10,10 @@ const ideaSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  funding: {
+    type: String,
+    required: true
+  },
   category: {
     type: String,
     required: true,
