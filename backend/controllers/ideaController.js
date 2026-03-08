@@ -49,8 +49,8 @@ export const submitIdea = catchAsyncErrors(async (req, res) => {
     innovationScore: aiResult.innovationScore,
     marketFit: aiResult.marketFit,
     viabilityScore: aiResult.viabilityScore,
-    risk: aiResult.risk,
-    recommendation: aiResult.recommendation
+    risks: aiResult.risks,
+    suggestions: aiResult.recommendations
   });
 
    idea.prediction = prediction._id;

@@ -6,6 +6,7 @@ const predictionSchema = new mongoose.Schema({
   ref: "Idea",
   unique: true
   },
+  prediction: { type: String, required: true },
   viabilityScore: {
     type: Number,
     required: true

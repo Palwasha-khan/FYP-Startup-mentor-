@@ -94,6 +94,12 @@ const DashboardResults = () => {
                 Analysis Results
               </h2>
               <p className="text-muted-foreground">Your idea has been analyzed ✨</p>
+
+              {data?.prediction && (
+              <p className="mt-2 text-lg font-semibold text-cyan-600">
+                Prediction: {data.prediction}
+              </p>
+      )}
             </div>
           </div>
 

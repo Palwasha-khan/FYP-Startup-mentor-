@@ -35,7 +35,7 @@ const DashboardSubmitIdea = () => {
     e.preventDefault();
   
     try {
-      await submitidea({ title,category, location, description,funding }).unwrap();
+     const response = await submitidea({ title,category, location, description,funding }).unwrap();
   
       toast({
         title: "Idea Submitted",

@@ -84,16 +84,16 @@ def predict(input_data: StartupInput):
     innovationScore = float(np.random.randint(60, 100))
     marketFit = float(np.random.randint(50, 100))
     viabilityScore = float(np.random.randint(40, 100))
-    risk = "Low" if viabilityScore > 60 else "Medium"
-    recommendation = "Go Ahead" if innovationScore > 70 else "Needs Review"
+    risks = "Low" if viabilityScore > 60 else "Medium"
+    recommendations = "Go Ahead" if innovationScore > 70 else "Needs Review"
 
     return {
         "prediction": prediction,
         "innovationScore": innovationScore,
         "marketFit": marketFit,
         "viabilityScore": viabilityScore,
-        "risk": risk,
-        "recommendation": recommendation
+        "risks": risks,
+        "recommendations": recommendations
     }
 # -----------------------------
 # Health Check
@@ -101,3 +101,5 @@ def predict(input_data: StartupInput):
 @app.get("/")
 def root():
     return {"message": "Startup Classifier API Running"}
+
+#py -3.11 -m uvicorn newfile:app --host 127.0.0.1 --port 8080
