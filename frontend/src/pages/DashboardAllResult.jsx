@@ -1,18 +1,42 @@
 import { useSelector } from "react-redux";
 import DashboardLayout from "../components/dashboard/DashboardLayout"; 
-import { useGetideasQuery } from "@/redux/api/ideaApi";
+import { useDeleteIdeaMutation, useGetideasQuery } from "@/redux/api/ideaApi";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, Lightbulb, Plus, Target, TrendingUp } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { Trash2 } from "lucide-react";
+import { toast, useToast } from "@/hooks/use-toast";
 
 const DashboardAllResult = () => {
 
-     const { user } = useSelector((state) => state.auth);
-    
+    const { user } = useSelector((state) => state.auth);
+    const [deleteIdea] = useDeleteIdeaMutation();
+    const { toast } = useToast();
     const { data, isLoading,error } = useGetideasQuery(user?._id, {
       skip: !user?._id,
     });
+
+    const handleDelete = async (id, e) => {
+      e.preventDefault(); // stop Link navigation
+      e.stopPropagation();
+
+      if (window.confirm("Are you sure you want to delete this idea?")) {
+        try {
+          await deleteIdea(id).unwrap();
+            toast({
+        title: "Idea Deleted",
+        description: res.message || "Idea removed successfully",
+      }); 
+        } catch (error) {
+          toast({
+          title: "Error",
+          description: "Failed to delete idea",
+          variant: "destructive",
+        });
+        }
+      }
+    };
   return (
       <DashboardLayout> 
         <div className="max-w-6xl mx-auto space-y-6">
@@ -74,6 +98,13 @@ const DashboardAllResult = () => {
                         {idea.status}
                       </span>
                     </div>
+                      <button
+                        onClick={(e) => handleDelete(idea._id, e)}
+                        className="p-2 rounded-lg hover:bg-red-100 transition"
+                      >
+                        <Trash2 className="w-4 h-4 text-red-500 hover:text-red-700" />
+                      </button>
+                    
                     <ArrowRight className="w-5 h-5 text-gradient group-hover:text-purple transition-colors" />
                   </div>
                 </div>

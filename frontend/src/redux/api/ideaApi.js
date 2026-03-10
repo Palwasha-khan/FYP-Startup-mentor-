@@ -5,18 +5,29 @@ export const ideaApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:4000/api/idea",credentials: "include",}),
     tagTypes: ["Idea"],
     endpoints: (builder) => ({
+
         submitIdea: builder.mutation({
         query: (body) => ({
         url: "/new",
         method: "POST",
         body,
-      }),
-      invalidatesTags: ["Idea"],
-    }),
+        }),
+        invalidatesTags: ["Idea"],
+        }),
+
         getideas: builder.query({
             query: (params) => "/all",
+            providesTags: ["Ideas"], 
+        }),
+
+        deleteIdea: builder.mutation({
+        query: (id) => ({
+            url: `/delete/${id}`,
+            method: "DELETE",
+        }),
+        invalidatesTags: ["Ideas"],
         }),
     }),
 });
 
-export const {   useSubmitIdeaMutation,useGetideasQuery } = ideaApi
+export const {   useSubmitIdeaMutation,useGetideasQuery ,useDeleteIdeaMutation} = ideaApi

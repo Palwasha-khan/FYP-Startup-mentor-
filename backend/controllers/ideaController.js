@@ -74,3 +74,38 @@ export const getMyIdeas = async (req, res) => {
     data: ideas
   });
 };
+
+// delete idea => /api/ideas/:id
+export const deleteIdea = catchAsyncErrors(async (req, res) => {
+
+  const idea = await Idea.findById(req.params.id);
+
+  if (!idea) {
+    return res.status(404).json({
+      success: false,
+      message: "Idea not found"
+    });
+  }
+
+  // Check if idea belongs to logged in user
+  if (idea.user.toString() !== req.user._id.toString()) {
+    return res.status(403).json({
+      success: false,
+      message: "You are not authorized to delete this idea"
+    });
+  }
+
+  // Delete prediction if exists
+  if (idea.prediction) {
+    await Prediction.findByIdAndDelete(idea.prediction);
+  }
+
+  // Delete idea
+  await Idea.findByIdAndDelete(req.params.id);
+
+  res.status(200).json({
+    success: true,
+    message: "Idea and prediction deleted successfully"
+  });
+
+});
