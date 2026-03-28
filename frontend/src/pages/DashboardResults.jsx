@@ -117,6 +117,21 @@ const DashboardResults = () => {
               <div className="text-sm text-muted-foreground">Innovation Score</div>
             </div>
           </div>
+
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+            <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/20 text-center">
+              <div className="text-3xl font-bold text-green-500 mb-1">{data?.positiveComments}</div>
+              <div className="text-sm text-muted-foreground">Positive Comments</div>
+            </div>
+            <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-center">
+              <div className="text-3xl font-bold text-red-500 mb-1">{data?.negativeComments}</div>
+              <div className="text-sm text-muted-foreground">Negative Comments</div>
+            </div>
+            <div className="p-4 rounded-xl bg-yellow-500/10 border border-yellow-500/20 text-center">
+              <div className="text-3xl font-bold text-yellow-500 mb-1">{data?.averageRating}</div>
+              <div className="text-sm text-muted-foreground">Average Rating</div>
+            </div>
+          </div>
         </Card>
 
         {/* Potential Risks Card */}

@@ -9,7 +9,7 @@ import axios from "axios";
 export const submitIdea = catchAsyncErrors(async (req, res) => {
 
   const userId = req.user._id;
-  const {  title ,description, location, category ,funding} = req.body;
+  const {  title ,description, location,lat,lng, category ,funding} = req.body;
    
 
   if (!title || !description || !location || !category || !funding) {
@@ -21,12 +21,14 @@ export const submitIdea = catchAsyncErrors(async (req, res) => {
     const predictionResponse = await axios.post(
       "http://127.0.0.1:8080/predict",
       {
-        name: title,
-        description,
-        location,
-        category,
-        funding
-      }
+         name: title,
+          description,
+          location,
+          category,
+          funding: parseFloat(funding),       
+          latitude: parseFloat(lat),          
+          longitude: parseFloat(lng) 
+            }
     );
 
   const aiResult = predictionResponse.data;
@@ -37,6 +39,8 @@ export const submitIdea = catchAsyncErrors(async (req, res) => {
     description,
     location,
     category,
+    latitude:lat,
+    longitude:lng,
     funding,
     user: userId
   });
@@ -49,6 +53,9 @@ export const submitIdea = catchAsyncErrors(async (req, res) => {
     innovationScore: aiResult.innovationScore,
     marketFit: aiResult.marketFit,
     viabilityScore: aiResult.viabilityScore,
+    positiveComments: aiResult.positiveComments,
+    negativeComments: aiResult.negativeComments,
+    averageRating: aiResult.averageRating,
     risks: aiResult.risks,
     suggestions: aiResult.recommendations
   });

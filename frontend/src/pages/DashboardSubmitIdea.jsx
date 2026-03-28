@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
+import LocationMapPicker from "@/components/dashboard/LocationMapPicker";
 import {
   Select,
   SelectContent,
@@ -17,11 +18,13 @@ import { useSubmitIdeaMutation } from "@/redux/api/ideaApi";
 import { useToast } from "@/hooks/use-toast"; 
 
 const categories = [
-  'Technology', 'Health', 'Education', 'Finance','Food', 'Other'
+  'Technology', 'Health', 'education', 'Finance','Food', 'Other'
 ];
 
 const DashboardSubmitIdea = () => {
   const [category, setCategory] = useState("");
+  const [lat, setLat] = useState(30.3753);
+  const [lng, setLng] = useState(69.3451);
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
   const [title, setTitle] = useState("");
@@ -35,7 +38,7 @@ const DashboardSubmitIdea = () => {
     e.preventDefault();
   
     try {
-     const response = await submitidea({ title,category, location, description,funding }).unwrap();
+     const response = await submitidea({ title,category,lat,lng, location, description,funding }).unwrap();
   
       toast({
         title: "Idea Submitted",
@@ -87,14 +90,14 @@ const DashboardSubmitIdea = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <div>
               <label className="flex items-center gap-2 text-sm font-medium mb-2">
-                <Target className="w-4 h-4 text-pink-500" />
+                <Target className="w-4 h-4 text-pink-400" />
                 Category
               </label>
               <Select value={category} onValueChange={setCategory}>
                 <SelectTrigger className="bg-background/50 border-border/50">
                   <SelectValue placeholder="Select a category" />
                 </SelectTrigger>
-                <SelectContent className="bg-popover border-border">
+                <SelectContent className="bg-popover border-border z-[10000]">
                   {categories.map((cat) => (
                     <SelectItem key={cat} value={cat}>
                       {cat}
@@ -106,20 +109,6 @@ const DashboardSubmitIdea = () => {
 
             <div>
               <label className="flex items-center gap-2 text-sm font-medium mb-2">
-                <MapPin className="w-4 h-4 text-cyan-500" />
-                Location
-              </label>
-              <Input
-                placeholder="e.g., San Francisco, Remote"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                className="bg-background/50 border-border/50"
-              />
-            </div>
-          </div>
-
-          <div className="mb-6">
-            <label className="flex items-center gap-2 text-sm font-medium mb-2">
               <Sparkles className="w-4 h-4 text-purple-500" />
               Idea Funding
             </label>
@@ -129,6 +118,20 @@ const DashboardSubmitIdea = () => {
                 onChange={(e) => setFunding(e.target.value)}
                 className="bg-background/50 border-border/50"
               />
+            </div>
+          </div>
+
+          <div className="mb-4">
+            <label className="flex items-center gap-2 text-sm font-medium mb-2">
+              <MapPin className="w-4 h-4 text-cyan" />
+              Location
+            </label>
+            <LocationMapPicker
+              lat={lat}
+              lng={lng}
+              locationName={location}
+              onChange={(newLat, newLng, name) => { setLat(newLat); setLng(newLng); setLocation(name); }}
+            />
           </div>
 
           <div className="mb-6">

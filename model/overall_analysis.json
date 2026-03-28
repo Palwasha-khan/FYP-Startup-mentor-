@@ -1,0 +1,16 @@
+{
+    "selected_category": "education",
+    "selected_location": "mianwali",
+    "total_entities": 150,
+    "total_comments": 750,
+    "positive_comments": 514,
+    "negative_comments": 236,
+    "positive_ratio": 0.69,
+    "average_rating": 3.52,
+    "overall_sentiment": "Mostly Positive",
+    "top_issues": [
+        "facilities",
+        "management"
+    ],
+    "final_recommendation": "Improve key weak areas."
+}

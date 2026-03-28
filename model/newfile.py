@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-import joblib
-import tensorflow as tf
-import tensorflow_hub as hub
+from radiuss import analyze_location
+import joblib 
 import numpy as np
 
 # -----------------------------
@@ -19,9 +18,6 @@ model = joblib.load("xgboost_tuned.pkl")
 print("Loading Label Encoder...")
 le = joblib.load("label_encoder.pkl")
 
-print("Loading ELMo model from TF Hub...")
-elmo = hub.load("https://tfhub.dev/google/elmo/3")
-
 print("All models loaded successfully!")
 
 # -----------------------------
@@ -32,20 +28,10 @@ class StartupInput(BaseModel):
     description: str
     location: str
     category: str
-    funding: str
+    funding: float
+    latitude: float
+    longitude: float
 
-
-# -----------------------------
-# Embedding Function
-# -----------------------------
-def get_elmo_embeddings(sentences):
-    
-    if isinstance(sentences, str):
-        sentences = [sentences]
-
-    embeddings = elmo.signatures["default"](tf.constant(sentences))["default"]
-
-    return embeddings.numpy()
 
 # -----------------------------------
 # Prediction Function
@@ -57,8 +43,8 @@ def predict_status(name, description, location, category, funding):
     # limit tokens
     text = " ".join(text.split()[:60])
 
-    # generate embeddings
-    emb = get_elmo_embeddings([text])
+    # ✅ TEMP embedding (ELMo removed)
+    emb = np.random.rand(1, 1024)
 
     # model prediction
     pred = model.predict(emb)
@@ -67,11 +53,17 @@ def predict_status(name, description, location, category, funding):
     result = le.inverse_transform(pred)[0]
 
     return result
+
+
 # -----------------------------
 # Prediction Endpoint
 # -----------------------------
 @app.post("/predict")
 def predict(input_data: StartupInput):
+
+    # Debug check
+    print("Latitude received:", input_data.latitude)
+    print("Longitude received:", input_data.longitude)
 
     prediction = predict_status(
         input_data.name,
@@ -81,11 +73,28 @@ def predict(input_data: StartupInput):
         input_data.funding
     )
 
+    # Dummy analytics
     innovationScore = float(np.random.randint(60, 100))
     marketFit = float(np.random.randint(50, 100))
     viabilityScore = float(np.random.randint(40, 100))
     risks = "Low" if viabilityScore > 60 else "Medium"
     recommendations = "Go Ahead" if innovationScore > 70 else "Needs Review"
+
+    # Call radius logic 
+    radius_data = analyze_location(
+    input_data.category,
+    input_data.location,
+    input_data.latitude,
+    input_data.longitude
+)
+
+    positive_comments = radius_data["positive_comments"]
+    negative_comments = radius_data["negative_comments"]
+    average_rating = radius_data["average_rating"]
+
+    print(f"Positive Comments: {positive_comments}")
+    print(f"Negative Comments: {negative_comments}")
+    print(f"Average Rating: {average_rating}")
 
     return {
         "prediction": prediction,
@@ -93,8 +102,13 @@ def predict(input_data: StartupInput):
         "marketFit": marketFit,
         "viabilityScore": viabilityScore,
         "risks": risks,
-        "recommendations": recommendations
+        "recommendations": recommendations,
+        "positiveComments": positive_comments,
+        "negativeComments": negative_comments,
+        "averageRating": average_rating 
     }
+
+
 # -----------------------------
 # Health Check
 # -----------------------------

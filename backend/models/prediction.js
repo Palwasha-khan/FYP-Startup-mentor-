@@ -21,6 +21,18 @@ const predictionSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  positiveComments: {
+    type: Number,
+    required: true
+  },
+  negativeComments: {
+    type: Number,
+    required: true
+  },
+  averageRating: {
+    type: Number,
+    required: true
+  },
 
   risks: [{
     type: String

@@ -17,12 +17,20 @@ const ideaSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    enum: ['Technology', 'Health', 'Education', 'Finance','Food', 'Other']
+    enum: ['Technology', 'Health', 'education', 'Finance','Food', 'Other']
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required:true,
+  },
+  latitude: {
+    type: String,
+    required: true
+  },
+  longitude: {
+    type: String,
+    required: true
   },
   location: {
     type: String,
