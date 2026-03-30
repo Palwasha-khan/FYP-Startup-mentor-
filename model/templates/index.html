@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI Business Advisor</title>
+</head>
+
+<body>
+    <h1>AI Business Decision System</h1>
+    <form method="post">
+        <label>Business Name:</label><br>
+        <input type="text" name="business_name" required><br><br>
+
+        <label>Category:</label><br>
+        <input type="text" name="category" required><br><br>
+
+        <label>Location:</label><br>
+        <input type="text" name="location" required><br><br>
+
+        <label>Description:</label><br>
+        <textarea name="description" rows="3" cols="40" required></textarea><br><br>
+
+        <button type="submit">Get Decision</button>
+    </form>
+
+    {% if decision %}
+    <h2>Business Decision:</h2>
+    <pre>{{ decision | tojson(indent=2) }}</pre>
+    {% endif %}
+</body>
+
+</html>

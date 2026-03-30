@@ -1,8 +1,9 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from radiuss import analyze_location
+from app import business_decision, load_data, get_competitor_data
 import joblib 
 import numpy as np
+import requests
 
 # -----------------------------
 # FastAPI app
@@ -73,40 +74,36 @@ def predict(input_data: StartupInput):
         input_data.funding
     )
 
-    # Dummy analytics
-    innovationScore = float(np.random.randint(60, 100))
-    marketFit = float(np.random.randint(50, 100))
-    viabilityScore = float(np.random.randint(40, 100))
-    risks = "Low" if viabilityScore > 60 else "Medium"
-    recommendations = "Go Ahead" if innovationScore > 70 else "Needs Review"
+  
+    # Prepare payload for Flask API
+    payload = {
+        "business_name": input_data.name,
+        "category": input_data.category,
+        "location": input_data.location,
+        "description": input_data.description
+    }
 
-    # Call radius logic 
-    radius_data = analyze_location(
-    input_data.category,
-    input_data.location,
-    input_data.latitude,
-    input_data.longitude
-)
-
-    positive_comments = radius_data["positive_comments"]
-    negative_comments = radius_data["negative_comments"]
-    average_rating = radius_data["average_rating"]
-
-    print(f"Positive Comments: {positive_comments}")
-    print(f"Negative Comments: {negative_comments}")
-    print(f"Average Rating: {average_rating}")
+    response = requests.post("http://127.0.0.1:5000/api/decision", json=payload)
+    if response.status_code == 200:
+        flask_result = response.json()
+    else:
+        flask_result = {
+            "error": "Failed to get decision from Flask backend"
+        }
+    
 
     return {
-        "prediction": prediction,
-        "innovationScore": innovationScore,
-        "marketFit": marketFit,
-        "viabilityScore": viabilityScore,
-        "risks": risks,
-        "recommendations": recommendations,
-        "positiveComments": positive_comments,
-        "negativeComments": negative_comments,
-        "averageRating": average_rating 
-    }
+    # "prediction": prediction,
+    "prediction": flask_result.get("decision"),
+    "viabilityScore": flask_result.get("success_probability"),
+    "marketFit": flask_result.get("Market fit"),
+    "positiveComments": flask_result.get("positive_comments"),
+    "negativeComments": flask_result.get("negative_comments"),
+    "averageRating": flask_result.get("average_rating"),
+    "recommendations": flask_result.get("final_advice"),
+    "risks": flask_result.get("Risks")
+}
+ 
 
 
 # -----------------------------
