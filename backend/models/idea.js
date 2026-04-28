@@ -55,10 +55,8 @@ const ideaSchema = new mongoose.Schema({
     enum: [0, 1],
     default: 0
   },
-  marketReadinessLevel: {
-    type: String,
-    required: false // Optional, or set true if you want it mandatory
-  },
+ marketReadinessLevel: { type: Number, default: 0 },
+  marketReadinessItems: [{ type: String }], // Array of strings for the checkboxes
   // --- END NEW FIELDS ---
   prediction: {
     type: mongoose.Schema.Types.ObjectId,

@@ -23,6 +23,7 @@ export const submitIdea = catchAsyncErrors(async (req, res) => {
     mentorshipSupport,
     incubationSupport,
     marketReadinessLevel,
+    marketReadinessItems
   } = req.body;
 
   // 2. Updated Validation
@@ -77,7 +78,8 @@ export const submitIdea = catchAsyncErrors(async (req, res) => {
     avgTeamExperience,
     mentorshipSupport,
     incubationSupport,
-    marketReadinessLevel,
+    marketReadinessLevel, 
+    marketReadinessItems,
     user: userId
   });
 
