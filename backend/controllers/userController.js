@@ -14,10 +14,11 @@ import { upload_file } from '../utils/cloudinary.js';
 export const registerUser = catchAsyncErrors(async(req, res,next) => {
 
   const validateEmail = (email) => {
-    return /^[^/s@/]+@[^/s@]+\.[^/s@]+$/.test(email);
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
    
     const { name, email, password } = req.body;
+    console.log("Request Body:", req.body);
 
     if (!name || !email || !password) {
         return next(new ErrorHandler('All fields are required',400))

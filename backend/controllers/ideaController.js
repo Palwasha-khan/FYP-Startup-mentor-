@@ -5,48 +5,83 @@ import ErrorHandler from "../utils/errorHandler.js";
 import callPythonAI from "../services/aiService.js";
 import axios from "axios";
 
-//create new idea  => /api/new/ideas
+// create new idea => /api/new/ideas
 export const submitIdea = catchAsyncErrors(async (req, res) => {
-
   const userId = req.user._id;
-  const {  title ,description, location,lat,lng, category ,funding} = req.body;
-   
 
-  if (!title || !description || !location || !category || !funding) {
-              return res.status(400).json({ success: false, message: "All fields are required" });
-          }
- 
+  // 1. Destructure ALL new fields from the request body
+  const {
+    title,
+    description,
+    locationName, // renamed from location to match frontend
+    lat,
+    lng,
+    category,
+    fundingAmount, // renamed from funding
+    teamSize,
+    avgTeamExperience,
+    mentorshipSupport,
+    incubationSupport,
+    marketReadinessLevel,
+  } = req.body;
 
-   // Call FastAPI
-    const predictionResponse = await axios.post(
-      "http://127.0.0.1:8080/predict",
-      {
-         name: title,
-          description,
-          location,
-          category,
-          funding: parseFloat(funding),       
-          latitude: parseFloat(lat),          
-          longitude: parseFloat(lng) 
-            }
-    );
+  // 2. Updated Validation
+  if (!title || !description || !locationName || !category) {
+    return res.status(400).json({ success: false, message: "Required fields are missing" });
+  }
 
-  const aiResult = predictionResponse.data;
+  // // 3. Call FastAPI with the expanded data set
+  // const predictionResponse = await axios.post(
+  //   "http://127.0.0.1:8080/predict",
+  //   {
+  //     name: title,
+  //     description,
+  //     location: locationName,
+  //     category,
+  //     funding: parseFloat(fundingAmount) || 0,
+  //     latitude: parseFloat(lat),
+  //     longitude: parseFloat(lng),
+  //     // NEW AI INPUTS
+  //     team_size: Number(teamSize),
+  //     experience: Number(avgTeamExperience),
+  //     mentorship: mentorshipSupport,
+  //     incubation: incubationSupport,
+  //     readiness: marketReadinessLevel
+  //   }
+  // );
 
-  // Create idea
+  // const aiResult = predictionResponse.data;
+
+  const aiResult = {
+    prediction: "High Potential (Mock)",
+    innovationScore: 85,
+    marketFit: 70,
+    viabilityScore: 75,
+    positiveComments: 20, 
+    negativeComments: 14,
+    averageRating: 4.2,
+    risks: "Testing phase risks",
+    recommendations: "Continue with the prototype."
+  };
+
+  // 4. Save Idea with NEW fields
   const idea = await Idea.create({
     title,
     description,
-    location,
+    location: locationName,
     category,
-    latitude:lat,
-    longitude:lng,
-    funding,
+    latitude: lat,
+    longitude: lng,
+    funding: fundingAmount,
+    teamSize,
+    avgTeamExperience,
+    mentorshipSupport,
+    incubationSupport,
+    marketReadinessLevel,
     user: userId
   });
- 
 
-  // Create prediction
+  // 5. Create prediction (Keep this as is, assuming AI result structure remains same)
   const prediction = await Prediction.create({
     idea: idea._id,
     prediction: aiResult.prediction,
@@ -60,9 +95,9 @@ export const submitIdea = catchAsyncErrors(async (req, res) => {
     suggestions: aiResult.recommendations
   });
 
-   idea.prediction = prediction._id;
-   await idea.save();
-   
+  idea.prediction = prediction._id;
+  await idea.save();
+
   res.status(201).json({
     success: true,
     idea,

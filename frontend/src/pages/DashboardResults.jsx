@@ -1,88 +1,178 @@
-import { AlertTriangle, Star, TrendingUp,FileText, Target, CheckCircle } from "lucide-react";
+import { 
+  AlertTriangle, Star, TrendingUp, FileText, Target, 
+  MapPin, Lightbulb, CheckCircle, ArrowLeft, Info
+} from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";  
 import { Link, useParams } from "react-router-dom";
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import jsPDF from "jspdf";
 import { useGetPredictionQuery } from "@/redux/api/predictionApi";
 
 const DashboardResults = () => {
-
   const { ideaId } = useParams();
+  const { data: response, isLoading, error } = useGetPredictionQuery(ideaId);
 
-  const { data, isLoading, error } = useGetPredictionQuery(ideaId);
+  const prediction = response?.data; 
+  const idea = prediction?.idea;
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error loading prediction</p>; 
-  console.log("DATA:", data?.data);
-  console.log("ERROR:", error);
-  console.log("LOADING:", isLoading);
+  if (isLoading) return (
+    <DashboardLayout>
+      <div className="flex justify-center items-center h-[50vh]">
+        <p className="text-slate-500 font-medium">Processing analysis report...</p>
+      </div>
+    </DashboardLayout>
+  );
 
-   const generatePDFReport = () => {
+  if (error) return (
+    <DashboardLayout>
+      <div className="text-center py-12">
+        <p className="text-red-600 font-semibold">Unable to retrieve data. Please contact support.</p>
+      </div>
+    </DashboardLayout>
+  );
+
+  const generatePDFReport = () => {
     const doc = new jsPDF();
-    
-    // Title
+    const margin = 20;
+    let yPos = 30; // Track vertical position for dynamic content
+
+    // 1. Header & Title
     doc.setFontSize(22);
-    doc.setTextColor(0, 150, 136);
-    doc.text("Startup Idea Analysis Report", 20, 25);
+    doc.setTextColor(40, 40, 40);
+    doc.text("EXECUTIVE STARTUP ANALYSIS", margin, yPos);
     
-    // Date
+    yPos += 5;
+    doc.setLineWidth(0.5);
+    doc.setDrawColor(200, 200, 200);
+    doc.line(margin, yPos, 190, yPos);
+
+    // 2. Project Overview Section
+    yPos += 15;
+    doc.setFontSize(14);
+    doc.setFont("helvetica", "bold");
+    doc.text("1. PROJECT IDENTIFICATION", margin, yPos);
+    
+    yPos += 10;
+    doc.setFontSize(11);
+    doc.setFont("helvetica", "normal");
+    doc.text(`Title: ${idea?.title || "N/A"}`, margin + 5, yPos);
+    yPos += 7;
+    doc.text(`Category: ${idea?.category || "N/A"}`, margin + 5, yPos);
+    yPos += 7;
+    doc.text(`Location: ${idea?.location || "N/A"}`, margin + 5, yPos);
+    
+    yPos += 10;
+    const descTitle = "Description:";
+    doc.setFont("helvetica", "bold");
+    doc.text(descTitle, margin + 5, yPos);
+    
+    yPos += 5;
+    doc.setFont("helvetica", "normal");
+    const splitDesc = doc.splitTextToSize(idea?.description || "No description provided.", 165);
+    doc.text(splitDesc, margin + 10, yPos);
+    yPos += (splitDesc.length * 5) + 10;
+
+    // 3. Analysis Scores Section
+    doc.setFontSize(14);
+    doc.setFont("helvetica", "bold");
+    doc.text("2. QUANTITATIVE ASSESSMENT", margin, yPos);
+    
+    yPos += 10;
+    doc.setFontSize(11);
+    doc.setFont("helvetica", "normal");
+    doc.text(`Innovation Score: ${prediction?.innovationScore || 0}%`, margin + 5, yPos);
+    yPos += 7;
+    doc.text(`Market Fit: ${prediction?.marketFit || 0}%`, margin + 5, yPos);
+    yPos += 7;
+    doc.text(`Viability Score: ${prediction?.viabilityScore || 0}%`, margin + 5, yPos);
+    yPos += 7;
+    doc.text(`Overall Prediction: ${prediction?.prediction || "N/A"}`, margin + 5, yPos);
+
+    // 4. Risks Section
+    yPos += 15;
+    doc.setFontSize(14);
+    doc.setFont("helvetica", "bold");
+    doc.text("3. POTENTIAL RISKS", margin, yPos);
+    
+    yPos += 5;
     doc.setFontSize(10);
-    doc.setTextColor(100, 100, 100);
-    doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 20, 35);
-    
-    // Scores Section
-    doc.setFontSize(16);
-    doc.setTextColor(0, 0, 0);
-    doc.text("Analysis Scores", 20, 50);
-    
-    doc.setFontSize(12);
-    doc.text("Viability Score: 85%", 25, 62);
-    doc.text("Market Fit: 72%", 25, 72);
-    doc.text("Innovation Score: 90%", 25, 82);
-    
-    // Risks Section
-    doc.setFontSize(16);
-    doc.text("Potential Risks", 20, 100);
-    
-    doc.setFontSize(12);
-    doc.text("1. Competitors", 25, 112);
-    doc.setFontSize(10);
-    doc.text("   Identify main competitors and their advantages", 25, 120);
-    
-    doc.setFontSize(12);
-    doc.text("2. Market Trends", 25, 132);
-    doc.setFontSize(10);
-    doc.text("   Analyze current market trends and shifts", 25, 140);
-    
-    // Suggestions Section
-    doc.setFontSize(16);
-    doc.setTextColor(0, 0, 0);
-    doc.text("Suggestions", 20, 158);
-    
-    doc.setFontSize(10);
-    const suggestions = [
-      "1. Focus on a niche market segment to reduce competition",
-      "2. Build MVP and test with early adopters before scaling",
-      "3. Consider strategic partnerships for faster market entry"
-    ];
-    
-    suggestions.forEach((suggestion, index) => {
-      doc.text(suggestion, 25, 170 + (index * 10));
+    doc.setFont("helvetica", "normal");
+    prediction?.risks?.forEach((risk, index) => {
+      yPos += 7;
+      const splitRisk = doc.splitTextToSize(`${index + 1}. ${risk}`, 165);
+      doc.text(splitRisk, margin + 5, yPos);
+      yPos += (splitRisk.length - 1) * 5; // Adjust yPos if text wraps
     });
+
+    // 5. Suggestions Section
+    yPos += 15;
+    if (yPos > 250) { doc.addPage(); yPos = 20; } // Add page if running out of space
+    doc.setFontSize(14);
+    doc.setFont("helvetica", "bold");
+    doc.text("4. STRATEGIC SUGGESTIONS", margin, yPos);
     
+    yPos += 5;
+    doc.setFontSize(10);
+    doc.setFont("helvetica", "normal");
+    prediction?.suggestions?.forEach((sug, index) => {
+      yPos += 7;
+      const splitSug = doc.splitTextToSize(`${index + 1}. ${sug}`, 165);
+      doc.text(splitSug, margin + 5, yPos);
+      yPos += (splitSug.length - 1) * 5;
+    });
+
     // Footer
     doc.setFontSize(8);
     doc.setTextColor(150, 150, 150);
-    doc.text("Generated by Start Up Mentor", 20, 280);
-    
-    // Save the PDF
-    doc.save("startup-analysis-report.pdf");
-  };
+    doc.text(`Report Generated by StartUp Mentor - ${new Date().toLocaleDateString()}`, margin, 285);
 
-  return (
+    doc.save(`${idea?.title?.replace(/\s+/g, '_')}_Analysis_Report.pdf`);
+  };
+return (
     <DashboardLayout>
       <div className="max-w-4xl mx-auto space-y-6">
+        
+        {/* --- ADDED: PROJECT IDENTIFICATION SECTION --- */}
+        <Card className="p-6 bg-background/50 border border-border/50 shadow-sm">
+          <div className="flex items-center gap-3 mb-4 border-b pb-3">
+            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+              <Info className="w-5 h-5" />
+            </div>
+            <div>
+              <h2 className="text-xl font-bold">Project Overview</h2>
+              <p className="text-xs text-muted-foreground">Detailed identification of your submission</p>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-3">
+              <div>
+                <span className="text-[10px] font-bold uppercase text-muted-foreground tracking-wider">Startup Title</span>
+                <p className="text-lg font-semibold">{idea?.title || "N/A"}</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <Target className="w-4 h-4 text-purple-500" />
+                <span className="text-sm text-muted-foreground">{idea?.category}</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <MapPin className="w-4 h-4 text-cyan-500" />
+                <span>{idea?.location}</span>
+              </div>
+            </div>
+
+            <div className="p-4 rounded-xl bg-muted/30 border border-border/40">
+              <span className="text-[10px] font-bold uppercase text-muted-foreground tracking-wider block mb-2">Description</span>
+              <p className="text-sm leading-relaxed text-muted-foreground italic">
+                "{idea?.description}"
+              </p>
+            </div>
+          </div>
+        </Card>
+        {/* --- END OF ADDED SECTION --- */}
+
         {/* Analysis Score Card */}
         <Card className="p-6 bg-gradient-to-br from-cyan-400/10 to-purple-500/10 border-cyan-400/20 shadow-lg">
           <div className="flex items-center gap-4 mb-6">
@@ -95,40 +185,25 @@ const DashboardResults = () => {
               </h2>
               <p className="text-muted-foreground">Your idea has been analyzed ✨</p>
 
-              {data?.prediction && (
+              {prediction?.prediction && (
               <p className="mt-2 text-lg font-semibold text-cyan-600">
-                Prediction: {data.prediction}
+                Prediction: {prediction.prediction}
               </p>
-      )}
+              )}
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-4 rounded-xl bg-background/50 border border-border/50 text-center">
-              <div className="text-3xl font-bold text-cyan-500 mb-1">{data?.viabilityScore}%</div>
-              <div className="text-sm text-muted-foreground">Viability Score</div>
-            </div>
-            <div className="p-4 rounded-xl bg-background/50 border border-border/50 text-center">
-              <div className="text-3xl font-bold text-purple-500 mb-1">{data?.marketFit}%</div>
-              <div className="text-sm text-muted-foreground">Market Fit</div>
-            </div>
-            <div className="p-4 rounded-xl bg-background/50 border border-border/50 text-center">
-              <div className="text-3xl font-bold text-pink-500 mb-1">{data?.innovationScore}%</div>
-              <div className="text-sm text-muted-foreground">Innovation Score</div>
-            </div>
-          </div>
-
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
             <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/20 text-center">
-              <div className="text-3xl font-bold text-green-500 mb-1">{data?.positiveComments}</div>
+              <div className="text-3xl font-bold text-green-500 mb-1">{prediction?.positiveComments}</div>
               <div className="text-sm text-muted-foreground">Positive Comments</div>
             </div>
             <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-center">
-              <div className="text-3xl font-bold text-red-500 mb-1">{data?.negativeComments}</div>
+              <div className="text-3xl font-bold text-red-500 mb-1">{prediction?.negativeComments}</div>
               <div className="text-sm text-muted-foreground">Negative Comments</div>
             </div>
             <div className="p-4 rounded-xl bg-yellow-500/10 border border-yellow-500/20 text-center">
-              <div className="text-3xl font-bold text-yellow-500 mb-1">{data?.averageRating}</div>
+              <div className="text-3xl font-bold text-yellow-500 mb-1">{prediction?.averageRating}</div>
               <div className="text-sm text-muted-foreground">Average Rating</div>
             </div>
           </div>
@@ -144,13 +219,10 @@ const DashboardResults = () => {
           </div>
 
           <div className="space-y-4">
-            {data?.risks?.map((risk, index) => (
+            {prediction?.risks?.map((risk, index) => (
               <div key={index}>
-                <h3 className="font-semibold mb-2">
-                  {index + 1}.
-                </h3>
                 <div className="p-4 rounded-xl bg-background/50 border border-border/50 text-muted-foreground">
-                  {risk}
+                   <span className="font-bold mr-2">{index + 1}.</span> {risk}
                 </div>
               </div>
             ))}
@@ -167,13 +239,10 @@ const DashboardResults = () => {
           </div>
 
           <div className="space-y-4">
-          {data?.suggestions?.map((suggestion, num) => (
+          {prediction?.suggestions?.map((suggestion, num) => (
             <div key={num}>
-              <h3 className="font-semibold mb-2">
-                {num + 1}.
-              </h3>
               <div className="p-4 rounded-xl bg-gradient-to-r from-purple/10 to-pink/10 border border-purple/20 text-muted-foreground">
-                {suggestion}
+                 <span className="font-bold mr-2">{num + 1}.</span> {suggestion}
               </div>
             </div>
           ))}
@@ -187,7 +256,7 @@ const DashboardResults = () => {
               Submit Another Idea
             </Button>
           </Link>
-           <Button 
+          <Button 
             onClick={generatePDFReport}
             className="flex-1 gradient-button text-white py-6"
           >
