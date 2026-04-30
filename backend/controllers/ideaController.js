@@ -112,9 +112,11 @@ export const getMyIdeas = async (req, res) => {
   const ideas = await Idea.find({ user: req.user._id })
     .populate("prediction")
     .sort({ createdAt: -1 });
+    console.log(ideas)
 
   res.json({
     success: true,
+    count: ideas.length,
     data: ideas
   });
 };

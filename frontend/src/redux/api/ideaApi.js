@@ -17,7 +17,7 @@ export const ideaApi = createApi({
 
         getideas: builder.query({
             query: (params) => "/all",
-            providesTags: ["Ideas"], 
+            providesTags: ["Idea"], 
         }),
 
         deleteIdea: builder.mutation({
@@ -25,7 +25,7 @@ export const ideaApi = createApi({
             url: `/delete/${id}`,
             method: "DELETE",
         }),
-        invalidatesTags: ["Ideas"],
+        invalidatesTags: ["Idea"],
         }),
     }),
 });
