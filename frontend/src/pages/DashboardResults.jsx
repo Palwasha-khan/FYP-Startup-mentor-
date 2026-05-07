@@ -1,11 +1,11 @@
-import { 
-  AlertTriangle, Star, TrendingUp, FileText, Target, 
+import {
+  AlertTriangle, Star, TrendingUp, FileText, Target,
   MapPin, Lightbulb, CheckCircle, ArrowLeft, Info
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";  
+import { Separator } from "@/components/ui/separator";
 import { Link, useParams } from "react-router-dom";
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import jsPDF from "jspdf";
@@ -15,7 +15,7 @@ const DashboardResults = () => {
   const { ideaId } = useParams();
   const { data: response, isLoading, error } = useGetPredictionQuery(ideaId);
 
-  const prediction = response?.data; 
+  const prediction = response?.data;
   const idea = prediction?.idea;
 
   if (isLoading) return (
@@ -43,7 +43,7 @@ const DashboardResults = () => {
     doc.setFontSize(22);
     doc.setTextColor(40, 40, 40);
     doc.text("EXECUTIVE STARTUP ANALYSIS", margin, yPos);
-    
+
     yPos += 5;
     doc.setLineWidth(0.5);
     doc.setDrawColor(200, 200, 200);
@@ -54,7 +54,7 @@ const DashboardResults = () => {
     doc.setFontSize(14);
     doc.setFont("helvetica", "bold");
     doc.text("1. PROJECT IDENTIFICATION", margin, yPos);
-    
+
     yPos += 10;
     doc.setFontSize(11);
     doc.setFont("helvetica", "normal");
@@ -63,12 +63,12 @@ const DashboardResults = () => {
     doc.text(`Category: ${idea?.category || "N/A"}`, margin + 5, yPos);
     yPos += 7;
     doc.text(`Location: ${idea?.location || "N/A"}`, margin + 5, yPos);
-    
+
     yPos += 10;
     const descTitle = "Description:";
     doc.setFont("helvetica", "bold");
     doc.text(descTitle, margin + 5, yPos);
-    
+
     yPos += 5;
     doc.setFont("helvetica", "normal");
     const splitDesc = doc.splitTextToSize(idea?.description || "No description provided.", 165);
@@ -79,24 +79,24 @@ const DashboardResults = () => {
     doc.setFontSize(14);
     doc.setFont("helvetica", "bold");
     doc.text("2. QUANTITATIVE ASSESSMENT", margin, yPos);
-    
+
     yPos += 10;
     doc.setFontSize(11);
     doc.setFont("helvetica", "normal");
-    doc.text(`Innovation Score: ${prediction?.innovationScore || 0}%`, margin + 5, yPos);
+    // doc.text(`Innovation Score: ${prediction?.innovationScore || 0}%`, margin + 5, yPos);
+    // yPos += 7;
+    // doc.text(`Market Fit: ${prediction?.marketFit || 0}%`, margin + 5, yPos);
     yPos += 7;
-    doc.text(`Market Fit: ${prediction?.marketFit || 0}%`, margin + 5, yPos);
-    yPos += 7;
-    doc.text(`Viability Score: ${prediction?.viabilityScore || 0}%`, margin + 5, yPos);
-    yPos += 7;
-    doc.text(`Overall Prediction: ${prediction?.prediction || "N/A"}`, margin + 5, yPos);
+    doc.text(`Probability Score: ${prediction?.success_probability || 0}%`, margin + 5, yPos);
+    // yPos += 7;
+    // doc.text(`Overall Prediction: ${prediction?.prediction || "N/A"}`, margin + 5, yPos);
 
     // 4. Risks Section
     yPos += 15;
     doc.setFontSize(14);
     doc.setFont("helvetica", "bold");
     doc.text("3. POTENTIAL RISKS", margin, yPos);
-    
+
     yPos += 5;
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
@@ -113,7 +113,7 @@ const DashboardResults = () => {
     doc.setFontSize(14);
     doc.setFont("helvetica", "bold");
     doc.text("4. STRATEGIC SUGGESTIONS", margin, yPos);
-    
+
     yPos += 5;
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
@@ -131,10 +131,10 @@ const DashboardResults = () => {
 
     doc.save(`${idea?.title?.replace(/\s+/g, '_')}_Analysis_Report.pdf`);
   };
-return (
+  return (
     <DashboardLayout>
       <div className="max-w-4xl mx-auto space-y-6">
-        
+
         {/* --- ADDED: PROJECT IDENTIFICATION SECTION --- */}
         <Card className="p-6 bg-background/50 border border-border/50 shadow-sm">
           <div className="flex items-center gap-3 mb-4 border-b pb-3">
@@ -146,7 +146,7 @@ return (
               <p className="text-xs text-muted-foreground">Detailed identification of your submission</p>
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-3">
               <div>
@@ -185,10 +185,10 @@ return (
               </h2>
               <p className="text-muted-foreground">Your idea has been analyzed ✨</p>
 
-              {prediction?.prediction && (
-              <p className="mt-2 text-lg font-semibold text-cyan-600">
-                Prediction: {prediction.prediction}
-              </p>
+              {prediction?.success_probability && (
+                <p className="mt-2 text-lg font-semibold text-cyan-600">
+                  success_probability: {prediction.success_probability}%
+                </p>
               )}
             </div>
           </div>
@@ -222,7 +222,7 @@ return (
             {prediction?.risks?.map((risk, index) => (
               <div key={index}>
                 <div className="p-4 rounded-xl bg-background/50 border border-border/50 text-muted-foreground">
-                   <span className="font-bold mr-2">{index + 1}.</span> {risk}
+                  <span className="font-bold mr-2">{index + 1}.</span> {risk}
                 </div>
               </div>
             ))}
@@ -239,14 +239,14 @@ return (
           </div>
 
           <div className="space-y-4">
-          {prediction?.suggestions?.map((suggestion, num) => (
-            <div key={num}>
-              <div className="p-4 rounded-xl bg-gradient-to-r from-purple/10 to-pink/10 border border-purple/20 text-muted-foreground">
-                 <span className="font-bold mr-2">{num + 1}.</span> {suggestion}
+            {prediction?.suggestions?.map((suggestion, num) => (
+              <div key={num}>
+                <div className="p-4 rounded-xl bg-gradient-to-r from-purple/10 to-pink/10 border border-purple/20 text-muted-foreground">
+                  <span className="font-bold mr-2">{num + 1}.</span> {suggestion}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
         </Card>
 
         {/* Action Buttons */}
@@ -256,7 +256,7 @@ return (
               Submit Another Idea
             </Button>
           </Link>
-          <Button 
+          <Button
             onClick={generatePDFReport}
             className="flex-1 gradient-button text-white py-6"
           >

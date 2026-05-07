@@ -145,7 +145,7 @@ const handleDelete = async (id, e) => {
                     <div className="text-right">
                       <div className="flex items-center gap-1 text-cyan">
                         <TrendingUp className="w-4 h-4" />
-                        <span className="font-bold">{idea.prediction?.innovationScore}%</span>
+                        <span className="font-bold">{idea.prediction?.success_probability}%</span>
                       </div>
                       <span className="text-xs text-muted-foreground capitalize">
                         {idea.status}

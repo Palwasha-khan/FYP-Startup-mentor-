@@ -1,26 +1,17 @@
-import mongoose  from 'mongoose';
+import mongoose from 'mongoose';
 
 const predictionSchema = new mongoose.Schema({
   idea: {
-  type: mongoose.Schema.Types.ObjectId,
-  ref: "Idea",
-  unique: true
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Idea",
+    unique: true
   },
   prediction: { type: String, required: true },
-  viabilityScore: {
+  success_probability: {
     type: Number,
     required: true
   },
 
-  marketFit: {
-    type: Number,
-    required: true
-  },
-
-  innovationScore: {
-    type: Number,
-    required: true
-  },
   positiveComments: {
     type: Number,
     required: true
