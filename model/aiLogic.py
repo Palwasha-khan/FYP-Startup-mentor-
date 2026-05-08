@@ -74,30 +74,6 @@ def predict(input_data: StartupInput):
     model_prediction = get_prediction(input_data)
 
     # 2. Use LLM for suggestions based on model result
-    # prompt = f"""
-    # You are a startup advisor. A predictive model has suggested that this startup should: {model_prediction}.
-
-    # Startup Details:
-    # - Name: {input_data.title}
-    # - Category: {input_data.category}
-    # - Description: {input_data.description}
-    # - Team: {input_data.teamSize} members with {input_data.avgTeamExperience} years avg exp.
-    # - Resources: Funding ${input_data.fundingAmount}, Mentorship: {input_data.mentorshipSupport}
-
-    # Provide strategic advice and recommendations based on this '{model_prediction}' status. 
-    # If 'Close', explain risks. If 'Operating', explain growth steps.
-
-    # Output STRICT JSON ONLY:
-    # {{
-    #   "decision": "{model_prediction}",
-    #   "success_probability": 1-100,
-    #   "positiveComments": number,
-    #   "negativeComments": number,
-    #   "averageRating": 1-5,
-    #   "suggestions": ["...", "..."],
-    #   "risks": ["...", "..."]
-    # }}
-    # """
     
     
     prompt = f"""
