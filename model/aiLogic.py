@@ -1,159 +1,138 @@
-# -----------------------------
-# IMPORTS
-# -----------------------------
+import os
+import re
+import json
+import pickle
+import numpy as np
+from typing import List
 from fastapi import FastAPI
 from pydantic import BaseModel
 from openai import OpenAI
-import json
-import re
-import os
 
-# -----------------------------
-# APP INIT
-# -----------------------------
 app = FastAPI()
 
 # -----------------------------
-# CONFIGURE CLIENT
+# CONFIGURE CLIENTS
 # -----------------------------
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key="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"  # 🔐 Use environment variable
 )
 
-# -----------------------------
-# BASE DIRECTORY
-# -----------------------------
 BASE_DIR = os.path.dirname(__file__)
+MODEL_PATH = os.path.join(BASE_DIR, "startup_model.pkl")
 
-# -----------------------------
-# CATEGORY → FILE MAPPING
-# -----------------------------
-CATEGORY_FILES = {
-    "education": "education_100_entities_enhanced (1).json",
-    "food": "food_100_entities_enhanced.json",
-    "health": "health_100_entities_clean.json",
-    "technology": "technology_100_entities_enhanced.json",
-    "e-commerce": "ecommerce_100_entities_enhanced.json",
-    "finance": "finance_100_entities_enhanced.json"
-    
- 
-}
+# Load the trained model
+with open(MODEL_PATH, "rb") as f:
+    trained_model = pickle.load(f)
 
 # -----------------------------
 # REQUEST SCHEMA
 # -----------------------------
 class StartupInput(BaseModel):
-    name: str
+    title: str
+    category: str  # One of: EdTech, FinTech, GreenTech, HealthTech
+    locationName: str
     description: str
-    location: str
-    category: str
-    funding: float
-    latitude: float
-    longitude: float
+    teamSize: int
+    avgTeamExperience: float
+    fundingAmount: float
+    mentorshipSupport: bool
+    incubationSupport: bool
+    marketReadinessLevel: int
 
 # -----------------------------
-# JSON EXTRACTOR
+# HELPERS
 # -----------------------------
-def extract_json(text):
-    try:
-        json_part = re.search(r'\{.*\}', text, re.DOTALL).group()
-        return json.loads(json_part)
-    except:
-        return {}
+def get_prediction(data: StartupInput):
+    # One-hot encode category for the model's expected 10 features
+    domains = ["edtech", "fintech", "greentech", "healthtech"]
+    domain_vector = [1 if data.category.lower() == d else 0 for d in domains]
 
-# -----------------------------
-# LOAD DATA BASED ON CATEGORY
-# -----------------------------
-def load_businesses(category):
-    filename = CATEGORY_FILES.get(category.lower())
+    # Map features to model expected order:
+    # team_size, avg_team_experience, funding_amount_usd, market_readiness_level, 
+    # mentorship_support, incubation_support, + 4 domain columns
+    features = np.array([[
+        data.teamSize,
+        data.avgTeamExperience,
+        data.fundingAmount,
+        data.marketReadinessLevel,
+        int(data.mentorshipSupport),
+        int(data.incubationSupport),
+        *domain_vector
+    ]])
 
-    if not filename:
-        return []
-
-    file_path = os.path.join(BASE_DIR, filename)
-
-    if not os.path.exists(file_path):
-        return []
-
-    with open(file_path, "r", encoding="utf-8") as f:
-        return json.load(f)
+    prediction = trained_model.predict(features)[0]
+    # Assuming 1 = Operating (Open), 0 = Close
+    return "Operating" if prediction == 1 else "Close"
 
 # -----------------------------
-# FIND COMPETITORS
+# MAIN LOGIC
 # -----------------------------
-def find_competitors(category, location):
-    businesses = load_businesses(category)
+@app.post("/predict")
+def predict(input_data: StartupInput):
+    # 1. Get prediction from trained XGBoost model
+    model_prediction = get_prediction(input_data)
 
-    filtered = []
-    for b in businesses:
-        if location.lower() in b.get("location", "").lower():
-            filtered.append(b)
+    # 2. Use LLM for suggestions based on model result
+    # prompt = f"""
+    # You are a startup advisor. A predictive model has suggested that this startup should: {model_prediction}.
 
-    return filtered
+    # Startup Details:
+    # - Name: {input_data.title}
+    # - Category: {input_data.category}
+    # - Description: {input_data.description}
+    # - Team: {input_data.teamSize} members with {input_data.avgTeamExperience} years avg exp.
+    # - Resources: Funding ${input_data.fundingAmount}, Mentorship: {input_data.mentorshipSupport}
 
-# -----------------------------
-# ANALYZE COMPETITORS
-# -----------------------------
-def analyze_competitors(competitors):
-    if not competitors:
-        return 0, 0, "No competitors found."
+    # Provide strategic advice and recommendations based on this '{model_prediction}' status. 
+    # If 'Close', explain risks. If 'Operating', explain growth steps.
 
-    total_rating = sum(c.get("rating", 0) for c in competitors)
-    total_reviews = sum(c.get("reviews", 0) for c in competitors)
-
-    avg_rating = total_rating / len(competitors)
-
-    comments = []
-    for c in competitors:
-        comments.extend(c.get("comments", []))
-
-    comments_text = " ".join(comments[:100])
-
-    return avg_rating, total_reviews, comments_text
-
-# -----------------------------
-# BUSINESS DECISION LOGIC
-# -----------------------------
-def business_decision(name, category, location, description):
-
-    competitors = find_competitors(category, location)
-    avg_rating, total_reviews, reviews_text = analyze_competitors(competitors)
-
+    # Output STRICT JSON ONLY:
+    # {{
+    #   "decision": "{model_prediction}",
+    #   "success_probability": 1-100,
+    #   "positiveComments": number,
+    #   "negativeComments": number,
+    #   "averageRating": 1-5,
+    #   "suggestions": ["...", "..."],
+    #   "risks": ["...", "..."]
+    # }}
+    # """
+    
+    
     prompt = f"""
-You are a startup analyst.
+You are an expert Startup Venture Capital (VC) Advisor. 
 
-Analyze whether a business should be opened or not.
+### CONTEXT:
+A predictive model has classified this startup as: {model_prediction}.
+Your task is to validate this idea, check for category-description alignment, and provide a sentiment-driven score.
 
-Business Name: {name}
-Category: {category}
-Location: {location}
-Description: {description}
+### STARTUP DATA:
+- Name: {input_data.title}
+- Primary Category: {input_data.category}
+- Description: {input_data.description}
+- Team: {input_data.teamSize} members, {input_data.avgTeamExperience} years avg exp.
+- Funding: ${input_data.fundingAmount}
+- Mentorship: {input_data.mentorshipSupport}
 
-Market Data:
-- Average competitor rating: {avg_rating}
-- Total reviews: {total_reviews}
+### TASK INSTRUCTIONS:
+1. **Category Alignment:** Analyze if the 'Description' actually matches the 'Category'. If the description is vague, nonsensical, or belongs to a different industry, set "alignment_status" to "unclear_idea".
+2. **Sub-category Extraction:** Identify the specific niche (e.g., if Category is 'Education', Sub-category might be 'Test Prep' or 'EdTech SaaS').
+3. **Sentiment Simulation:** Based on the description and market viability, simulate how many "Positive" vs "Negative" expert comments this idea would receive out of a pool of 100 experts.
+4. **Rating:** Calculate an 'Average Rating' (1-5) based on the synergy between Team Experience, Funding, and Market Readiness.
 
-Customer Feedback Summary:
-{reviews_text}
-
-Decision Rules:
-- If market is saturated or competitors are strong → "Do Not Open"
-- If mixed signals → "Risky"
-- If opportunity exists → "Open"
-
-Output STRICT JSON ONLY:
-
+### OUTPUT FORMAT (STRICT JSON ONLY):
 {{
-  "decision": "Open" or "Do Not Open" or "Risky",
-  "success_probability": number (0-100),
-  "marketFit": number (0-100),
-  "innovationScore": number (0-100),
-  "positiveComments": number (0-100),
-  "negativeComments": number (0-100),
-  "averageRating": number (0-5),
-  "final_advice": ["...","..."],
-  "risks": ["...", "..."]
+  "decision": "{model_prediction}",
+#   "alignment_status": "matched" | "unclear_idea",
+  "identified_subcategory": "string",
+  "success_probability": 1-100,
+  "positiveComments": number,
+  "negativeComments": number,
+  "averageRating": 1-5,
+#   "analysis": "A brief explanation of why the idea is clear or unclear.",
+  "suggestions": ["suggestion 1", "suggestion 2", "..."],
+  "risks": ["risk 1", "risk 2"]
 }}
 """
 
@@ -163,56 +142,9 @@ Output STRICT JSON ONLY:
             messages=[{"role": "user", "content": prompt}],
             temperature=0.3
         )
-
-        ai_result = extract_json(response.choices[0].message.content)
-
+        ai_result = json.loads(re.search(r'\{.*\}', response.choices[0].message.content, re.DOTALL).group())
+        return ai_result
     except Exception as e:
-        return {
-            "prediction": "Error",
-            "error": str(e)
-        }
-
-    return {
-        "prediction": ai_result.get("decision", "Unknown"),
-        "viabilityScore": ai_result.get("success_probability", 0),
-        "marketFit": ai_result.get("market_fit", 0),
-        "innovationScore": ai_result.get("innovation_score", 0),
-        "positiveComments": ai_result.get("positive_comments", 0),
-        "negativeComments": ai_result.get("negative_comments", 0),
-        "averageRating": ai_result.get("average_rating", avg_rating),
-
-        "recommendations": ai_result.get("final_advice", []),
-        "risks": ai_result.get("risks", []),
-
-        "competitors_found": len(competitors),
-        "avg_market_rating": avg_rating
-    }
-
-# -----------------------------
-# API ENDPOINT
-# -----------------------------
-@app.post("/predict")
-def predict(input_data: StartupInput):
-    try:
-        result = business_decision(
-            input_data.name,
-            input_data.category,
-            input_data.location,
-            input_data.description
-        )
-        return result
-
-    except Exception as e:
-        return {
-            "error": str(e),
-            "prediction": "Error"
-        }
-
-# -----------------------------
-# HEALTH CHECK
-# -----------------------------
-@app.get("/")
-def root():
-    return {"message": "Startup Mentor API Running 🚀"}
-# -----------------------------
-# uvicorn aiLogic:app --reload --port 8080
+        return {"error": str(e), "model_status": model_prediction}
+    
+    # uvicorn aiLogic:app --reload --port 8080
