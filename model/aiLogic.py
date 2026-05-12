@@ -1,141 +1,126 @@
+import os
+import re
+import json
+import pickle
+import numpy as np
+from typing import List
 from fastapi import FastAPI
 from pydantic import BaseModel
 from openai import OpenAI
-import json
-import re
-import numpy as np
+
+app = FastAPI()
 
 # -----------------------------
-# FastAPI app
-# -----------------------------
-app = FastAPI(title="Startup Classifier API")
-
-# -----------------------------
-# Configure OpenAI Client
+# CONFIGURE CLIENTS
 # -----------------------------
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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"   # move to env for safety
+    api_key="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"  # 🔐 Use environment variable
 )
 
+BASE_DIR = os.path.dirname(__file__)
+MODEL_PATH = os.path.join(BASE_DIR, "startup_model.pkl")
+
+# Load the trained model
+with open(MODEL_PATH, "rb") as f:
+    trained_model = pickle.load(f)
+
 # -----------------------------
-# Request Schema
+# REQUEST SCHEMA
 # -----------------------------
 class StartupInput(BaseModel):
-    name: str
+    title: str
+    category: str  # One of: EdTech, FinTech, GreenTech, HealthTech
+    locationName: str
     description: str
-    location: str
-    category: str
-    funding: float
-    latitude: float
-    longitude: float
+    teamSize: int
+    avgTeamExperience: float
+    fundingAmount: float
+    mentorshipSupport: bool
+    incubationSupport: bool
+    marketReadinessLevel: int
 
 # -----------------------------
-# JSON Extractor (safely)
+# HELPERS
 # -----------------------------
-def extract_json(text):
-    try:
-        json_part = re.search(r'\{.*\}', text, re.DOTALL).group()
-        return json.loads(json_part)
-    except:
-        return {}
+def get_prediction(data: StartupInput):
+    # One-hot encode category for the model's expected 10 features
+    domains = ["edtech", "fintech", "greentech", "healthtech"]
+    domain_vector = [1 if data.category.lower() == d else 0 for d in domains]
 
-# -----------------------------
-# Business Decision Logic
-# -----------------------------
-def business_decision(name, category, location, description):
-    # Placeholder: Replace this with your competitor data if needed
-    reviews_text = "Good product. Average demand. Needs marketing."  
-    avg_rating = 4.0
-    total_reviews = 100
+    # Map features to model expected order:
+    # team_size, avg_team_experience, funding_amount_usd, market_readiness_level, 
+    # mentorship_support, incubation_support, + 4 domain columns
+    features = np.array([[
+        data.teamSize,
+        data.avgTeamExperience,
+        data.fundingAmount,
+        data.marketReadinessLevel,
+        int(data.mentorshipSupport),
+        int(data.incubationSupport),
+        *domain_vector
+    ]])
 
-    prompt = f"""
-    Your task is to analyze a startup idea based on the given location, category, and description.
-    Output STRICT JSON only.
-
-    Business Name: {name}
-    Category: {category}
-    Location: {location}
-    Description: {description}
-
-    Market Insights:
-    - Average competitor rating: {avg_rating}
-    - Total reviews in market: {total_reviews}
-
-    Competitor Comments:
-    {reviews_text}
-
-    Output:
-    {{
-        "decision": "Open / Do Not Open / Risky",
-        "success_probability": 0-100,
-        "Market fit": 0-100,
-        "innovationScore": 0-100,
-        "positive_comments": 0-100,
-        "negative_comments": 0-100,
-        "average_rating": 0-5,
-        "final_advice": ["...", "..."],
-        "Risks": ["...", "..."]
-    }}
-    """
-
-    response = client.chat.completions.create(
-        model="meta-llama/llama-3-8b-instruct",
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.3
-    )
-
-    ai_result = extract_json(response.choices[0].message.content)
-
-    # Ensure all fields exist with default values
-    return {
-        "prediction": ai_result.get("decision", "Unknown"),
-        "viabilityScore": ai_result.get("success_probability", 0),
-        "marketFit": ai_result.get("Market fit", 0),
-        "innovationScore": ai_result.get("innovationScore", 0),
-        "positiveComments": ai_result.get("positive_comments", 0),
-        "negativeComments": ai_result.get("negative_comments", 0),
-        "averageRating": ai_result.get("average_rating", 0),
-        "recommendations": ai_result.get("final_advice", []),
-        "risks": ai_result.get("Risks", [])
-    }
+    prediction = trained_model.predict(features)[0]
+    # Assuming 1 = Operating (Open), 0 = Close
+    return "Operating" if prediction == 1 else "Close"
 
 # -----------------------------
-# Prediction Endpoint
+# MAIN LOGIC
 # -----------------------------
 @app.post("/predict")
 def predict(input_data: StartupInput):
+    # 1. Get prediction from trained XGBoost model
+    model_prediction = get_prediction(input_data)
+
+    # 2. Use LLM for suggestions based on model result
+    
+    
+    prompt = f"""
+You are an expert Startup Venture Capital (VC) Advisor. 
+
+### CONTEXT:
+A predictive model has classified this startup as: {model_prediction}.
+Your task is to validate this idea, check for category-description alignment, and provide a sentiment-driven score.
+
+### STARTUP DATA:
+- Name: {input_data.title}
+- Primary Category: {input_data.category}
+- Description: {input_data.description}
+- Team: {input_data.teamSize} members, {input_data.avgTeamExperience} years avg exp.
+- Funding: ${input_data.fundingAmount}
+- Mentorship: {input_data.mentorshipSupport}
+
+### TASK INSTRUCTIONS:
+1. **Category Alignment:** Analyze if the 'Description' actually matches the 'Category'. If the description is vague, nonsensical, or belongs to a different industry, set "alignment_status" to "unclear_idea".
+2. **Sub-category Extraction:** Identify the specific niche (e.g., if Category is 'Education', Sub-category might be 'Test Prep' or 'EdTech SaaS').
+3. **Sentiment Simulation:** Based on the description and market viability, simulate how many "Positive" vs "Negative" expert comments this idea would receive out of a pool of 100 experts.
+4. **Rating:** Calculate an 'Average Rating' (1-5) based on the synergy between Team Experience, Funding, and Market Readiness.
+
+### OUTPUT FORMAT (STRICT JSON ONLY):
+{{
+  "decision": "{model_prediction}",
+#   "alignment_status": "matched" | "unclear_idea",
+  "identified_subcategory": "string",
+  "success_probability": 1-100,
+  "positiveComments": number,
+  "negativeComments": number,
+  "averageRating": 1-5,
+#   "analysis": "A brief explanation of why the idea is clear or unclear.",
+  "suggestions": ["suggestion 1", "suggestion 2", "..."],
+  "risks": ["risk 1", "risk 2"]
+}}
+"""
+
     try:
-        result = business_decision(
-            input_data.name,
-            input_data.category,
-            input_data.location,
-            input_data.description
+        response = client.chat.completions.create(
+            model="meta-llama/llama-3-8b-instruct",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.3
         )
-
-        print("Prediction result:", result)
-        return result
+        ai_result = json.loads(re.search(r'\{.*\}', response.choices[0].message.content, re.DOTALL).group())
+        return ai_result
     except Exception as e:
-        # Log the real error for debugging
-        print("Error in /predict:", str(e))
-        # Return proper JSON so Node/Axios doesn't break
-        return {
-            "prediction": "Error",
-            "viabilityScore": 0,
-            "marketFit": 0,
-            "innovationScore": 0,
-            "positiveComments": 0,
-            "negativeComments": 0,
-            "averageRating": 0,
-            "recommendations": [],
-            "risks": [],
-            "error": str(e)
-        }
-
-# -----------------------------
-# Health Check
-# -----------------------------
-@app.get("/")
-def root():
-    return {"message": "Startup Classifier API Running"}
-# uvicorn aiLogic:app --reload --port 8080
+        return {"error": str(e), "model_status": model_prediction}
+    
+    # uvicorn aiLogic:app --reload --port 8080

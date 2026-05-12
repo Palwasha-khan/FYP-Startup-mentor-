@@ -1,0 +1,1042 @@
+[
+    {
+        "name": "Nishtar Hospital",
+        "Subcategory": "Hospital, Public",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1575,
+        "longitude": 71.5249,
+        "reviews": 820,
+        "rating": 4.7,
+        "comments": [
+            "Excellent medical facilities",
+            "Experienced doctors and staff"
+        ]
+    },
+    {
+        "name": "Children's Hospital Multan",
+        "Subcategory": "Hospital, Public",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1628,
+        "longitude": 71.5164,
+        "reviews": 610,
+        "rating": 4.5,
+        "comments": [
+            "Best pediatric care in the city",
+            "Clean and organized hospital"
+        ]
+    },
+    {
+        "name": "Multan Institute of Kidney Diseases",
+        "Subcategory": "Hospital, Specialized",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1487,
+        "longitude": 71.5093,
+        "reviews": 430,
+        "rating": 4.6,
+        "comments": [
+            "Excellent kidney treatment services",
+            "Professional and helpful staff"
+        ]
+    },
+    {
+        "name": "Ibn-e-Siena Hospital",
+        "Subcategory": "Hospital, Private",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1711,
+        "longitude": 71.4872,
+        "reviews": 350,
+        "rating": 4.3,
+        "comments": [
+            "Good private healthcare services",
+            "Qualified doctors and quick response"
+        ]
+    },
+    {
+        "name": "Fatima Jinnah Dental Hospital",
+        "Subcategory": "Hospital, Dental",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1652,
+        "longitude": 71.4985,
+        "reviews": 270,
+        "rating": 4.2,
+        "comments": [
+            "Affordable dental treatment",
+            "Good patient care"
+        ]
+    },
+    {
+        "name": "City Medical Center",
+        "Subcategory": "Clinic, Private",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1834,
+        "longitude": 71.4742,
+        "reviews": 190,
+        "rating": 4.0,
+        "comments": [
+            "Good diagnostic services",
+            "Average waiting time"
+        ]
+    },
+    {
+        "name": "Al Shifa Clinic",
+        "Subcategory": "Clinic, Private",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1785,
+        "longitude": 71.4408,
+        "reviews": 140,
+        "rating": 3.8,
+        "comments": [
+            "Basic healthcare available",
+            "Needs better management"
+        ]
+    },
+    {
+        "name": "Care Plus Medical Center",
+        "Subcategory": "Clinic, Private",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1708,
+        "longitude": 71.4821,
+        "reviews": 110,
+        "rating": 3.1,
+        "comments": [
+            "Average treatment quality",
+            "Management response is slow"
+        ]
+    },
+    {
+        "name": "Bright Health Clinic",
+        "Subcategory": "Clinic, Private",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1655,
+        "longitude": 71.4902,
+        "reviews": 88,
+        "rating": 2.8,
+        "comments": [
+            "Poor administration services",
+            "Patients complain about delays"
+        ]
+    },
+    {
+        "name": "New Life Health Center",
+        "Subcategory": "Clinic, Private",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1601,
+        "longitude": 71.4856,
+        "reviews": 74,
+        "rating": 2.5,
+        "comments": [
+            "Low service quality",
+            "Facilities need major improvement"
+        ]
+    },
+    {
+        "name": "Services Hospital",
+        "Subcategory": "Hospital, Public",
+        "location": "Lahore, Lahore City Tehsil, Lahore District, Lahore Division, Punjab, 54500, Pakistan",
+        "latitude": 31.5497,
+        "longitude": 74.3436,
+        "reviews": 910,
+        "rating": 4.7,
+        "comments": [
+            "Excellent emergency and medical services",
+            "Experienced doctors and staff"
+        ]
+    },
+    {
+        "name": "Mayo Hospital",
+        "Subcategory": "Hospital, Public",
+        "location": "Lahore, Lahore City Tehsil, Lahore District, Lahore Division, Punjab, 54500, Pakistan",
+        "latitude": 31.5732,
+        "longitude": 74.3128,
+        "reviews": 1200,
+        "rating": 4.6,
+        "comments": [
+            "Historic and trusted hospital",
+            "Strong healthcare facilities"
+        ]
+    },
+    {
+        "name": "Shaukat Khanum Memorial Cancer Hospital",
+        "Subcategory": "Hospital, Specialized",
+        "location": "Lahore, Lahore City Tehsil, Lahore District, Lahore Division, Punjab, 54500, Pakistan",
+        "latitude": 31.4685,
+        "longitude": 74.2728,
+        "reviews": 1500,
+        "rating": 4.9,
+        "comments": [
+            "Best cancer treatment center",
+            "Outstanding patient care and professionalism"
+        ]
+    },
+    {
+        "name": "Jinnah Hospital Lahore",
+        "Subcategory": "Hospital, Public",
+        "location": "Lahore, Lahore City Tehsil, Lahore District, Lahore Division, Punjab, 54500, Pakistan",
+        "latitude": 31.4951,
+        "longitude": 74.2907,
+        "reviews": 980,
+        "rating": 4.5,
+        "comments": [
+            "Good healthcare services",
+            "Experienced specialists available"
+        ]
+    },
+    {
+        "name": "Hameed Latif Hospital",
+        "Subcategory": "Hospital, Private",
+        "location": "Lahore, Lahore City Tehsil, Lahore District, Lahore Division, Punjab, 54500, Pakistan",
+        "latitude": 31.5204,
+        "longitude": 74.3587,
+        "reviews": 640,
+        "rating": 4.4,
+        "comments": [
+            "Good private healthcare facilities",
+            "Professional doctors and quick service"
+        ]
+    },
+    {
+        "name": "Pakistan Institute of Medical Sciences (PIMS)",
+        "Subcategory": "Hospital, Public",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.7076,
+        "longitude": 73.0519,
+        "reviews": 1250,
+        "rating": 4.7,
+        "comments": [
+            "Excellent emergency and specialized care",
+            "Experienced doctors and strong medical facilities"
+        ]
+    },
+    {
+        "name": "Federal Government Polyclinic Hospital",
+        "Subcategory": "Hospital, Public",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.7152,
+        "longitude": 73.0601,
+        "reviews": 860,
+        "rating": 4.4,
+        "comments": [
+            "Affordable healthcare services",
+            "Good patient care and experienced staff"
+        ]
+    },
+    {
+        "name": "Shifa International Hospital",
+        "Subcategory": "Hospital, Private",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.6939,
+        "longitude": 73.0658,
+        "reviews": 1430,
+        "rating": 4.8,
+        "comments": [
+            "Top private hospital in Islamabad",
+            "Modern facilities and professional doctors"
+        ]
+    },
+    {
+        "name": "Kulsum International Hospital",
+        "Subcategory": "Hospital, Private",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.7068,
+        "longitude": 73.0981,
+        "reviews": 720,
+        "rating": 4.3,
+        "comments": [
+            "Good private medical services",
+            "Quick response and quality treatment"
+        ]
+    },
+    {
+        "name": "Ali Medical Centre",
+        "Subcategory": "Hospital, Private",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.6848,
+        "longitude": 73.0472,
+        "reviews": 540,
+        "rating": 4.2,
+        "comments": [
+            "Reliable healthcare and diagnostics",
+            "Supportive doctors and staff"
+        ]
+    },
+    {
+        "name": "Care Plus Medical Center",
+        "Subcategory": "Clinic, Private",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.6891,
+        "longitude": 73.0517,
+        "reviews": 130,
+        "rating": 3.1,
+        "comments": [
+            "Average treatment quality",
+            "Management response is slow"
+        ]
+    },
+    {
+        "name": "Bright Health Clinic",
+        "Subcategory": "Clinic, Private",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.6873,
+        "longitude": 73.0495,
+        "reviews": 92,
+        "rating": 2.8,
+        "comments": [
+            "Poor administration services",
+            "Patients complain about delays"
+        ]
+    },
+    {
+        "name": "New Life Health Center",
+        "Subcategory": "Clinic, Private",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.6858,
+        "longitude": 73.0471,
+        "reviews": 74,
+        "rating": 2.5,
+        "comments": [
+            "Low service quality",
+            "Facilities need major improvement"
+        ]
+    },
+    {
+        "name": "Jinnah Postgraduate Medical Centre",
+        "Subcategory": "Hospital, Public",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8607,
+        "longitude": 67.0011,
+        "reviews": 1650,
+        "rating": 4.8,
+        "comments": [
+            "Excellent tertiary healthcare services",
+            "Highly experienced doctors and specialists"
+        ]
+    },
+    {
+        "name": "Civil Hospital Karachi",
+        "Subcategory": "Hospital, Public",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8619,
+        "longitude": 67.0099,
+        "reviews": 1420,
+        "rating": 4.6,
+        "comments": [
+            "Trusted government hospital",
+            "Strong emergency and surgical services"
+        ]
+    },
+    {
+        "name": "Aga Khan University Hospital",
+        "Subcategory": "Hospital, Private",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8937,
+        "longitude": 67.0689,
+        "reviews": 2100,
+        "rating": 4.9,
+        "comments": [
+            "Best private hospital in Karachi",
+            "Outstanding patient care and modern facilities"
+        ]
+    },
+    {
+        "name": "Liaquat National Hospital",
+        "Subcategory": "Hospital, Private",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.9008,
+        "longitude": 67.0674,
+        "reviews": 980,
+        "rating": 4.5,
+        "comments": [
+            "Excellent specialist doctors",
+            "Good diagnostic and surgical care"
+        ]
+    },
+    {
+        "name": "National Institute of Cardiovascular Diseases",
+        "Subcategory": "Hospital, Specialized",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8731,
+        "longitude": 67.0325,
+        "reviews": 1340,
+        "rating": 4.7,
+        "comments": [
+            "Best cardiac treatment center",
+            "Professional cardiology services"
+        ]
+    },
+    {
+        "name": "City Care Medical Center",
+        "Subcategory": "Clinic, Private",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8574,
+        "longitude": 67.0197,
+        "reviews": 190,
+        "rating": 3.2,
+        "comments": [
+            "Average treatment quality",
+            "Management response is slow"
+        ]
+    },
+    {
+        "name": "Bright Health Clinic",
+        "Subcategory": "Clinic, Private",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8546,
+        "longitude": 67.0152,
+        "reviews": 120,
+        "rating": 2.9,
+        "comments": [
+            "Poor administration services",
+            "Patients complain about long waiting times"
+        ]
+    },
+    {
+        "name": "New Life Health Center",
+        "Subcategory": "Clinic, Private",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8509,
+        "longitude": 67.0093,
+        "reviews": 88,
+        "rating": 2.4,
+        "comments": [
+            "Low service quality",
+            "Facilities need major improvement"
+        ]
+    },
+    {
+        "name": "District Headquarters Hospital Mianwali",
+        "Subcategory": "Hospital, Public",
+        "location": "Sarghoda Mor, Mianwali - Muzaffargarh Road, Neku Khelanwala, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5608,
+        "longitude": 71.5284,
+        "reviews": 540,
+        "rating": 4.4,
+        "comments": [
+            "Good emergency and general healthcare services",
+            "Experienced doctors and supportive staff"
+        ]
+    },
+    {
+        "name": "Tehsil Headquarter Hospital Mianwali",
+        "Subcategory": "Hospital, Public",
+        "location": "Sarghoda Mor, Mianwali - Muzaffargarh Road, Neku Khelanwala, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5621,
+        "longitude": 71.5302,
+        "reviews": 420,
+        "rating": 4.2,
+        "comments": [
+            "Affordable healthcare for local residents",
+            "Good patient handling and facilities"
+        ]
+    },
+    {
+        "name": "Al Shifa Hospital Mianwali",
+        "Subcategory": "Hospital, Private",
+        "location": "Sarghoda Mor, Mianwali - Muzaffargarh Road, Neku Khelanwala, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5615,
+        "longitude": 71.5296,
+        "reviews": 260,
+        "rating": 4.0,
+        "comments": [
+            "Reliable private healthcare services",
+            "Qualified doctors and quick response"
+        ]
+    },
+    {
+        "name": "City Medical Center",
+        "Subcategory": "Clinic, Private",
+        "location": "Sarghoda Mor, Mianwali - Muzaffargarh Road, Neku Khelanwala, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5599,
+        "longitude": 71.5278,
+        "reviews": 180,
+        "rating": 3.5,
+        "comments": [
+            "Basic healthcare services available",
+            "Average management and waiting time"
+        ]
+    },
+    {
+        "name": "Bright Health Clinic",
+        "Subcategory": "Clinic, Private",
+        "location": "Sarghoda Mor, Mianwali - Muzaffargarh Road, Neku Khelanwala, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5587,
+        "longitude": 71.5265,
+        "reviews": 92,
+        "rating": 2.8,
+        "comments": [
+            "Poor administration services",
+            "Patients complain about delays and weak facilities"
+        ]
+    },
+    {
+        "name": "New Life Health Center",
+        "Subcategory": "Clinic, Private",
+        "location": "Sarghoda Mor, Mianwali - Muzaffargarh Road, Neku Khelanwala, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5576,
+        "longitude": 71.5253,
+        "reviews": 74,
+        "rating": 2.4,
+        "comments": [
+            "Low service quality",
+            "Facilities need major improvement"
+        ]
+    },
+    {
+        "name": "District Headquarters Hospital Mianwali",
+        "Subcategory": "Hospital, Public",
+        "location": "Sarghoda Auto Engineering Workshop, Mianwali - Muzaffargarh Road, Civil Line, Jhambra Sharqi, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5853,
+        "longitude": 71.5436,
+        "reviews": 620,
+        "rating": 4.5,
+        "comments": [
+            "Strong emergency and healthcare services",
+            "Experienced doctors and supportive staff"
+        ]
+    },
+    {
+        "name": "Tehsil Headquarter Hospital Mianwali",
+        "Subcategory": "Hospital, Public",
+        "location": "Sarghoda Auto Engineering Workshop, Mianwali - Muzaffargarh Road, Civil Line, Jhambra Sharqi, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5868,
+        "longitude": 71.5451,
+        "reviews": 480,
+        "rating": 4.3,
+        "comments": [
+            "Affordable public healthcare",
+            "Good patient care and treatment"
+        ]
+    },
+    {
+        "name": "Al Noor Hospital",
+        "Subcategory": "Hospital, Private",
+        "location": "Sarghoda Auto Engineering Workshop, Mianwali - Muzaffargarh Road, Civil Line, Jhambra Sharqi, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5849,
+        "longitude": 71.5425,
+        "reviews": 310,
+        "rating": 4.1,
+        "comments": [
+            "Reliable private healthcare services",
+            "Qualified doctors and fast response"
+        ]
+    },
+    {
+        "name": "Mianwali Medical Center",
+        "Subcategory": "Clinic, Private",
+        "location": "Sarghoda Auto Engineering Workshop, Mianwali - Muzaffargarh Road, Civil Line, Jhambra Sharqi, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5837,
+        "longitude": 71.5412,
+        "reviews": 210,
+        "rating": 3.6,
+        "comments": [
+            "Basic healthcare and diagnostics available",
+            "Average waiting time"
+        ]
+    },
+    {
+        "name": "Bright Health Clinic",
+        "Subcategory": "Clinic, Private",
+        "location": "Sarghoda Auto Engineering Workshop, Mianwali - Muzaffargarh Road, Civil Line, Jhambra Sharqi, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5821,
+        "longitude": 71.5403,
+        "reviews": 98,
+        "rating": 2.9,
+        "comments": [
+            "Poor administration services",
+            "Patients complain about delays and weak facilities"
+        ]
+    },
+    {
+        "name": "New Life Health Center",
+        "Subcategory": "Clinic, Private",
+        "location": "Sarghoda Auto Engineering Workshop, Mianwali - Muzaffargarh Road, Civil Line, Jhambra Sharqi, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5814,
+        "longitude": 71.5391,
+        "reviews": 75,
+        "rating": 2.5,
+        "comments": [
+            "Low service quality",
+            "Facilities need major improvement"
+        ]
+    },
+    {
+        "name": "Sharif Medical City Hospital",
+        "Subcategory": "Hospital, Private",
+        "location": "Mohlanwal Road, Green Forts 2, Tricon Village, Chung, Raiwind Tehsil, Lahore District, Lahore Division, Punjab, 53800, Pakistan",
+        "latitude": 31.4012,
+        "longitude": 74.2148,
+        "reviews": 720,
+        "rating": 4.7,
+        "comments": [
+            "Excellent private healthcare services",
+            "Experienced doctors and modern facilities"
+        ]
+    },
+    {
+        "name": "Raiwind THQ Hospital",
+        "Subcategory": "Hospital, Public",
+        "location": "Mohlanwal Road, Green Forts 2, Tricon Village, Chung, Raiwind Tehsil, Lahore District, Lahore Division, Punjab, 53800, Pakistan",
+        "latitude": 31.4035,
+        "longitude": 74.2186,
+        "reviews": 510,
+        "rating": 4.3,
+        "comments": [
+            "Affordable healthcare for local residents",
+            "Good emergency and patient care"
+        ]
+    },
+    {
+        "name": "Chung Medical Center",
+        "Subcategory": "Clinic, Private",
+        "location": "Mohlanwal Road, Green Forts 2, Tricon Village, Chung, Raiwind Tehsil, Lahore District, Lahore Division, Punjab, 53800, Pakistan",
+        "latitude": 31.3984,
+        "longitude": 74.2102,
+        "reviews": 260,
+        "rating": 4.0,
+        "comments": [
+            "Reliable basic healthcare services",
+            "Quick diagnostic support"
+        ]
+    },
+    {
+        "name": "Green Forts Health Clinic",
+        "Subcategory": "Clinic, Private",
+        "location": "Mohlanwal Road, Green Forts 2, Tricon Village, Chung, Raiwind Tehsil, Lahore District, Lahore Division, Punjab, 53800, Pakistan",
+        "latitude": 31.3956,
+        "longitude": 74.2074,
+        "reviews": 180,
+        "rating": 3.5,
+        "comments": [
+            "Basic treatment available",
+            "Average management and waiting time"
+        ]
+    },
+    {
+        "name": "Bright Health Clinic Chung",
+        "Subcategory": "Clinic, Private",
+        "location": "Mohlanwal Road, Green Forts 2, Tricon Village, Chung, Raiwind Tehsil, Lahore District, Lahore Division, Punjab, 53800, Pakistan",
+        "latitude": 31.3939,
+        "longitude": 74.2041,
+        "reviews": 95,
+        "rating": 2.8,
+        "comments": [
+            "Poor administration services",
+            "Patients complain about delays"
+        ]
+    },
+    {
+        "name": "New Life Medical Center",
+        "Subcategory": "Clinic, Private",
+        "location": "Mohlanwal Road, Green Forts 2, Tricon Village, Chung, Raiwind Tehsil, Lahore District, Lahore Division, Punjab, 53800, Pakistan",
+        "latitude": 31.3927,
+        "longitude": 74.2030,
+        "reviews": 72,
+        "rating": 2.4,
+        "comments": [
+            "Low service quality",
+            "Facilities need major improvement"
+        ]
+    },
+    {
+        "name": "District Headquarters Hospital Chakwal",
+        "Subcategory": "Hospital, Public",
+        "location": "Chakwal, Chakwal Tehsil, Chakwal District, Rawalpindi Division, Punjab, 48300, Pakistan",
+        "latitude": 32.9329,
+        "longitude": 72.8531,
+        "reviews": 640,
+        "rating": 4.6,
+        "comments": [
+            "Excellent emergency and general healthcare services",
+            "Experienced doctors and supportive staff"
+        ]
+    },
+    {
+        "name": "THQ Hospital Chakwal",
+        "Subcategory": "Hospital, Public",
+        "location": "Chakwal, Chakwal Tehsil, Chakwal District, Rawalpindi Division, Punjab, 48300, Pakistan",
+        "latitude": 32.9305,
+        "longitude": 72.8562,
+        "reviews": 510,
+        "rating": 4.3,
+        "comments": [
+            "Affordable healthcare for local residents",
+            "Good patient handling and facilities"
+        ]
+    },
+    {
+        "name": "Al Shifa Hospital Chakwal",
+        "Subcategory": "Hospital, Private",
+        "location": "Chakwal, Chakwal Tehsil, Chakwal District, Rawalpindi Division, Punjab, 48300, Pakistan",
+        "latitude": 32.9342,
+        "longitude": 72.8578,
+        "reviews": 320,
+        "rating": 4.1,
+        "comments": [
+            "Reliable private healthcare services",
+            "Qualified doctors and quick response"
+        ]
+    },
+    {
+        "name": "City Medical Center Chakwal",
+        "Subcategory": "Clinic, Private",
+        "location": "Chakwal, Chakwal Tehsil, Chakwal District, Rawalpindi Division, Punjab, 48300, Pakistan",
+        "latitude": 32.9284,
+        "longitude": 72.8509,
+        "reviews": 210,
+        "rating": 3.6,
+        "comments": [
+            "Basic healthcare and diagnostics available",
+            "Average waiting time"
+        ]
+    },
+    {
+        "name": "Bright Health Clinic Chakwal",
+        "Subcategory": "Clinic, Private",
+        "location": "Chakwal, Chakwal Tehsil, Chakwal District, Rawalpindi Division, Punjab, 48300, Pakistan",
+        "latitude": 32.9258,
+        "longitude": 72.8462,
+        "reviews": 102,
+        "rating": 2.9,
+        "comments": [
+            "Poor administration services",
+            "Patients complain about delays and weak facilities"
+        ]
+    },
+    {
+        "name": "New Life Health Center Chakwal",
+        "Subcategory": "Clinic, Private",
+        "location": "Chakwal, Chakwal Tehsil, Chakwal District, Rawalpindi Division, Punjab, 48300, Pakistan",
+        "latitude": 32.9236,
+        "longitude": 72.8441,
+        "reviews": 76,
+        "rating": 2.5,
+        "comments": [
+            "Low service quality",
+            "Facilities need major improvement"
+        ]
+    },
+    {
+        "name": "District Headquarters Hospital Talagang",
+        "Subcategory": "Hospital, Public",
+        "location": "Talagang, Talagang Tehsil, Talagang District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.9274,
+        "longitude": 72.4156,
+        "reviews": 580,
+        "rating": 4.5,
+        "comments": [
+            "Good emergency and healthcare services",
+            "Experienced doctors and supportive staff"
+        ]
+    },
+    {
+        "name": "THQ Hospital Talagang",
+        "Subcategory": "Hospital, Public",
+        "location": "Talagang, Talagang Tehsil, Talagang District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.9281,
+        "longitude": 72.4172,
+        "reviews": 460,
+        "rating": 4.2,
+        "comments": [
+            "Affordable healthcare for local residents",
+            "Good patient care and treatment"
+        ]
+    },
+    {
+        "name": "Al Noor Hospital Talagang",
+        "Subcategory": "Hospital, Private",
+        "location": "Talagang, Talagang Tehsil, Talagang District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.9265,
+        "longitude": 72.4139,
+        "reviews": 290,
+        "rating": 4.0,
+        "comments": [
+            "Reliable private healthcare services",
+            "Qualified doctors and quick response"
+        ]
+    },
+    {
+        "name": "City Medical Center Talagang",
+        "Subcategory": "Clinic, Private",
+        "location": "Talagang, Talagang Tehsil, Talagang District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.9249,
+        "longitude": 72.4115,
+        "reviews": 180,
+        "rating": 3.5,
+        "comments": [
+            "Basic healthcare services available",
+            "Average waiting time"
+        ]
+    },
+    {
+        "name": "Bright Health Clinic Talagang",
+        "Subcategory": "Clinic, Private",
+        "location": "Talagang, Talagang Tehsil, Talagang District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.9228,
+        "longitude": 72.4091,
+        "reviews": 96,
+        "rating": 2.8,
+        "comments": [
+            "Poor administration services",
+            "Patients complain about delays and weak facilities"
+        ]
+    },
+    {
+        "name": "New Life Health Center Talagang",
+        "Subcategory": "Clinic, Private",
+        "location": "Talagang, Talagang Tehsil, Talagang District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.9216,
+        "longitude": 72.4080,
+        "reviews": 70,
+        "rating": 2.4,
+        "comments": [
+            "Low service quality",
+            "Facilities need major improvement"
+        ]
+    },
+    {
+        "name": "Wah General Hospital",
+        "Subcategory": "Hospital, Public",
+        "location": "Wah, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7463,
+        "longitude": 72.7862,
+        "reviews": 710,
+        "rating": 4.6,
+        "comments": [
+            "Excellent emergency and general healthcare services",
+            "Experienced doctors and supportive staff"
+        ]
+    },
+    {
+        "name": "THQ Hospital Wah Cantt",
+        "Subcategory": "Hospital, Public",
+        "location": "Wah, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7481,
+        "longitude": 72.7850,
+        "reviews": 540,
+        "rating": 4.3,
+        "comments": [
+            "Affordable healthcare for local residents",
+            "Good patient care and treatment"
+        ]
+    },
+    {
+        "name": "Al Shifa Hospital Wah",
+        "Subcategory": "Hospital, Private",
+        "location": "Wah, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7472,
+        "longitude": 72.7839,
+        "reviews": 360,
+        "rating": 4.1,
+        "comments": [
+            "Reliable private healthcare services",
+            "Qualified doctors and quick response"
+        ]
+    },
+    {
+        "name": "City Medical Center Wah",
+        "Subcategory": "Clinic, Private",
+        "location": "Wah, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7449,
+        "longitude": 72.7802,
+        "reviews": 210,
+        "rating": 3.6,
+        "comments": [
+            "Basic healthcare and diagnostics available",
+            "Average waiting time"
+        ]
+    },
+    {
+        "name": "Bright Health Clinic Wah",
+        "Subcategory": "Clinic, Private",
+        "location": "Wah, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7432,
+        "longitude": 72.7778,
+        "reviews": 110,
+        "rating": 2.9,
+        "comments": [
+            "Poor administration services",
+            "Patients complain about delays and weak facilities"
+        ]
+    },
+    {
+        "name": "New Life Health Center Wah",
+        "Subcategory": "Clinic, Private",
+        "location": "Wah, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7425,
+        "longitude": 72.7765,
+        "reviews": 78,
+        "rating": 2.5,
+        "comments": [
+            "Low service quality",
+            "Facilities need major improvement"
+        ]
+    },
+    {
+        "name": "THQ Hospital Taxila",
+        "Subcategory": "Hospital, Public",
+        "location": "Wah, Gudwal Road, 27 Area, Ghauri Town, New Godwal, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7408,
+        "longitude": 72.7921,
+        "reviews": 650,
+        "rating": 4.4,
+        "comments": [
+            "Good emergency and general healthcare services",
+            "Affordable treatment for local community"
+        ]
+    },
+    {
+        "name": "Civil Hospital Taxila",
+        "Subcategory": "Hospital, Public",
+        "location": "Wah, Gudwal Road, 27 Area, Ghauri Town, New Godwal, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7416,
+        "longitude": 72.7930,
+        "reviews": 520,
+        "rating": 4.2,
+        "comments": [
+            "Good patient care services",
+            "Experienced medical staff"
+        ]
+    },
+    {
+        "name": "Al Noor Hospital Taxila",
+        "Subcategory": "Hospital, Private",
+        "location": "Wah, Gudwal Road, 27 Area, Ghauri Town, New Godwal, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7399,
+        "longitude": 72.7912,
+        "reviews": 340,
+        "rating": 4.1,
+        "comments": [
+            "Reliable private hospital services",
+            "Quick response and good doctors"
+        ]
+    },
+    {
+        "name": "City Medical Center Ghauri Town",
+        "Subcategory": "Clinic, Private",
+        "location": "Wah, Gudwal Road, 27 Area, Ghauri Town, New Godwal, Taxila Tehsil, Rawalpindi District, Punjab, 47040, Pakistan",
+        "latitude": 33.7384,
+        "longitude": 72.7896,
+        "reviews": 210,
+        "rating": 3.6,
+        "comments": [
+            "Basic healthcare services available",
+            "Average waiting time and facilities"
+        ]
+    },
+    {
+        "name": "Bright Health Clinic New Godwal",
+        "Subcategory": "Clinic, Private",
+        "location": "Wah, Gudwal Road, 27 Area, Ghauri Town, New Godwal, Taxila Tehsil, Rawalpindi District, Punjab, 47040, Pakistan",
+        "latitude": 33.7376,
+        "longitude": 72.7888,
+        "reviews": 110,
+        "rating": 2.8,
+        "comments": [
+            "Poor administration services",
+            "Patients report long waiting times"
+        ]
+    },
+    {
+        "name": "New Life Health Center Taxila",
+        "Subcategory": "Clinic, Private",
+        "location": "Wah, Gudwal Road, 27 Area, Ghauri Town, New Godwal, Taxila Tehsil, Rawalpindi District, Punjab, 47040, Pakistan",
+        "latitude": 33.7368,
+        "longitude": 72.7875,
+        "reviews": 85,
+        "rating": 2.5,
+        "comments": [
+            "Low service quality",
+            "Facilities need major improvement"
+        ]
+    },
+    {
+        "name": "Civil Hospital Hyderabad",
+        "Subcategory": "Hospital, Public",
+        "location": "Hyderabad, Station Road, Gaddi Colony, Gulshan-e-Hali, Latifabad, Hyderabad City Taluka, Latifabad Taluka, Hyderabad District, Hyderabad Division, Sindh, 91000, Pakistan",
+        "latitude": 25.3960,
+        "longitude": 68.3578,
+        "reviews": 980,
+        "rating": 4.6,
+        "comments": [
+            "Large public hospital with good emergency care",
+            "Experienced doctors but crowded environment"
+        ]
+    },
+    {
+        "name": "Liaquat University Hospital",
+        "Subcategory": "Hospital, Public",
+        "location": "Hyderabad, Station Road, Gaddi Colony, Gulshan-e-Hali, Latifabad, Hyderabad City Taluka, Latifabad Taluka, Hyderabad District, Sindh, 91000, Pakistan",
+        "latitude": 25.3926,
+        "longitude": 68.3571,
+        "reviews": 860,
+        "rating": 4.5,
+        "comments": [
+            "Good teaching hospital services",
+            "Qualified doctors and specialists available"
+        ]
+    },
+    {
+        "name": "National Medical Centre Hyderabad",
+        "Subcategory": "Hospital, Private",
+        "location": "Hyderabad, Station Road, Gulshan-e-Hali, Latifabad, Sindh, 91000, Pakistan",
+        "latitude": 25.3898,
+        "longitude": 68.3550,
+        "reviews": 520,
+        "rating": 4.2,
+        "comments": [
+            "Good private healthcare services",
+            "Clean environment and professional staff"
+        ]
+    },
+    {
+        "name": "Indus Hospital Hyderabad Unit",
+        "Subcategory": "Hospital, Specialized",
+        "location": "Hyderabad, Latifabad, Hyderabad District, Sindh, 91000, Pakistan",
+        "latitude": 25.3879,
+        "longitude": 68.3604,
+        "reviews": 740,
+        "rating": 4.7,
+        "comments": [
+            "Free and high-quality treatment",
+            "Excellent patient care services"
+        ]
+    },
+    {
+        "name": "City Medical Center Hyderabad",
+        "Subcategory": "Clinic, Private",
+        "location": "Hyderabad, Gaddi Colony, Sindh, 91000, Pakistan",
+        "latitude": 25.3845,
+        "longitude": 68.3612,
+        "reviews": 210,
+        "rating": 3.6,
+        "comments": [
+            "Basic healthcare services available",
+            "Average waiting time and facilities"
+        ]
+    },
+    {
+        "name": "Bright Health Clinic Hyderabad",
+        "Subcategory": "Clinic, Private",
+        "location": "Hyderabad, Latifabad, Sindh, 91000, Pakistan",
+        "latitude": 25.3832,
+        "longitude": 68.3548,
+        "reviews": 95,
+        "rating": 2.8,
+        "comments": [
+            "Poor administration services",
+            "Patients complain about delays"
+        ]
+    },
+    {
+        "name": "New Life Health Center Hyderabad",
+        "Subcategory": "Clinic, Private",
+        "location": "Hyderabad, Station Road, Sindh, 91000, Pakistan",
+        "latitude": 25.3810,
+        "longitude": 68.3512,
+        "reviews": 78,
+        "rating": 2.5,
+        "comments": [
+            "Low service quality",
+            "Facilities need major improvement"
+        ]
+    }
+]

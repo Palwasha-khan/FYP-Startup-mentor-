@@ -1,4 +1,4 @@
-import { Children, useState } from "react"; 
+import { Children, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   Home,
@@ -11,11 +11,11 @@ import {
   User,
   LogOut,
   Settings,
-   Scale, 
+  Scale,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import Loader  from "@/components/ui/loader";
+import Loader from "@/components/ui/loader";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,55 +23,55 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import logo from "@/assets/logo.png"; 
+import logo from "@/assets/logo.png";
 import { useGetMeQuery } from "@/redux/api/userApi";
 import { useDispatch, useSelector } from "react-redux";
 import { useLogoutMutation } from "@/redux/api/authApi";
 import { logout as logoutSlice } from "@/redux/features/userSlice";
- const navItems = [
+const navItems = [
   { icon: Home, label: "Home", path: "/dashboard" },
   { icon: Lightbulb, label: "Submit Idea", path: "/dashboard/submit-idea" },
   { icon: Star, label: "Results", path: "/dashboard/results" },
-  { icon: Scale, label: "Compare Ideas", path: "/dashboard/compare" },
-  { icon: MessageSquare, label: "Feedback", path: "/dashboard/feedback" }, 
+  // { icon: Scale, label: "Compare Ideas", path: "/dashboard/compare" },
+  { icon: MessageSquare, label: "Feedback", path: "/dashboard/feedback" },
   { icon: HelpCircle, label: "FAQs", path: "/dashboard/faqs" },
 ];
 
-const DashboardLayout = ({children}) => { 
- 
+const DashboardLayout = ({ children }) => {
+
   const location = useLocation();
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
 
-  const {   isLoading, error } = useGetMeQuery();
+  const { isLoading, error } = useGetMeQuery();
   const dispatch = useDispatch();
   const { user, isAuthenticated, loading } = useSelector(state => state.auth);
   const [logoutApi] = useLogoutMutation();
 
-  if (isLoading) return <Loader/>;
-   
- 
+  if (isLoading) return <Loader />;
+
+
   const handleLogout = async () => {
-  try {
-    await logoutApi().unwrap();    
-    dispatch(logoutSlice());       
-    navigate("/");               
-  } catch (err) {
-    console.log("Logout failed:", err);
-  }
-};
+    try {
+      await logoutApi().unwrap();
+      dispatch(logoutSlice());
+      navigate("/");
+    } catch (err) {
+      console.log("Logout failed:", err);
+    }
+  };
 
   return (
     <div className="min-h-screen flex w-full">
-      
+
       <aside
         className={cn(
           "gradient-sidebar text-sidebar-foreground flex flex-col transition-all duration-300 relative",
           collapsed ? "w-20" : "w-72"
         )}
       >
-        
-         <div className="p-4 flex items-center gap-3 border-b border-sidebar-border">
+
+        <div className="p-4 flex items-center gap-3 border-b border-sidebar-border">
           <img src={logo} alt="Start Up Mentor" className="w-10 h-10 rounded-lg object-cover flex-shrink-0" />
           {!collapsed && (
             <div className="flex flex-col leading-tight">
@@ -82,7 +82,7 @@ const DashboardLayout = ({children}) => {
           )}
         </div>
 
-        
+
         <nav className="flex-1 py-4">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
@@ -104,7 +104,7 @@ const DashboardLayout = ({children}) => {
           })}
         </nav>
 
-        
+
         <div className="p-4">
           <Link
             to="/dashboard/submit-idea"
@@ -113,9 +113,9 @@ const DashboardLayout = ({children}) => {
               collapsed && "justify-center p-3"
             )}
           >
-           <div className="w-8 h-8 rounded-lg gradient-button flex items-center justify-center">
-  <Lightbulb className="w-4 h-4 text-white" />
-</div>
+            <div className="w-8 h-8 rounded-lg gradient-button flex items-center justify-center">
+              <Lightbulb className="w-4 h-4 text-white" />
+            </div>
 
             {!collapsed && (
               <div>
@@ -128,7 +128,7 @@ const DashboardLayout = ({children}) => {
           </Link>
         </div>
 
-       
+
         <button
           onClick={() => setCollapsed(!collapsed)}
           className="absolute -right-3 top-20 w-6 h-6 rounded-full bg-sidebar-accent border border-sidebar-border flex items-center justify-center hover:bg-sidebar-primary transition-colors"
@@ -143,10 +143,10 @@ const DashboardLayout = ({children}) => {
 
       {/* Main content */}
       <div className="flex-1 flex flex-col bg-gradient-to-br from-background via-muted/20 to-background">
-         
+
         <header className="h-16 border-b border-border flex items-center justify-between px-6 bg-card/50 backdrop-blur-sm">
           <div>
-             <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
 
               Dashboard
             </h1>
@@ -156,19 +156,19 @@ const DashboardLayout = ({children}) => {
           </div>
 
           <DropdownMenu>
-            <DropdownMenuTrigger asChild> 
+            <DropdownMenuTrigger asChild>
               <Button variant="outline" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center bg-gradient-to-br from-purple-500 to-pink-500 p-[2px]">
-              <div className="w-full h-full rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
-                {user?.avatar?.url ? (
-                  <img src={user.avatar.url} alt={user.name} className="w-full h-full object-cover" />
-                ) : (
-                  <User className="w-4 h-4 text-gray-500" />
-                )}
-              </div>
-            </div>
-              <span>Profile</span>
-            </Button>
+                <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center bg-gradient-to-br from-purple-500 to-pink-500 p-[2px]">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
+                    {user?.avatar?.url ? (
+                      <img src={user.avatar.url} alt={user.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <User className="w-4 h-4 text-gray-500" />
+                    )}
+                  </div>
+                </div>
+                <span>Profile</span>
+              </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-48 bg-card">
               <DropdownMenuItem asChild>

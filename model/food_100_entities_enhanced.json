@@ -1,0 +1,1497 @@
+[
+    {
+        "name": "Mocca Express 0",
+        "Subcategory": "Cafe",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.177,
+        "longitude": 71.5285,
+        "reviews": 2519,
+        "rating": 4.2,
+        "comments": [
+            "The cold brew is strong and refreshing.",
+            "Peaceful spot for work or studying.",
+            "Sandwiches are fresh and healthy.",
+            "Instagrammable interior with great lighting.",
+            "Good selection of desserts, especially the cheesecake."
+        ]
+    },
+    {
+        "name": "Little Italy Dining 1",
+        "Subcategory": "Italian Food",
+        "location": "Lahore, Lahore City Tehsil, Lahore District, Lahore Division, Punjab, 54500, Pakistan",
+        "latitude": 31.5551,
+        "longitude": 74.3313,
+        "reviews": 452,
+        "rating": 3.7,
+        "comments": [
+            "Excellent selection of mocktails to go with the food.",
+            "Desserts like tiramisu are a must-try here.",
+            "Cheesy and flavorful dishes that melt in your mouth.",
+            "Fine dining experience with professional staff."
+        ]
+    },
+    {
+        "name": "Second Cup Grand 2",
+        "Subcategory": "Cafe",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.717,
+        "longitude": 73.0432,
+        "reviews": 541,
+        "rating": 4.7,
+        "comments": [
+            "Love the background music and overall vibe.",
+            "The cold brew is strong and refreshing.",
+            "Peaceful spot for work or studying.",
+            "Cozy environment for coffee and reading.",
+            "Sandwiches are fresh and healthy."
+        ]
+    },
+    {
+        "name": "Pantry Hub 3",
+        "Subcategory": "Italian Food",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8455,
+        "longitude": 67.0205,
+        "reviews": 1095,
+        "rating": 4.7,
+        "comments": [
+            "Excellent selection of mocktails to go with the food.",
+            "Authentic Italian ingredients used in every dish.",
+            "The lasagna was rich and creamy."
+        ]
+    },
+    {
+        "name": "Bread & Beyond Express 4",
+        "Subcategory": "Bakery & Sweets",
+        "location": "Sarghoda Mor, Mianwali - Muzaffargarh Road, Neku Khelanwala, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.546,
+        "longitude": 71.5183,
+        "reviews": 121,
+        "rating": 3.8,
+        "comments": [
+            "Highly recommended for festivals and special occasions.",
+            "The mithai is always fresh and not overly sweet.",
+            "Traditional sweets are the best in this area."
+        ]
+    },
+    {
+        "name": "Village Restaurant Kitchen 5",
+        "Subcategory": "Desi Food",
+        "location": "Mohlanwal Road, Green Forts 2, Tricon Village, Chung, Raiwind Tehsil, Lahore District, Lahore Division, Punjab, 53800, Pakistan",
+        "latitude": 31.4102,
+        "longitude": 74.2005,
+        "reviews": 1810,
+        "rating": 3.6,
+        "comments": [
+            "Spicy and delicious, the spices are perfectly balanced.",
+            "Best karahi in town, highly recommend the mutton variety.",
+            "Authentic local flavors that remind me of home."
+        ]
+    },
+    {
+        "name": "Burger King Point 6",
+        "Subcategory": "Fast Food",
+        "location": "Chakwal, Chakwal Tehsil, Chakwal District, Rawalpindi Division, Punjab, 48300, Pakistan",
+        "latitude": 32.9324,
+        "longitude": 72.8659,
+        "reviews": 404,
+        "rating": 3.8,
+        "comments": [
+            "Good value for money with their combo deals.",
+            "Quick service and fresh burgers every time.",
+            "The sauces are unique and very tasty."
+        ]
+    },
+    {
+        "name": "Hardee's Grand 7",
+        "Subcategory": "Fast Food",
+        "location": "Talagang, Talagang Tehsil, Talagang District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.9471,
+        "longitude": 72.4125,
+        "reviews": 1374,
+        "rating": 4.8,
+        "comments": [
+            "Always consistent in quality.",
+            "Open late night, perfect for midnight cravings.",
+            "Quick service and fresh burgers every time.",
+            "Crispy fries and zinger burger are top-notch."
+        ]
+    },
+    {
+        "name": "Bundu Khan Spot 8",
+        "Subcategory": "Desi Food",
+        "location": "Wah, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7484,
+        "longitude": 72.7976,
+        "reviews": 1785,
+        "rating": 4.7,
+        "comments": [
+            "Best karahi in town, highly recommend the mutton variety.",
+            "Traditional seating and environment, very cultural vibe.",
+            "Spicy and delicious, the spices are perfectly balanced.",
+            "The naan was fresh and crispy."
+        ]
+    },
+    {
+        "name": "Cosa Nostra Dining 9",
+        "Subcategory": "Italian Food",
+        "location": "Hyderabad, Station Road, Gaddi Colony, Gulshan-e-Hali, Latifabad, Hyderabad City Taluka, Latifabad Taluka, Hyderabad District, Hyderabad Division, Sindh, 91000, Pakistan",
+        "latitude": 25.3832,
+        "longitude": 68.3622,
+        "reviews": 257,
+        "rating": 4.6,
+        "comments": [
+            "Great ambiance for dinner, perfect for couples.",
+            "Cheesy and flavorful dishes that melt in your mouth.",
+            "Best pasta and wood-fired pizza I've had in ages."
+        ]
+    },
+    {
+        "name": "The China Kitchen Multan 10",
+        "Subcategory": "Chinese Food",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1537,
+        "longitude": 71.5169,
+        "reviews": 367,
+        "rating": 3.9,
+        "comments": [
+            "Authentic Chinese taste, not too desi-fied.",
+            "Great chow mein and hot and sour soup.",
+            "Ambience is calm and pleasant."
+        ]
+    },
+    {
+        "name": "Kitchen Cuisine Express 11",
+        "Subcategory": "Bakery & Sweets",
+        "location": "Lahore, Lahore City Tehsil, Lahore District, Lahore Division, Punjab, 54500, Pakistan",
+        "latitude": 31.5444,
+        "longitude": 74.3528,
+        "reviews": 1163,
+        "rating": 5.0,
+        "comments": [
+            "Great variety of biscuits and snacks.",
+            "The mithai is always fresh and not overly sweet.",
+            "Their customized cakes are beautiful and tasty."
+        ]
+    },
+    {
+        "name": "Tuscany Courtyard Hub 12",
+        "Subcategory": "Italian Food",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.7057,
+        "longitude": 73.0516,
+        "reviews": 908,
+        "rating": 3.4,
+        "comments": [
+            "Excellent selection of mocktails to go with the food.",
+            "Fine dining experience with professional staff.",
+            "Great ambiance for dinner, perfect for couples."
+        ]
+    },
+    {
+        "name": "Tuscany Courtyard Dining 13",
+        "Subcategory": "Italian Food",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8695,
+        "longitude": 66.9973,
+        "reviews": 2488,
+        "rating": 4.4,
+        "comments": [
+            "Excellent selection of mocktails to go with the food.",
+            "The lasagna was rich and creamy.",
+            "Desserts like tiramisu are a must-try here."
+        ]
+    },
+    {
+        "name": "Sante the Cafe Express 14",
+        "Subcategory": "Italian Food",
+        "location": "Sarghoda Mor, Mianwali - Muzaffargarh Road, Neku Khelanwala, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5747,
+        "longitude": 71.5256,
+        "reviews": 2959,
+        "rating": 3.8,
+        "comments": [
+            "Authentic Italian ingredients used in every dish.",
+            "Fine dining experience with professional staff.",
+            "Cheesy and flavorful dishes that melt in your mouth.",
+            "Desserts like tiramisu are a must-try here.",
+            "The lasagna was rich and creamy."
+        ]
+    },
+    {
+        "name": "Tuscany Courtyard Raiwind 15",
+        "Subcategory": "Italian Food",
+        "location": "Mohlanwal Road, Green Forts 2, Tricon Village, Chung, Raiwind Tehsil, Lahore District, Lahore Division, Punjab, 53800, Pakistan",
+        "latitude": 31.3882,
+        "longitude": 74.2262,
+        "reviews": 2645,
+        "rating": 4.1,
+        "comments": [
+            "Best pasta and wood-fired pizza I've had in ages.",
+            "Great ambiance for dinner, perfect for couples.",
+            "The lasagna was rich and creamy."
+        ]
+    },
+    {
+        "name": "Butt Karahi Dining 16",
+        "Subcategory": "Desi Food",
+        "location": "Chakwal, Chakwal Tehsil, Chakwal District, Rawalpindi Division, Punjab, 48300, Pakistan",
+        "latitude": 32.9451,
+        "longitude": 72.8519,
+        "reviews": 1490,
+        "rating": 3.4,
+        "comments": [
+            "Great service and the lassi was refreshing.",
+            "The naan was fresh and crispy.",
+            "A bit crowded on weekends but worth the wait."
+        ]
+    },
+    {
+        "name": "P.F. Chang's Grand 17",
+        "Subcategory": "Chinese Food",
+        "location": "Talagang, Talagang Tehsil, Talagang District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.9207,
+        "longitude": 72.4191,
+        "reviews": 1149,
+        "rating": 5.0,
+        "comments": [
+            "The Manchurian has the perfect tangy flavor.",
+            "Staff is very polite and helpful.",
+            "Perfect for family gatherings and large groups.",
+            "Quick and tasty, ideal for a quick lunch."
+        ]
+    },
+    {
+        "name": "Tehzeeb Dining 18",
+        "Subcategory": "Bakery & Sweets",
+        "location": "Wah, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7568,
+        "longitude": 72.7777,
+        "reviews": 1665,
+        "rating": 3.4,
+        "comments": [
+            "Clean and hygienic, you can see the kitchen is well-kept.",
+            "Excellent packaging for gifts.",
+            "Highly recommended for festivals and special occasions.",
+            "Their customized cakes are beautiful and tasty."
+        ]
+    },
+    {
+        "name": "Monal Spot 19",
+        "Subcategory": "Desi Food",
+        "location": "Hyderabad, Station Road, Gaddi Colony, Gulshan-e-Hali, Latifabad, Hyderabad City Taluka, Latifabad Taluka, Hyderabad District, Hyderabad Division, Sindh, 91000, Pakistan",
+        "latitude": 25.3946,
+        "longitude": 68.3473,
+        "reviews": 880,
+        "rating": 3.4,
+        "comments": [
+            "A bit crowded on weekends but worth the wait.",
+            "Great service and the lassi was refreshing.",
+            "Authentic local flavors that remind me of home.",
+            "The naan was fresh and crispy."
+        ]
+    },
+    {
+        "name": "Pizza Hut Spot 20",
+        "Subcategory": "Fast Food",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1496,
+        "longitude": 71.5174,
+        "reviews": 1859,
+        "rating": 3.6,
+        "comments": [
+            "Family friendly spot with a nice play area.",
+            "Clean environment and efficient order management.",
+            "Open late night, perfect for midnight cravings."
+        ]
+    },
+    {
+        "name": "Gourmet Kitchen 21",
+        "Subcategory": "Bakery & Sweets",
+        "location": "Lahore, Lahore City Tehsil, Lahore District, Lahore Division, Punjab, 54500, Pakistan",
+        "latitude": 31.5485,
+        "longitude": 74.3592,
+        "reviews": 245,
+        "rating": 3.3,
+        "comments": [
+            "Their customized cakes are beautiful and tasty.",
+            "Traditional sweets are the best in this area.",
+            "Highly recommended for festivals and special occasions."
+        ]
+    },
+    {
+        "name": "Burger King Dining 22",
+        "Subcategory": "Fast Food",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.6959,
+        "longitude": 73.0558,
+        "reviews": 1443,
+        "rating": 4.3,
+        "comments": [
+            "Crispy fries and zinger burger are top-notch.",
+            "Good value for money with their combo deals.",
+            "Family friendly spot with a nice play area.",
+            "Open late night, perfect for midnight cravings.",
+            "Quick service and fresh burgers every time."
+        ]
+    },
+    {
+        "name": "Pompei Spot 23",
+        "Subcategory": "Italian Food",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8727,
+        "longitude": 67.015,
+        "reviews": 2932,
+        "rating": 3.4,
+        "comments": [
+            "Authentic Italian ingredients used in every dish.",
+            "Cheesy and flavorful dishes that melt in your mouth.",
+            "Best pasta and wood-fired pizza I've had in ages.",
+            "Excellent selection of mocktails to go with the food."
+        ]
+    },
+    {
+        "name": "Gloria Jean's Dining 24",
+        "Subcategory": "Cafe",
+        "location": "Sarghoda Mor, Mianwali - Muzaffargarh Road, Neku Khelanwala, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5797,
+        "longitude": 71.5266,
+        "reviews": 2332,
+        "rating": 3.9,
+        "comments": [
+            "Good selection of desserts, especially the cheesecake.",
+            "Peaceful spot for work or studying.",
+            "Cozy environment for coffee and reading."
+        ]
+    },
+    {
+        "name": "Mocca Kitchen 25",
+        "Subcategory": "Cafe",
+        "location": "Mohlanwal Road, Green Forts 2, Tricon Village, Chung, Raiwind Tehsil, Lahore District, Lahore Division, Punjab, 53800, Pakistan",
+        "latitude": 31.3815,
+        "longitude": 74.2133,
+        "reviews": 2829,
+        "rating": 4.1,
+        "comments": [
+            "Excellent snacks and a wide variety of teas.",
+            "Instagrammable interior with great lighting.",
+            "Good selection of desserts, especially the cheesecake."
+        ]
+    },
+    {
+        "name": "The China Kitchen Point 26",
+        "Subcategory": "Chinese Food",
+        "location": "Chakwal, Chakwal Tehsil, Chakwal District, Rawalpindi Division, Punjab, 48300, Pakistan",
+        "latitude": 32.917,
+        "longitude": 72.8376,
+        "reviews": 2758,
+        "rating": 4.1,
+        "comments": [
+            "Perfect for family gatherings and large groups.",
+            "Good portion sizes, one serving is enough for two.",
+            "Ambience is calm and pleasant."
+        ]
+    },
+    {
+        "name": "Johnny & Jugnu Spot 27",
+        "Subcategory": "Fast Food",
+        "location": "Talagang, Talagang Tehsil, Talagang District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.9154,
+        "longitude": 72.4244,
+        "reviews": 1474,
+        "rating": 4.0,
+        "comments": [
+            "Clean environment and efficient order management.",
+            "Always consistent in quality.",
+            "Crispy fries and zinger burger are top-notch.",
+            "Family friendly spot with a nice play area.",
+            "Good value for money with their combo deals."
+        ]
+    },
+    {
+        "name": "Bamboo Union Dining 28",
+        "Subcategory": "Chinese Food",
+        "location": "Wah, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7443,
+        "longitude": 72.7866,
+        "reviews": 2238,
+        "rating": 4.2,
+        "comments": [
+            "Authentic Chinese taste, not too desi-fied.",
+            "Great chow mein and hot and sour soup.",
+            "Staff is very polite and helpful."
+        ]
+    },
+    {
+        "name": "The China Kitchen Point 29",
+        "Subcategory": "Chinese Food",
+        "location": "Hyderabad, Station Road, Gaddi Colony, Gulshan-e-Hali, Latifabad, Hyderabad City Taluka, Latifabad Taluka, Hyderabad District, Hyderabad Division, Sindh, 91000, Pakistan",
+        "latitude": 25.3966,
+        "longitude": 68.3403,
+        "reviews": 2890,
+        "rating": 4.6,
+        "comments": [
+            "Quick and tasty, ideal for a quick lunch.",
+            "Staff is very polite and helpful.",
+            "Authentic Chinese taste, not too desi-fied.",
+            "Great chow mein and hot and sour soup.",
+            "Good portion sizes, one serving is enough for two."
+        ]
+    },
+    {
+        "name": "Butt Karahi Spot 30",
+        "Subcategory": "Desi Food",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1571,
+        "longitude": 71.5125,
+        "reviews": 1775,
+        "rating": 3.4,
+        "comments": [
+            "Best karahi in town, highly recommend the mutton variety.",
+            "Great service and the lassi was refreshing.",
+            "The naan was fresh and crispy.",
+            "Authentic local flavors that remind me of home."
+        ]
+    },
+    {
+        "name": "Bundu Khan Dining 31",
+        "Subcategory": "Desi Food",
+        "location": "Lahore, Lahore City Tehsil, Lahore District, Lahore Division, Punjab, 54500, Pakistan",
+        "latitude": 31.555,
+        "longitude": 74.3593,
+        "reviews": 1606,
+        "rating": 4.1,
+        "comments": [
+            "Spicy and delicious, the spices are perfectly balanced.",
+            "Great service and the lassi was refreshing.",
+            "Must try their BBQ platter, it's enough for the whole family."
+        ]
+    },
+    {
+        "name": "Mocca Islamabad 32",
+        "Subcategory": "Cafe",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.6945,
+        "longitude": 73.0414,
+        "reviews": 1920,
+        "rating": 3.6,
+        "comments": [
+            "The cold brew is strong and refreshing.",
+            "Love the background music and overall vibe.",
+            "Instagrammable interior with great lighting.",
+            "Peaceful spot for work or studying."
+        ]
+    },
+    {
+        "name": "Pizza Hut Point 33",
+        "Subcategory": "Fast Food",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8653,
+        "longitude": 67.0084,
+        "reviews": 633,
+        "rating": 4.6,
+        "comments": [
+            "Open late night, perfect for midnight cravings.",
+            "Always consistent in quality.",
+            "Good value for money with their combo deals.",
+            "Clean environment and efficient order management.",
+            "The sauces are unique and very tasty."
+        ]
+    },
+    {
+        "name": "Dynasty Mianwali 34",
+        "Subcategory": "Chinese Food",
+        "location": "Sarghoda Mor, Mianwali - Muzaffargarh Road, Neku Khelanwala, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.546,
+        "longitude": 71.5178,
+        "reviews": 221,
+        "rating": 4.2,
+        "comments": [
+            "Perfect for family gatherings and large groups.",
+            "Great chow mein and hot and sour soup.",
+            "Good portion sizes, one serving is enough for two.",
+            "Authentic Chinese taste, not too desi-fied.",
+            "The Manchurian has the perfect tangy flavor."
+        ]
+    },
+    {
+        "name": "Tai-Pan Spot 35",
+        "Subcategory": "Chinese Food",
+        "location": "Mohlanwal Road, Green Forts 2, Tricon Village, Chung, Raiwind Tehsil, Lahore District, Lahore Division, Punjab, 53800, Pakistan",
+        "latitude": 31.3986,
+        "longitude": 74.1952,
+        "reviews": 1309,
+        "rating": 4.4,
+        "comments": [
+            "Good portion sizes, one serving is enough for two.",
+            "The Manchurian has the perfect tangy flavor.",
+            "Authentic Chinese taste, not too desi-fied.",
+            "Great chow mein and hot and sour soup."
+        ]
+    },
+    {
+        "name": "Mei Kong Spot 36",
+        "Subcategory": "Chinese Food",
+        "location": "Chakwal, Chakwal Tehsil, Chakwal District, Rawalpindi Division, Punjab, 48300, Pakistan",
+        "latitude": 32.9216,
+        "longitude": 72.8489,
+        "reviews": 2652,
+        "rating": 3.8,
+        "comments": [
+            "Perfect for family gatherings and large groups.",
+            "Great chow mein and hot and sour soup.",
+            "Authentic Chinese taste, not too desi-fied.",
+            "Good portion sizes, one serving is enough for two.",
+            "The Manchurian has the perfect tangy flavor."
+        ]
+    },
+    {
+        "name": "Mocca Dining 37",
+        "Subcategory": "Cafe",
+        "location": "Talagang, Talagang Tehsil, Talagang District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.9396,
+        "longitude": 72.4349,
+        "reviews": 1852,
+        "rating": 3.7,
+        "comments": [
+            "Love the background music and overall vibe.",
+            "Cozy environment for coffee and reading.",
+            "Good selection of desserts, especially the cheesecake."
+        ]
+    },
+    {
+        "name": "Lal Qila Point 38",
+        "Subcategory": "Desi Food",
+        "location": "Wah, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7527,
+        "longitude": 72.7893,
+        "reviews": 511,
+        "rating": 4.5,
+        "comments": [
+            "The naan was fresh and crispy.",
+            "Spicy and delicious, the spices are perfectly balanced.",
+            "Authentic local flavors that remind me of home.",
+            "A bit crowded on weekends but worth the wait.",
+            "Traditional seating and environment, very cultural vibe."
+        ]
+    },
+    {
+        "name": "Lotus Court Express 39",
+        "Subcategory": "Chinese Food",
+        "location": "Hyderabad, Station Road, Gaddi Colony, Gulshan-e-Hali, Latifabad, Hyderabad City Taluka, Latifabad Taluka, Hyderabad District, Hyderabad Division, Sindh, 91000, Pakistan",
+        "latitude": 25.4074,
+        "longitude": 68.3575,
+        "reviews": 2548,
+        "rating": 4.2,
+        "comments": [
+            "Good portion sizes, one serving is enough for two.",
+            "Ambience is calm and pleasant.",
+            "Perfect for family gatherings and large groups.",
+            "Authentic Chinese taste, not too desi-fied."
+        ]
+    },
+    {
+        "name": "Second Cup Hub 40",
+        "Subcategory": "Cafe",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1436,
+        "longitude": 71.5377,
+        "reviews": 153,
+        "rating": 4.1,
+        "comments": [
+            "Good selection of desserts, especially the cheesecake.",
+            "Peaceful spot for work or studying.",
+            "Cozy environment for coffee and reading.",
+            "Sandwiches are fresh and healthy.",
+            "Love the background music and overall vibe."
+        ]
+    },
+    {
+        "name": "Bundu Khan Sweets Kitchen 41",
+        "Subcategory": "Bakery & Sweets",
+        "location": "Lahore, Lahore City Tehsil, Lahore District, Lahore Division, Punjab, 54500, Pakistan",
+        "latitude": 31.5487,
+        "longitude": 74.3349,
+        "reviews": 1207,
+        "rating": 4.4,
+        "comments": [
+            "Their customized cakes are beautiful and tasty.",
+            "Highly recommended for festivals and special occasions.",
+            "Great variety of biscuits and snacks."
+        ]
+    },
+    {
+        "name": "Monal Point 42",
+        "Subcategory": "Desi Food",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.7137,
+        "longitude": 73.0511,
+        "reviews": 1194,
+        "rating": 4.5,
+        "comments": [
+            "Traditional seating and environment, very cultural vibe.",
+            "Great service and the lassi was refreshing.",
+            "Spicy and delicious, the spices are perfectly balanced.",
+            "Must try their BBQ platter, it's enough for the whole family."
+        ]
+    },
+    {
+        "name": "Gloria Jean's Karachi 43",
+        "Subcategory": "Cafe",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8554,
+        "longitude": 67.0178,
+        "reviews": 2374,
+        "rating": 3.5,
+        "comments": [
+            "Good selection of desserts, especially the cheesecake.",
+            "Peaceful spot for work or studying.",
+            "Instagrammable interior with great lighting.",
+            "Cozy environment for coffee and reading.",
+            "Love the background music and overall vibe."
+        ]
+    },
+    {
+        "name": "Usmania Express 44",
+        "Subcategory": "Desi Food",
+        "location": "Sarghoda Mor, Mianwali - Muzaffargarh Road, Neku Khelanwala, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5773,
+        "longitude": 71.5206,
+        "reviews": 1932,
+        "rating": 4.8,
+        "comments": [
+            "A bit crowded on weekends but worth the wait.",
+            "Spicy and delicious, the spices are perfectly balanced.",
+            "Traditional seating and environment, very cultural vibe.",
+            "Must try their BBQ platter, it's enough for the whole family.",
+            "Great service and the lassi was refreshing."
+        ]
+    },
+    {
+        "name": "Monal Spot 45",
+        "Subcategory": "Desi Food",
+        "location": "Mohlanwal Road, Green Forts 2, Tricon Village, Chung, Raiwind Tehsil, Lahore District, Lahore Division, Punjab, 53800, Pakistan",
+        "latitude": 31.3988,
+        "longitude": 74.1952,
+        "reviews": 1738,
+        "rating": 3.7,
+        "comments": [
+            "Best karahi in town, highly recommend the mutton variety.",
+            "Traditional seating and environment, very cultural vibe.",
+            "A bit crowded on weekends but worth the wait.",
+            "The naan was fresh and crispy."
+        ]
+    },
+    {
+        "name": "Tuscany Courtyard Chakwal 46",
+        "Subcategory": "Italian Food",
+        "location": "Chakwal, Chakwal Tehsil, Chakwal District, Rawalpindi Division, Punjab, 48300, Pakistan",
+        "latitude": 32.9135,
+        "longitude": 72.864,
+        "reviews": 2986,
+        "rating": 3.6,
+        "comments": [
+            "Desserts like tiramisu are a must-try here.",
+            "Cheesy and flavorful dishes that melt in your mouth.",
+            "Excellent selection of mocktails to go with the food.",
+            "Authentic Italian ingredients used in every dish."
+        ]
+    },
+    {
+        "name": "Burger King Spot 47",
+        "Subcategory": "Fast Food",
+        "location": "Talagang, Talagang Tehsil, Talagang District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.9338,
+        "longitude": 72.4094,
+        "reviews": 2715,
+        "rating": 3.4,
+        "comments": [
+            "Good value for money with their combo deals.",
+            "Open late night, perfect for midnight cravings.",
+            "The sauces are unique and very tasty.",
+            "Crispy fries and zinger burger are top-notch.",
+            "Quick service and fresh burgers every time."
+        ]
+    },
+    {
+        "name": "Ginsoy Grand 48",
+        "Subcategory": "Chinese Food",
+        "location": "Wah, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7393,
+        "longitude": 72.8038,
+        "reviews": 953,
+        "rating": 4.8,
+        "comments": [
+            "Staff is very polite and helpful.",
+            "The Manchurian has the perfect tangy flavor.",
+            "Quick and tasty, ideal for a quick lunch."
+        ]
+    },
+    {
+        "name": "Dynasty Hyderabad 49",
+        "Subcategory": "Chinese Food",
+        "location": "Hyderabad, Station Road, Gaddi Colony, Gulshan-e-Hali, Latifabad, Hyderabad City Taluka, Latifabad Taluka, Hyderabad District, Hyderabad Division, Sindh, 91000, Pakistan",
+        "latitude": 25.3803,
+        "longitude": 68.3539,
+        "reviews": 2315,
+        "rating": 3.7,
+        "comments": [
+            "Great chow mein and hot and sour soup.",
+            "Authentic Chinese taste, not too desi-fied.",
+            "Good portion sizes, one serving is enough for two.",
+            "The Manchurian has the perfect tangy flavor.",
+            "Staff is very polite and helpful."
+        ]
+    },
+    {
+        "name": "Monal Dining 50",
+        "Subcategory": "Desi Food",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1545,
+        "longitude": 71.5418,
+        "reviews": 236,
+        "rating": 4.5,
+        "comments": [
+            "Spicy and delicious, the spices are perfectly balanced.",
+            "Must try their BBQ platter, it's enough for the whole family.",
+            "A bit crowded on weekends but worth the wait.",
+            "Best karahi in town, highly recommend the mutton variety."
+        ]
+    },
+    {
+        "name": "Burger Lab Dining 51",
+        "Subcategory": "Fast Food",
+        "location": "Lahore, Lahore City Tehsil, Lahore District, Lahore Division, Punjab, 54500, Pakistan",
+        "latitude": 31.5397,
+        "longitude": 74.3296,
+        "reviews": 86,
+        "rating": 4.7,
+        "comments": [
+            "Quick service and fresh burgers every time.",
+            "Open late night, perfect for midnight cravings.",
+            "Always consistent in quality.",
+            "Clean environment and efficient order management.",
+            "Crispy fries and zinger burger are top-notch."
+        ]
+    },
+    {
+        "name": "Usmania Spot 52",
+        "Subcategory": "Desi Food",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.6983,
+        "longitude": 73.0678,
+        "reviews": 2507,
+        "rating": 3.6,
+        "comments": [
+            "Must try their BBQ platter, it's enough for the whole family.",
+            "Traditional seating and environment, very cultural vibe.",
+            "Authentic local flavors that remind me of home."
+        ]
+    },
+    {
+        "name": "L'Amour Grand 53",
+        "Subcategory": "Italian Food",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8616,
+        "longitude": 66.9974,
+        "reviews": 1342,
+        "rating": 3.3,
+        "comments": [
+            "Authentic Italian ingredients used in every dish.",
+            "Desserts like tiramisu are a must-try here.",
+            "Fine dining experience with professional staff.",
+            "Excellent selection of mocktails to go with the food.",
+            "Great ambiance for dinner, perfect for couples."
+        ]
+    },
+    {
+        "name": "Sante the Cafe Point 54",
+        "Subcategory": "Italian Food",
+        "location": "Sarghoda Mor, Mianwali - Muzaffargarh Road, Neku Khelanwala, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5559,
+        "longitude": 71.5177,
+        "reviews": 1348,
+        "rating": 4.8,
+        "comments": [
+            "Desserts like tiramisu are a must-try here.",
+            "Great ambiance for dinner, perfect for couples.",
+            "Cheesy and flavorful dishes that melt in your mouth.",
+            "The lasagna was rich and creamy."
+        ]
+    },
+    {
+        "name": "United King Spot 55",
+        "Subcategory": "Bakery & Sweets",
+        "location": "Mohlanwal Road, Green Forts 2, Tricon Village, Chung, Raiwind Tehsil, Lahore District, Lahore Division, Punjab, 53800, Pakistan",
+        "latitude": 31.3937,
+        "longitude": 74.2311,
+        "reviews": 2995,
+        "rating": 3.8,
+        "comments": [
+            "Highly recommended for festivals and special occasions.",
+            "Great variety of biscuits and snacks.",
+            "Clean and hygienic, you can see the kitchen is well-kept."
+        ]
+    },
+    {
+        "name": "Pizza Hut Hub 56",
+        "Subcategory": "Fast Food",
+        "location": "Chakwal, Chakwal Tehsil, Chakwal District, Rawalpindi Division, Punjab, 48300, Pakistan",
+        "latitude": 32.9492,
+        "longitude": 72.8385,
+        "reviews": 966,
+        "rating": 3.6,
+        "comments": [
+            "Clean environment and efficient order management.",
+            "Family friendly spot with a nice play area.",
+            "The sauces are unique and very tasty.",
+            "Good value for money with their combo deals."
+        ]
+    },
+    {
+        "name": "Bundu Khan Sweets Spot 57",
+        "Subcategory": "Bakery & Sweets",
+        "location": "Talagang, Talagang Tehsil, Talagang District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.9381,
+        "longitude": 72.4292,
+        "reviews": 2050,
+        "rating": 4.4,
+        "comments": [
+            "Clean and hygienic, you can see the kitchen is well-kept.",
+            "Highly recommended for festivals and special occasions.",
+            "Fresh cakes and pastries available daily."
+        ]
+    },
+    {
+        "name": "Rahat Bakery Wah 58",
+        "Subcategory": "Bakery & Sweets",
+        "location": "Wah, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7619,
+        "longitude": 72.7709,
+        "reviews": 844,
+        "rating": 4.8,
+        "comments": [
+            "Fresh cakes and pastries available daily.",
+            "Excellent packaging for gifts.",
+            "Traditional sweets are the best in this area."
+        ]
+    },
+    {
+        "name": "McDonald's Grand 59",
+        "Subcategory": "Fast Food",
+        "location": "Hyderabad, Station Road, Gaddi Colony, Gulshan-e-Hali, Latifabad, Hyderabad City Taluka, Latifabad Taluka, Hyderabad District, Hyderabad Division, Sindh, 91000, Pakistan",
+        "latitude": 25.3911,
+        "longitude": 68.3712,
+        "reviews": 961,
+        "rating": 4.9,
+        "comments": [
+            "Open late night, perfect for midnight cravings.",
+            "Always consistent in quality.",
+            "Clean environment and efficient order management.",
+            "Quick service and fresh burgers every time."
+        ]
+    },
+    {
+        "name": "Gourmet Multan 60",
+        "Subcategory": "Bakery & Sweets",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1535,
+        "longitude": 71.5234,
+        "reviews": 143,
+        "rating": 4.2,
+        "comments": [
+            "The mithai is always fresh and not overly sweet.",
+            "Clean and hygienic, you can see the kitchen is well-kept.",
+            "Traditional sweets are the best in this area."
+        ]
+    },
+    {
+        "name": "Pasta Bella Express 61",
+        "Subcategory": "Italian Food",
+        "location": "Lahore, Lahore City Tehsil, Lahore District, Lahore Division, Punjab, 54500, Pakistan",
+        "latitude": 31.5507,
+        "longitude": 74.3525,
+        "reviews": 2568,
+        "rating": 3.9,
+        "comments": [
+            "The lasagna was rich and creamy.",
+            "Cheesy and flavorful dishes that melt in your mouth.",
+            "Authentic Italian ingredients used in every dish."
+        ]
+    },
+    {
+        "name": "Village Restaurant Grand 62",
+        "Subcategory": "Desi Food",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.7086,
+        "longitude": 73.0529,
+        "reviews": 1602,
+        "rating": 4.4,
+        "comments": [
+            "Traditional seating and environment, very cultural vibe.",
+            "Best karahi in town, highly recommend the mutton variety.",
+            "Must try their BBQ platter, it's enough for the whole family.",
+            "A bit crowded on weekends but worth the wait."
+        ]
+    },
+    {
+        "name": "Pasta Bella Hub 63",
+        "Subcategory": "Italian Food",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8429,
+        "longitude": 66.9976,
+        "reviews": 1493,
+        "rating": 3.3,
+        "comments": [
+            "Desserts like tiramisu are a must-try here.",
+            "Best pasta and wood-fired pizza I've had in ages.",
+            "Excellent selection of mocktails to go with the food.",
+            "Cheesy and flavorful dishes that melt in your mouth."
+        ]
+    },
+    {
+        "name": "P.F. Chang's Kitchen 64",
+        "Subcategory": "Chinese Food",
+        "location": "Sarghoda Mor, Mianwali - Muzaffargarh Road, Neku Khelanwala, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5726,
+        "longitude": 71.5433,
+        "reviews": 2897,
+        "rating": 3.4,
+        "comments": [
+            "Perfect for family gatherings and large groups.",
+            "Great chow mein and hot and sour soup.",
+            "Ambience is calm and pleasant."
+        ]
+    },
+    {
+        "name": "Mei Kong Raiwind 65",
+        "Subcategory": "Chinese Food",
+        "location": "Mohlanwal Road, Green Forts 2, Tricon Village, Chung, Raiwind Tehsil, Lahore District, Lahore Division, Punjab, 53800, Pakistan",
+        "latitude": 31.4174,
+        "longitude": 74.2046,
+        "reviews": 1790,
+        "rating": 3.9,
+        "comments": [
+            "Authentic Chinese taste, not too desi-fied.",
+            "Good portion sizes, one serving is enough for two.",
+            "Great chow mein and hot and sour soup.",
+            "Staff is very polite and helpful.",
+            "The Manchurian has the perfect tangy flavor."
+        ]
+    },
+    {
+        "name": "Pantry Kitchen 66",
+        "Subcategory": "Italian Food",
+        "location": "Chakwal, Chakwal Tehsil, Chakwal District, Rawalpindi Division, Punjab, 48300, Pakistan",
+        "latitude": 32.9325,
+        "longitude": 72.8364,
+        "reviews": 340,
+        "rating": 4.5,
+        "comments": [
+            "Authentic Italian ingredients used in every dish.",
+            "Great ambiance for dinner, perfect for couples.",
+            "Best pasta and wood-fired pizza I've had in ages.",
+            "Desserts like tiramisu are a must-try here."
+        ]
+    },
+    {
+        "name": "Pantry Spot 67",
+        "Subcategory": "Italian Food",
+        "location": "Talagang, Talagang Tehsil, Talagang District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.9125,
+        "longitude": 72.4219,
+        "reviews": 1468,
+        "rating": 4.6,
+        "comments": [
+            "Excellent selection of mocktails to go with the food.",
+            "Authentic Italian ingredients used in every dish.",
+            "Great ambiance for dinner, perfect for couples."
+        ]
+    },
+    {
+        "name": "McDonald's Hub 68",
+        "Subcategory": "Fast Food",
+        "location": "Wah, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7479,
+        "longitude": 72.7742,
+        "reviews": 2991,
+        "rating": 4.6,
+        "comments": [
+            "Family friendly spot with a nice play area.",
+            "Open late night, perfect for midnight cravings.",
+            "Always consistent in quality.",
+            "Clean environment and efficient order management.",
+            "Good value for money with their combo deals."
+        ]
+    },
+    {
+        "name": "Pasta Bella Hub 69",
+        "Subcategory": "Italian Food",
+        "location": "Hyderabad, Station Road, Gaddi Colony, Gulshan-e-Hali, Latifabad, Hyderabad City Taluka, Latifabad Taluka, Hyderabad District, Hyderabad Division, Sindh, 91000, Pakistan",
+        "latitude": 25.3927,
+        "longitude": 68.3711,
+        "reviews": 2074,
+        "rating": 3.3,
+        "comments": [
+            "Fine dining experience with professional staff.",
+            "The lasagna was rich and creamy.",
+            "Great ambiance for dinner, perfect for couples."
+        ]
+    },
+    {
+        "name": "Butt Karahi Multan 70",
+        "Subcategory": "Desi Food",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1554,
+        "longitude": 71.5207,
+        "reviews": 1400,
+        "rating": 4.9,
+        "comments": [
+            "Great service and the lassi was refreshing.",
+            "Must try their BBQ platter, it's enough for the whole family.",
+            "Best karahi in town, highly recommend the mutton variety."
+        ]
+    },
+    {
+        "name": "Tai-Pan Hub 71",
+        "Subcategory": "Chinese Food",
+        "location": "Lahore, Lahore City Tehsil, Lahore District, Lahore Division, Punjab, 54500, Pakistan",
+        "latitude": 31.5685,
+        "longitude": 74.3245,
+        "reviews": 2681,
+        "rating": 3.9,
+        "comments": [
+            "Great chow mein and hot and sour soup.",
+            "Perfect for family gatherings and large groups.",
+            "Quick and tasty, ideal for a quick lunch.",
+            "The Manchurian has the perfect tangy flavor.",
+            "Authentic Chinese taste, not too desi-fied."
+        ]
+    },
+    {
+        "name": "Howdy Dining 72",
+        "Subcategory": "Fast Food",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.7157,
+        "longitude": 73.0579,
+        "reviews": 1692,
+        "rating": 4.9,
+        "comments": [
+            "Clean environment and efficient order management.",
+            "Open late night, perfect for midnight cravings.",
+            "Family friendly spot with a nice play area.",
+            "The sauces are unique and very tasty."
+        ]
+    },
+    {
+        "name": "Sante the Cafe Express 73",
+        "Subcategory": "Italian Food",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8689,
+        "longitude": 66.9967,
+        "reviews": 2103,
+        "rating": 3.5,
+        "comments": [
+            "Authentic Italian ingredients used in every dish.",
+            "Fine dining experience with professional staff.",
+            "The lasagna was rich and creamy.",
+            "Cheesy and flavorful dishes that melt in your mouth.",
+            "Excellent selection of mocktails to go with the food."
+        ]
+    },
+    {
+        "name": "Bundu Khan Hub 74",
+        "Subcategory": "Desi Food",
+        "location": "Sarghoda Mor, Mianwali - Muzaffargarh Road, Neku Khelanwala, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.545,
+        "longitude": 71.5445,
+        "reviews": 1196,
+        "rating": 4.7,
+        "comments": [
+            "Traditional seating and environment, very cultural vibe.",
+            "Authentic local flavors that remind me of home.",
+            "A bit crowded on weekends but worth the wait."
+        ]
+    },
+    {
+        "name": "Pizza Hut Kitchen 75",
+        "Subcategory": "Fast Food",
+        "location": "Mohlanwal Road, Green Forts 2, Tricon Village, Chung, Raiwind Tehsil, Lahore District, Lahore Division, Punjab, 53800, Pakistan",
+        "latitude": 31.4017,
+        "longitude": 74.2236,
+        "reviews": 2788,
+        "rating": 3.8,
+        "comments": [
+            "The sauces are unique and very tasty.",
+            "Quick service and fresh burgers every time.",
+            "Clean environment and efficient order management.",
+            "Crispy fries and zinger burger are top-notch.",
+            "Always consistent in quality."
+        ]
+    },
+    {
+        "name": "Usmania Kitchen 76",
+        "Subcategory": "Desi Food",
+        "location": "Chakwal, Chakwal Tehsil, Chakwal District, Rawalpindi Division, Punjab, 48300, Pakistan",
+        "latitude": 32.9522,
+        "longitude": 72.8509,
+        "reviews": 2434,
+        "rating": 3.8,
+        "comments": [
+            "Great service and the lassi was refreshing.",
+            "Traditional seating and environment, very cultural vibe.",
+            "Authentic local flavors that remind me of home."
+        ]
+    },
+    {
+        "name": "Tehzeeb Hub 77",
+        "Subcategory": "Bakery & Sweets",
+        "location": "Talagang, Talagang Tehsil, Talagang District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.9233,
+        "longitude": 72.4269,
+        "reviews": 783,
+        "rating": 4.5,
+        "comments": [
+            "Great variety of biscuits and snacks.",
+            "Their customized cakes are beautiful and tasty.",
+            "Excellent packaging for gifts.",
+            "Highly recommended for festivals and special occasions.",
+            "Clean and hygienic, you can see the kitchen is well-kept."
+        ]
+    },
+    {
+        "name": "Dynasty Point 78",
+        "Subcategory": "Chinese Food",
+        "location": "Wah, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.7609,
+        "longitude": 72.7778,
+        "reviews": 514,
+        "rating": 3.2,
+        "comments": [
+            "Quick and tasty, ideal for a quick lunch.",
+            "Ambience is calm and pleasant.",
+            "Authentic Chinese taste, not too desi-fied.",
+            "Staff is very polite and helpful."
+        ]
+    },
+    {
+        "name": "Lotus Court Express 79",
+        "Subcategory": "Chinese Food",
+        "location": "Hyderabad, Station Road, Gaddi Colony, Gulshan-e-Hali, Latifabad, Hyderabad City Taluka, Latifabad Taluka, Hyderabad District, Hyderabad Division, Sindh, 91000, Pakistan",
+        "latitude": 25.4055,
+        "longitude": 68.3405,
+        "reviews": 2002,
+        "rating": 3.3,
+        "comments": [
+            "Quick and tasty, ideal for a quick lunch.",
+            "Ambience is calm and pleasant.",
+            "Staff is very polite and helpful.",
+            "The Manchurian has the perfect tangy flavor.",
+            "Perfect for family gatherings and large groups."
+        ]
+    },
+    {
+        "name": "Bamboo Union Grand 80",
+        "Subcategory": "Chinese Food",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.148,
+        "longitude": 71.5428,
+        "reviews": 2348,
+        "rating": 3.9,
+        "comments": [
+            "Authentic Chinese taste, not too desi-fied.",
+            "Great chow mein and hot and sour soup.",
+            "Ambience is calm and pleasant."
+        ]
+    },
+    {
+        "name": "Hobnob Hub 81",
+        "Subcategory": "Bakery & Sweets",
+        "location": "Lahore, Lahore City Tehsil, Lahore District, Lahore Division, Punjab, 54500, Pakistan",
+        "latitude": 31.567,
+        "longitude": 74.3305,
+        "reviews": 838,
+        "rating": 4.8,
+        "comments": [
+            "Their customized cakes are beautiful and tasty.",
+            "Great variety of biscuits and snacks.",
+            "Fresh cakes and pastries available daily.",
+            "Clean and hygienic, you can see the kitchen is well-kept.",
+            "Traditional sweets are the best in this area."
+        ]
+    },
+    {
+        "name": "KFC Point 82",
+        "Subcategory": "Fast Food",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.7049,
+        "longitude": 73.0474,
+        "reviews": 92,
+        "rating": 4.2,
+        "comments": [
+            "Always consistent in quality.",
+            "The sauces are unique and very tasty.",
+            "Good value for money with their combo deals.",
+            "Clean environment and efficient order management.",
+            "Quick service and fresh burgers every time."
+        ]
+    },
+    {
+        "name": "Kolachi Point 83",
+        "Subcategory": "Desi Food",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8756,
+        "longitude": 67.0121,
+        "reviews": 1279,
+        "rating": 5.0,
+        "comments": [
+            "Best karahi in town, highly recommend the mutton variety.",
+            "The naan was fresh and crispy.",
+            "Spicy and delicious, the spices are perfectly balanced.",
+            "Authentic local flavors that remind me of home.",
+            "Great service and the lassi was refreshing."
+        ]
+    },
+    {
+        "name": "Mei Kong Point 84",
+        "Subcategory": "Chinese Food",
+        "location": "Sarghoda Mor, Mianwali - Muzaffargarh Road, Neku Khelanwala, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5803,
+        "longitude": 71.537,
+        "reviews": 1016,
+        "rating": 5.0,
+        "comments": [
+            "Good portion sizes, one serving is enough for two.",
+            "Perfect for family gatherings and large groups.",
+            "Authentic Chinese taste, not too desi-fied.",
+            "The Manchurian has the perfect tangy flavor.",
+            "Ambience is calm and pleasant."
+        ]
+    },
+    {
+        "name": "Butt Karahi Kitchen 85",
+        "Subcategory": "Desi Food",
+        "location": "Mohlanwal Road, Green Forts 2, Tricon Village, Chung, Raiwind Tehsil, Lahore District, Lahore Division, Punjab, 53800, Pakistan",
+        "latitude": 31.4011,
+        "longitude": 74.2107,
+        "reviews": 268,
+        "rating": 3.9,
+        "comments": [
+            "Best karahi in town, highly recommend the mutton variety.",
+            "Must try their BBQ platter, it's enough for the whole family.",
+            "A bit crowded on weekends but worth the wait.",
+            "Great service and the lassi was refreshing."
+        ]
+    },
+    {
+        "name": "The China Kitchen Point 86",
+        "Subcategory": "Chinese Food",
+        "location": "Chakwal, Chakwal Tehsil, Chakwal District, Rawalpindi Division, Punjab, 48300, Pakistan",
+        "latitude": 32.9389,
+        "longitude": 72.8712,
+        "reviews": 2848,
+        "rating": 3.5,
+        "comments": [
+            "Ambience is calm and pleasant.",
+            "The Manchurian has the perfect tangy flavor.",
+            "Authentic Chinese taste, not too desi-fied.",
+            "Great chow mein and hot and sour soup."
+        ]
+    },
+    {
+        "name": "Hardee's Point 87",
+        "Subcategory": "Fast Food",
+        "location": "Talagang, Talagang Tehsil, Talagang District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.9282,
+        "longitude": 72.4099,
+        "reviews": 1425,
+        "rating": 4.7,
+        "comments": [
+            "Family friendly spot with a nice play area.",
+            "The sauces are unique and very tasty.",
+            "Good value for money with their combo deals.",
+            "Open late night, perfect for midnight cravings."
+        ]
+    },
+    {
+        "name": "Ginsoy Wah 88",
+        "Subcategory": "Chinese Food",
+        "location": "Wah, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.742,
+        "longitude": 72.7831,
+        "reviews": 161,
+        "rating": 3.4,
+        "comments": [
+            "Great chow mein and hot and sour soup.",
+            "Quick and tasty, ideal for a quick lunch.",
+            "Staff is very polite and helpful.",
+            "Ambience is calm and pleasant.",
+            "The Manchurian has the perfect tangy flavor."
+        ]
+    },
+    {
+        "name": "Butler's Chocolate Cafe Spot 89",
+        "Subcategory": "Cafe",
+        "location": "Hyderabad, Station Road, Gaddi Colony, Gulshan-e-Hali, Latifabad, Hyderabad City Taluka, Latifabad Taluka, Hyderabad District, Hyderabad Division, Sindh, 91000, Pakistan",
+        "latitude": 25.3823,
+        "longitude": 68.3739,
+        "reviews": 1643,
+        "rating": 4.2,
+        "comments": [
+            "The cold brew is strong and refreshing.",
+            "Peaceful spot for work or studying.",
+            "Instagrammable interior with great lighting.",
+            "Excellent snacks and a wide variety of teas.",
+            "Cozy environment for coffee and reading."
+        ]
+    },
+    {
+        "name": "Monal Kitchen 90",
+        "Subcategory": "Desi Food",
+        "location": "Multan, Multan City Tehsil, Multan District, Multan Division, Punjab, 66000, Pakistan",
+        "latitude": 30.1501,
+        "longitude": 71.5384,
+        "reviews": 2424,
+        "rating": 4.8,
+        "comments": [
+            "Must try their BBQ platter, it's enough for the whole family.",
+            "Traditional seating and environment, very cultural vibe.",
+            "Best karahi in town, highly recommend the mutton variety."
+        ]
+    },
+    {
+        "name": "Bundu Khan Sweets Spot 91",
+        "Subcategory": "Bakery & Sweets",
+        "location": "Lahore, Lahore City Tehsil, Lahore District, Lahore Division, Punjab, 54500, Pakistan",
+        "latitude": 31.5432,
+        "longitude": 74.3539,
+        "reviews": 1368,
+        "rating": 4.9,
+        "comments": [
+            "Clean and hygienic, you can see the kitchen is well-kept.",
+            "Great variety of biscuits and snacks.",
+            "The mithai is always fresh and not overly sweet."
+        ]
+    },
+    {
+        "name": "Chashni Express 92",
+        "Subcategory": "Bakery & Sweets",
+        "location": "Islamabad, Zone 1, Islamabad Capital Territory, 44000, Pakistan",
+        "latitude": 33.7233,
+        "longitude": 73.0378,
+        "reviews": 1316,
+        "rating": 3.8,
+        "comments": [
+            "The mithai is always fresh and not overly sweet.",
+            "Their customized cakes are beautiful and tasty.",
+            "Great variety of biscuits and snacks."
+        ]
+    },
+    {
+        "name": "Gloria Jean's Karachi 93",
+        "Subcategory": "Cafe",
+        "location": "Karachi Division, Sindh, Pakistan",
+        "latitude": 24.8456,
+        "longitude": 67.0191,
+        "reviews": 2843,
+        "rating": 4.9,
+        "comments": [
+            "Peaceful spot for work or studying.",
+            "Love the background music and overall vibe.",
+            "Sandwiches are fresh and healthy.",
+            "Instagrammable interior with great lighting.",
+            "Excellent snacks and a wide variety of teas."
+        ]
+    },
+    {
+        "name": "Savour Foods Grand 94",
+        "Subcategory": "Desi Food",
+        "location": "Sarghoda Mor, Mianwali - Muzaffargarh Road, Neku Khelanwala, Mianwali Tehsil, Mianwali District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.5791,
+        "longitude": 71.5476,
+        "reviews": 2783,
+        "rating": 4.2,
+        "comments": [
+            "Spicy and delicious, the spices are perfectly balanced.",
+            "Traditional seating and environment, very cultural vibe.",
+            "Best karahi in town, highly recommend the mutton variety.",
+            "Must try their BBQ platter, it's enough for the whole family.",
+            "The naan was fresh and crispy."
+        ]
+    },
+    {
+        "name": "Usmania Hub 95",
+        "Subcategory": "Desi Food",
+        "location": "Mohlanwal Road, Green Forts 2, Tricon Village, Chung, Raiwind Tehsil, Lahore District, Lahore Division, Punjab, 53800, Pakistan",
+        "latitude": 31.4105,
+        "longitude": 74.1981,
+        "reviews": 2087,
+        "rating": 4.9,
+        "comments": [
+            "Authentic local flavors that remind me of home.",
+            "A bit crowded on weekends but worth the wait.",
+            "Spicy and delicious, the spices are perfectly balanced.",
+            "Must try their BBQ platter, it's enough for the whole family."
+        ]
+    },
+    {
+        "name": "California Pizza Hub 96",
+        "Subcategory": "Fast Food",
+        "location": "Chakwal, Chakwal Tehsil, Chakwal District, Rawalpindi Division, Punjab, 48300, Pakistan",
+        "latitude": 32.9415,
+        "longitude": 72.8623,
+        "reviews": 562,
+        "rating": 3.6,
+        "comments": [
+            "The sauces are unique and very tasty.",
+            "Always consistent in quality.",
+            "Clean environment and efficient order management.",
+            "Crispy fries and zinger burger are top-notch.",
+            "Open late night, perfect for midnight cravings."
+        ]
+    },
+    {
+        "name": "Bundu Khan Sweets Grand 97",
+        "Subcategory": "Bakery & Sweets",
+        "location": "Talagang, Talagang Tehsil, Talagang District, Mianwali Division, Punjab, Pakistan",
+        "latitude": 32.9403,
+        "longitude": 72.4217,
+        "reviews": 2165,
+        "rating": 3.6,
+        "comments": [
+            "Clean and hygienic, you can see the kitchen is well-kept.",
+            "Excellent packaging for gifts.",
+            "The mithai is always fresh and not overly sweet.",
+            "Great variety of biscuits and snacks.",
+            "Fresh cakes and pastries available daily."
+        ]
+    },
+    {
+        "name": "Kolachi Kitchen 98",
+        "Subcategory": "Desi Food",
+        "location": "Wah, Taxila Tehsil, Rawalpindi District, Rawalpindi Division, Punjab, 47040, Pakistan",
+        "latitude": 33.745,
+        "longitude": 72.7811,
+        "reviews": 690,
+        "rating": 4.1,
+        "comments": [
+            "Authentic local flavors that remind me of home.",
+            "Great service and the lassi was refreshing.",
+            "Spicy and delicious, the spices are perfectly balanced."
+        ]
+    },
+    {
+        "name": "Layers Bakeshop Grand 99",
+        "Subcategory": "Bakery & Sweets",
+        "location": "Hyderabad, Station Road, Gaddi Colony, Gulshan-e-Hali, Latifabad, Hyderabad City Taluka, Latifabad Taluka, Hyderabad District, Hyderabad Division, Sindh, 91000, Pakistan",
+        "latitude": 25.3926,
+        "longitude": 68.364,
+        "reviews": 1956,
+        "rating": 3.3,
+        "comments": [
+            "Clean and hygienic, you can see the kitchen is well-kept.",
+            "The mithai is always fresh and not overly sweet.",
+            "Traditional sweets are the best in this area."
+        ]
+    }
+]
