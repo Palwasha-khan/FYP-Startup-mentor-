@@ -25,7 +25,8 @@
     "leaflet": "^1.9.4",
     "mongoose": "^9.1.6",
     "nodemailer": "^8.0.1",
-    "react-leaflet": "^5.0.0"
+    "react-leaflet": "^5.0.0",
+    "resend": "^6.12.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"

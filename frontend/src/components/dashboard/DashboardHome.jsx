@@ -36,7 +36,6 @@ const handleDelete = async (id, e) => {
       });
 
     } catch (error) {
-      console.log("DELETE ERROR:", error);
 
       toast({
         title: "Error",

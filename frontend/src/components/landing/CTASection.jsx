@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Target, Sparkles } from "lucide-react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const CTASection = () => {
+  const { user, isAuthenticated, loading } = useSelector((state) => state.auth);
   return (
     <section className="gradient-cta py-24 px-4 relative overflow-hidden">
       {/* Decorative blobs */}
@@ -35,14 +37,25 @@ const CTASection = () => {
         </p>
 
         {/* CTA Button */}
-        <Link to="/auth">
-          <Button
-            size="lg"
-            className="gradient-button text-white px-12 py-7 text-lg font-semibold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
-          >
+        {user ? (
+          <Link to="/dashboard/submit-idea">
+            <Button
+              size="lg"
+              className="gradient-button text-white px-12 py-7 text-lg font-semibold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
+            >
             🚀 Start Your Free Evaluation
           </Button>
         </Link>
+        ) : (
+          <Link to="/auth">
+            <Button
+              size="lg"
+              className="gradient-button text-white px-12 py-7 text-lg font-semibold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
+            >
+              🚀 Get Started Free
+            </Button>
+          </Link>
+        )}
       </div>
     </section>
   );

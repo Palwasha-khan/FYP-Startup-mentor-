@@ -5,6 +5,7 @@ import { feedbackApi } from "./api/feedbackApi";
 import { userApi } from "./api/userApi";
 import { ideaApi } from "./api/ideaApi";
 import { predictionApi } from "./api/predictionApi";
+import { contactApi } from "./api/contactApi";
 
 export const store = configureStore({
   reducer: {
@@ -14,7 +15,8 @@ export const store = configureStore({
     [feedbackApi.reducerPath]: feedbackApi.reducer,
     [ideaApi.reducerPath]: ideaApi.reducer,
     [predictionApi.reducerPath]: predictionApi.reducer,
+    [contactApi.reducerPath]: contactApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat([authApi.middleware,feedbackApi.middleware,userApi.middleware,ideaApi.middleware,predictionApi.middleware]),
+    getDefaultMiddleware().concat([authApi.middleware,feedbackApi.middleware,userApi.middleware,ideaApi.middleware,predictionApi.middleware,contactApi.middleware]),
 });

@@ -1,8 +1,10 @@
 import { Rocket, Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const HeroSection = () => {
+  const { user, isAuthenticated, loading } = useSelector((state) => state.auth);
   return (
     <section className="gradient-hero min-h-[90vh] flex flex-col items-center justify-center text-center px-4 py-24 relative overflow-hidden">
       {/* Colorful animated dots background */}
@@ -81,6 +83,18 @@ const HeroSection = () => {
       
       {/* CTA Buttons */}
       <div className="relative z-10 flex flex-col sm:flex-row gap-3">
+       
+         {user ? (
+          <Link to="/dashboard/submit-idea">
+          <Button
+            size="lg"
+            className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-white/20 transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+          >
+            Get Started Free
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
+        </Link>
+         ) : (
         <Link to="/auth">
           <Button
             size="lg"
@@ -90,6 +104,7 @@ const HeroSection = () => {
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
         </Link>
+        )}
         <Link to="/about">
           <Button
             size="lg"

@@ -7,6 +7,8 @@ import { Label } from "@/components/ui/label";
 import LandingLayout from "@/components/landing/LandingLayout";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
+import { useSubmitContactMutation } from "@/redux/api/contactApi";
+import Loader from "@/components/ui/loader";
 
 const contactInfo = [
   {
@@ -30,22 +32,49 @@ const contactInfo = [
 ];
 
 const Contact = () => {
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [submitContact, { isLoading }] = useSubmitContactMutation();
 
-  const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
+    // Basic Validation
+    if (!name || !email || !subject || !message) {
+      toast({
+        variant: "destructive",
+        title: "Missing Fields",
+        description: "Please fill in all the fields before sending.",
+      });
+      return;
+    }
 
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-    setName("");
-    setEmail("");
-    setMessage("");
+    try {
+      // Call the mutation
+      await submitContact({ name, email, subject, message }).unwrap();
+
+      toast({
+        title: "Message Sent!",
+        description: "Your message has been saved and emailed to our team.",
+      });
+
+      // Clear the form
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+    } catch (err) {
+      toast({
+        variant: "destructive",
+        title: "Submission Failed",
+        description: err?.data?.message || "Something went wrong. Please try again.",
+      });
+    }
   };
+  
 
   return (
     <LandingLayout>
@@ -110,6 +139,19 @@ const Contact = () => {
                   />
                 </div>
               </div>
+
+              {/* Added Subject Input to match backend controller */}
+              <div className="space-y-2">
+                <Label htmlFor="subject">Subject</Label>
+                <Input
+                  id="subject"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
+                  placeholder="What is this regarding?"
+                  className="bg-muted/20"
+                  disabled={isLoading}
+                />
+              </div>
               <div className="space-y-2">
                 <Label htmlFor="message" className="text-foreground">Message</Label>
                 <Textarea
@@ -124,8 +166,13 @@ const Contact = () => {
                 type="submit"
                 className="w-full h-12 gradient-button text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                Send Message
-                <Send className="w-5 h-5 ml-2" />
+                {isLoading ? (
+                  <Loader className="w-5 h-5 animate-spin" />
+                ) : (
+                  <>
+                    Send Message <Send className="w-4 h-4 ml-2" />
+                  </>
+                )}
               </Button>
             </form>
           </Card>
