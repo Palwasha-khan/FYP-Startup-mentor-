@@ -155,7 +155,7 @@ export const updateUserProfile = catchAsyncErrors(async (req, res) => {
          email: req.body.email}
 
         if(req.body.avatar) {
-        const avatarResponse = await upload_file(req.body.avatar, "shopit/avatars");
+        const avatarResponse = await upload_file(req.body.avatar, "startup-mentor/avatars");
         newUserData.avatar = avatarResponse;
     }
 
@@ -166,18 +166,7 @@ export const updateUserProfile = catchAsyncErrors(async (req, res) => {
     
 });
 
-//upload avatar  => api/v1/me/upload_avatar
-export const uploadAvatar = catchAsyncErrors(async(req,res,next)=>{
-     const avatarResponse = await upload_file(req.body.avatar, "startup-mentor/avatars")
-
-     const user = await User.findByIdAndUpdate(req?.user?._id,{
-        avatar: avatarResponse,
-     })
-     
-    res.status(200).json({
-        user,
-    })
-})
+ 
 
 
 // Update Password  

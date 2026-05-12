@@ -1,4 +1,4 @@
-import cloudinary from "cloudinary";
+import { v2 as cloudinary } from 'cloudinary';
 import  dotenv from "dotenv";
 
 dotenv.config({ path : 'backend/config/config.env'})
@@ -9,22 +9,23 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-export const upload_file = (file, folder) => {
-  return new Promise((resolve, reject) => {
-    cloudinary.uploader.upload(
-      file,
-      (result) => {
-        resolve({
-          public_id: result.public_id,
-          url: result.url,
+export const upload_file = async (file, folder) => {
+    try {
+        // cloudinary.uploader.upload() can take a Base64 string directly
+        const result = await cloudinary.uploader.upload(file, {
+            folder: folder,
+            resource_type: "auto" // This helps Cloudinary identify it's an image
         });
-      },
-      {
-        resource_type: "auto",
-        folder,
-      }
-    );
-  });
+
+        return {
+            public_id: result.public_id,
+            url: result.secure_url,
+        };
+    } catch (error) {
+        // This is likely where the error is being thrown
+        console.error("Cloudinary Upload Error:", error);
+        throw error;
+    }
 };
 
 export const delete_file = (public_id) => {

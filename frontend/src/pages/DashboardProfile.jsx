@@ -17,9 +17,7 @@ const DashboardProfile = ({ profileImage, setProfileImage }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [avatar , setAvatar] = useState('')
-  const [avatarPreview , setAvatarPreview] = useState(
-    user?.avatar ? user?.avatar?.url :""
-  )
+  const [avatarPreview , setAvatarPreview] = useState(user?.avatar?.url || "")
   
   const fileInputRef = useRef(null);
   const [updateProfile, {isLoading,error,isSuccess}] = useUpdateProfileMutation();
@@ -28,7 +26,7 @@ const DashboardProfile = ({ profileImage, setProfileImage }) => {
     if(user) {
       setName(user.name);
       setEmail(user.email)
-      setAvatarPreview(user.avatar || "");
+      setAvatarPreview(user?.avatar?.url || "");
     }
 
     if(error){
@@ -65,9 +63,11 @@ const DashboardProfile = ({ profileImage, setProfileImage }) => {
 
   const userData = {
     name,
-    email,
-    avatar: avatarPreview, // base64 string
+    email, 
   };
+  if (avatarPreview && avatarPreview.startsWith("data:image")) {
+    userData.avatar = avatarPreview;
+  }
 
   await updateProfile(userData).unwrap();
 };
@@ -90,7 +90,7 @@ const DashboardProfile = ({ profileImage, setProfileImage }) => {
               <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center overflow-hidden">
                 {avatarPreview ? (
                   <img
-                    src={user?.avatar?.url}
+                    src={avatarPreview}
                     alt={user.name} 
                     className="w-full h-full object-cover"
                   />
