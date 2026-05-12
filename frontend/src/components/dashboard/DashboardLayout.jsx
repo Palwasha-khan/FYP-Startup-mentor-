@@ -32,7 +32,7 @@ const navItems = [
   { icon: Home, label: "Home", path: "/dashboard" },
   { icon: Lightbulb, label: "Submit Idea", path: "/dashboard/submit-idea" },
   { icon: Star, label: "Results", path: "/dashboard/results" },
-  // { icon: Scale, label: "Compare Ideas", path: "/dashboard/compare" },
+  { icon: Scale, label: "Compare Ideas", path: "/dashboard/compare" },
   { icon: MessageSquare, label: "Feedback", path: "/dashboard/feedback" },
   { icon: HelpCircle, label: "FAQs", path: "/dashboard/faqs" },
 ];

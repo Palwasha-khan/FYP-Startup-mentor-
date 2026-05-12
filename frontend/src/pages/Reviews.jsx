@@ -4,51 +4,6 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import LandingLayout from "@/components/landing/LandingLayout";
 import { useGetfeedbacksQuery } from "@/redux/api/feedbackApi";
 
-const reviews = [
-  {
-    quote: "This platform helped me validate my startup idea and identify potential risks I hadn't considered. The suggestions were incredibly valuable!",
-    name: "Sarah Johnson",
-    role: "Tech Entrepreneur",
-    initials: "SJ",
-    rating: 5,
-  },
-  {
-    quote: "An excellent tool for organizing thoughts and getting structured feedback. The interface is intuitive and the insights are spot-on.",
-    name: "Michael Chen",
-    role: "Business Consultant",
-    initials: "MC",
-    rating: 5,
-  },
-  {
-    quote: "I've used many mentoring platforms, but this one stands out with its modern design and practical approach to idea validation.",
-    name: "Emily Rodriguez",
-    role: "Startup Founder",
-    initials: "ER",
-    rating: 5,
-  },
-  {
-    quote: "The AI analysis gave me insights I never would have thought of. Helped me pivot my idea before wasting months on the wrong approach.",
-    name: "David Park",
-    role: "Serial Entrepreneur",
-    initials: "DP",
-    rating: 5,
-  },
-  {
-    quote: "Clean interface, powerful features, and genuinely helpful suggestions. This is exactly what the startup ecosystem needed.",
-    name: "Lisa Thompson",
-    role: "Angel Investor",
-    initials: "LT",
-    rating: 5,
-  },
-  {
-    quote: "Used this to validate three different ideas. The risk assessment feature alone saved me from a costly mistake.",
-    name: "James Wilson",
-    role: "Product Manager",
-    initials: "JW",
-    rating: 5,
-  },
-];
-
 const stats = [
   { value: "5.0", label: "Average Rating", icon: "⭐" },
   { value: "500+", label: "Happy Users", icon: "👥" },
@@ -57,12 +12,8 @@ const stats = [
 
 const Reviews = () => {
 
- const { data, error, isLoading } = useGetfeedbacksQuery();
+ const { data, error, isLoading } = useGetfeedbacksQuery(); 
  
-console.log("DATA:", data?.data);
-console.log("ERROR:", error);
-console.log("LOADING:", isLoading);
-
   return (
     <LandingLayout>
       <div className="max-w-5xl mx-auto">

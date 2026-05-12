@@ -1,30 +1,8 @@
 import { Star, ThumbsUp } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { useGetfeedbacksQuery } from "@/redux/api/feedbackApi";
 
-const reviews = [
-  {
-    quote: "This platform helped me validate my startup idea and identify potential risks I hadn't considered. The suggestions were incredibly valuable!",
-    name: "Sarah Johnson",
-    role: "Tech Entrepreneur",
-    initials: "SJ",
-    rating: 5,
-  },
-  {
-    quote: "An excellent tool for organizing thoughts and getting structured feedback. The interface is intuitive and the insights are spot-on.",
-    name: "Michael Chen",
-    role: "Business Consultant",
-    initials: "MC",
-    rating: 5,
-  },
-  {
-    quote: "I've used many mentoring platforms, but this one stands out with its modern design and practical approach to idea validation.",
-    name: "Emily Rodriguez",
-    role: "Startup Founder",
-    initials: "ER",
-    rating: 5,
-  },
-];
 
 const stats = [
   { value: "5.0", label: "Average Rating" },
@@ -33,6 +11,12 @@ const stats = [
 ];
 
 const ReviewsSection = () => {
+  
+   const { data, error, isLoading } = useGetfeedbacksQuery();
+   const latestReviews = data?.data 
+  ? [...data.data].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 3) 
+  : [];
+   
   return (
     <section className="py-24 px-4 bg-white relative overflow-hidden">
       {/* Background decorations */}
@@ -69,9 +53,9 @@ const ReviewsSection = () => {
 
         {/* Review cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {reviews.map((review, index) => (
+           {latestReviews.map((review) => (
             <Card
-              key={index}
+              key={review._id}
               className="p-6 bg-white hover:shadow-2xl transition-all duration-300 border border-border/30 rounded-2xl hover:-translate-y-1"
             >
               {/* Quote icon */}
@@ -79,30 +63,27 @@ const ReviewsSection = () => {
 
               {/* Quote text */}
               <p className="text-foreground mb-6 leading-relaxed">
-                {review.quote}
+                {review.message}
               </p>
 
               {/* Stars */}
               <div className="flex gap-1 mb-4">
-                {Array.from({ length: review.rating }).map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-gold text-gold" />
-                ))}
+                 {Array.from({ length: review.rating }).map((_, i) => (
+          <Star key={i} className="w-5 h-5 fill-gold text-gold" />
+        ))}
               </div>
 
               {/* Author */}
               <div className="flex items-center gap-3 pt-4 border-t border-border/30">
                 <Avatar className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400">
                   <AvatarFallback className="bg-gradient-to-br from-purple-400 to-pink-400 text-white font-semibold">
-                    {review.initials}
+                     {review.name?.charAt(0)}
                   </AvatarFallback>
                 </Avatar>
                 <div>
                   <div className="font-semibold text-foreground">
-                    {review.name}
-                  </div>
-                  <div className="text-muted-foreground text-sm">
-                    {review.role}
-                  </div>
+                     {review.user?.name}
+                  </div> 
                 </div>
               </div>
             </Card>
