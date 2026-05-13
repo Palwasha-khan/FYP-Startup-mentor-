@@ -54,17 +54,19 @@ MongoDB Atlas Account
 Cloudinary API Keys
 
 1. Clone the repository
-Bash
+```bash
 git clone https://github.com/Palwasha-Khan/startup-mentor.git
 cd startup-mentor
+```
 2. Install Backend Dependencies
-Bash
-cd backend
+```bash 
 npm install
+```
 3. Install Frontend Dependencies
-Bash
+```bash
 cd ../frontend
 npm install
+```
 4. Environment Variables
 Create a .env file in the root of your backend folder and add the following:
 
@@ -96,10 +98,9 @@ Terminal 1 (Backend):
 
 ```bash
 cd backend
-npm run dev
-Terminal 2 (Frontend):
+npm run dev 
 ```
-
+Terminal 2 (Frontend):
 
 ```bash
 cd frontend
