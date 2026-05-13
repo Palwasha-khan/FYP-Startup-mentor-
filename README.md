@@ -46,8 +46,6 @@ NLP: LLM Integration for Sentiment Analysis
 APIs: Google Maps/Location API for geospatial risk assessment
 
 ⚙️ Installation & Setup
-Installation
-
 Prerequisites
 Node.js (v18+)
 
@@ -55,50 +53,58 @@ MongoDB Atlas Account
 
 Cloudinary API Keys
 
-Clone the repository:
-
+1. Clone the repository
 Bash
 git clone https://github.com/Palwasha-Khan/startup-mentor.git
 cd startup-mentor
-Install Backend Dependencies:
-
-Bash 
+2. Install Backend Dependencies
+Bash
+cd backend
 npm install
-Install Frontend Dependencies:
-
+3. Install Frontend Dependencies
 Bash
 cd ../frontend
 npm install
-Environment Variables:
-Create a .env file in the root of your backend folder:
+4. Environment Variables
+Create a .env file in the root of your backend folder and add the following:
 
-Plaintext
+Code snippet
+```bash
 PORT=4000
 NODE_ENV=DEVELOPMENT
 FRONTEND_URL=http://localhost:5173
+
 DB_URI=your_mongodb_atlas_uri
 JWT_SECRET=your_secret_key
 COOKIE_EXPIRES_TIME=7
+
 CLOUDINARY_NAME=your_name
 CLOUDINARY_API_KEY=your_key
 CLOUDINARY_API_SECRET=your_secret
+
 RESEND_API_KEY=your_resend_key
- 
+
 SMTP_HOST=sandbox.smtp.mailtrap.io
 SMTP_PORT=2525
 SMTP_EMAIL=your_email
 SMTP_PASSWORD=your_password
 SMTP_FROM_EMAIL=your_email
 SMTP_FROM_NAME=your_name
- 
-Run the App:
+```
+5. Run the App
+Terminal 1 (Backend):
 
-Bash
-# Run Backend (from /backend)
+```bash
+cd backend
 npm run dev
+Terminal 2 (Frontend):
+```
 
-# Run Frontend (from /frontend)
+
+```bash
+cd frontend
 npm run dev
+```
 📊 System Architecture
 Input: User submits startup details and target location via the React dashboard.
 
