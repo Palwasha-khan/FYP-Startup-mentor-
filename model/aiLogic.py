@@ -1,3 +1,4 @@
+import  dotenv from "dotenv";
 import os
 import re
 import json
@@ -13,9 +14,9 @@ app = FastAPI()
 # -----------------------------
 # CONFIGURE CLIENTS
 # -----------------------------
-client = OpenAI(
+client = OpenAI( 
     base_url="https://openrouter.ai/api/v1",
-    api_key="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"  # 🔐 Use environment variable
+    api_key=  dotenv.Model_API_KEY # 🔐 Use environment variable
 )
 
 BASE_DIR = os.path.dirname(__file__)
