@@ -7,24 +7,24 @@ export const userApi = createApi({
     baseUrl: "http://localhost:4000/api" ,credentials: "include",}),
     tagTypes:["User"],
   endpoints: (builder) => ({
+
       getMe: builder.query({
-      query: () => "/me",
-      transformResponse: (res) => res.user,
-      async onQueryStarted(arg, { dispatch, queryFulfilled }) {
-        try {
-          const response = await queryFulfilled; // { data: {...user} }
-          console.log("queryFulfilled response:", response);
-          dispatch(setUser(response.data));
-          dispatch(setIsAuthenticated(true));
-          dispatch(setLoading(false));
-        } catch (err) {
-          console.log(err);
-          dispatch(setUser(null));
-         dispatch(setIsAuthenticated(false));
-          dispatch(setLoading(false)); 
-        }
-      },
-      providesTags: ["User"],
+        query: () => "/me",
+        transformResponse: (res) => res.user,
+        async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+          try {
+            const { data } = await queryFulfilled;
+            dispatch(setUser(data));
+            dispatch(setIsAuthenticated(true));
+            dispatch(setLoading(false));
+          } catch (err) {
+            // If /me fails (user not logged in), reset state
+            dispatch(setUser(null));
+            dispatch(setIsAuthenticated(false));
+            dispatch(setLoading(false));
+          }
+        },
+        providesTags: ["User"],
       }),
 
       updateProfile: builder.mutation({

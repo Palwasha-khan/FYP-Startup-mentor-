@@ -8,8 +8,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node backend/app",
-    "dev": "var NODE_ENV=DEVELOPMENT& nodemon backend/app",
-    "prod": "var NODE_ENV=PRODUCTION& nodemon backend/app"
+    "dev": "set NODE_ENV=DEVELOPMENT& nodemon backend/app",
+    "prod": "set NODE_ENV=PRODUCTION& nodemon backend/app"
   },
   "dependencies": {
     "axios": "^1.13.5",

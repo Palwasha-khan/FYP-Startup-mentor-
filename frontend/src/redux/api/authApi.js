@@ -14,14 +14,29 @@ export const authApi = createApi({
         method: "POST",
         body,
       }),
+       
+          
       async onQueryStarted(args, { dispatch, queryFulfilled }) {
         try {
+          // 1. Wait for the login/register response
           await queryFulfilled; 
-          await dispatch(userApi.endpoints.getMe.initiate(null));
+
+          // 2. Trigger getMe and CAPTURE the result
+          // forceRefetch is vital so it doesn't use the old 'logged out' cache
+          const result = await dispatch(
+            userApi.endpoints.getMe.initiate(null, { subscribe: false, forceRefetch: true })
+          );
+
+          // 3. Update the userSlice IMMEDIATELY
+          if (result.data) {
+            dispatch(setUser(result.data)); // Result.data is already just 'user' because of transformResponse
+            dispatch(setIsAuthenticated(true));
+            dispatch(setLoading(false));
+          }
         } catch (error) {
-          console.log(error);
+          console.error("Login sync error:", error);
         }
-      }, 
+      },
     }),
 
     register: builder.mutation({
