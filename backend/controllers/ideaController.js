@@ -4,9 +4,28 @@ import Prediction from "../models/Prediction.js";
 import axios from "axios";
 
 // create new idea => /api/new/ideas
-export const submitIdea = catchAsyncErrors(async (req, res) => {
-  const userId = req.user._id;
+// create new idea => /api/new/ideas
+export const submitIdea = catchAsyncErrors(async (req, res, next) => {
+   
+// 1. Sirf un fields ki list jo required hain
+const requiredFields = ['title', 'description', 'locationName', 'category'];
 
+// 2. Safely check karein bina trim() crash ke
+const missingField = requiredFields.find(field => {
+  const value = req.body[field];
+  return value === undefined || value === null || String(value).trim() === "";
+});
+
+// 3. Agar koi bhi aik field missing mili, to yahin se response return kar do
+if (missingField) {
+  return res.status(400).json({ 
+    success: false, 
+    message: `${missingField} is required` 
+  });
+}
+   const userId = req.user._id;
+
+  // Destructure after safety validation ensures base properties exist safely
   const {
     title,
     description,
@@ -23,13 +42,8 @@ export const submitIdea = catchAsyncErrors(async (req, res) => {
     marketReadinessItems
   } = req.body;
 
-  // 1. Validation
-  if (!title || !description || !locationName || !category) {
-    return res.status(400).json({ success: false, message: "Required fields are missing" });
-  }
-
   try {
-    // 2. Call FastAPI
+    // 2. Call FastAPI Service Layer
     const predictionResponse = await axios.post(
       "http://127.0.0.1:8080/predict",
       {
@@ -37,19 +51,18 @@ export const submitIdea = catchAsyncErrors(async (req, res) => {
         category,
         locationName,
         description,
-        teamSize: Number(teamSize),
-        avgTeamExperience: parseFloat(avgTeamExperience),
+        teamSize: Number(teamSize) || 0,
+        avgTeamExperience: parseFloat(avgTeamExperience) || 0,
         fundingAmount: parseFloat(fundingAmount) || 0,
-        mentorshipSupport: Boolean(mentorshipSupport),
-        incubationSupport: Boolean(incubationSupport),
-        marketReadinessLevel: parseInt(marketReadinessLevel)
+        mentorshipSupport: mentorshipSupport === 'true' || mentorshipSupport === true,
+        incubationSupport: incubationSupport === 'true' || incubationSupport === true,
+        marketReadinessLevel: parseInt(marketReadinessLevel) || 0
       }
     );
 
     const aiResult = predictionResponse.data;
-    //console.log("AI Result received:", aiResult);   Helpful for debugging
 
-    // 3. Save Idea to MongoDB
+    // 3. Save Idea Document to MongoDB
     const idea = await Idea.create({
       title,
       description,
@@ -57,9 +70,9 @@ export const submitIdea = catchAsyncErrors(async (req, res) => {
       category,
       latitude: lat,
       longitude: lng,
-      funding: fundingAmount,
-      teamSize,
-      avgTeamExperience,
+      funding: fundingAmount || 0,
+      teamSize: teamSize || 0,
+      avgTeamExperience: avgTeamExperience || 0,
       mentorshipSupport,
       incubationSupport,
       marketReadinessLevel,
@@ -67,20 +80,15 @@ export const submitIdea = catchAsyncErrors(async (req, res) => {
       user: userId
     });
 
-    // 4. Create prediction with Fallback Mapping
-    // This solves the "prediction: Path prediction is required" error
+    // 4. Create Prediction Record with Fallback Engine Maps
     const prediction = await Prediction.create({
       idea: idea._id,
-      
-      // We check for 'prediction' OR 'decision' (common in Python ML results)
       prediction: aiResult.prediction || aiResult.decision || "Analysis Complete", 
-      
-     success_probability: aiResult.success_probability || 0,
+      success_probability: aiResult.success_probability || 0,
       positiveComments: aiResult.positiveComments || 0,
       negativeComments: aiResult.negativeComments || 0,
       averageRating: aiResult.averageRating || 0,
       
-      // Ensure risks and suggestions are strings, even if AI returns arrays
       risks: Array.isArray(aiResult.risks) 
         ? aiResult.risks.join(", ") 
         : (aiResult.risks || "None identified"),
@@ -90,25 +98,25 @@ export const submitIdea = catchAsyncErrors(async (req, res) => {
         : (aiResult.suggestions || aiResult.recommendations || "No specific suggestions")
     });
 
-    // 5. Link prediction back to idea
+    // 5. Atomic reference binding mapping
     idea.prediction = prediction._id;
     await idea.save();
 
-    res.status(201).json({
+    // Final response delivery status code 201
+    return res.status(201).json({
       success: true,
       idea,
       prediction
     });
 
   } catch (error) {
-    //console.error("AI Service Error:", error.response?.data || error.message);
+    console.error("AI Service Execution Failure Log:", error);
     
-    // If Python returns a 422, we pass that detail back to help debugging
     const errorMessage = error.response?.data?.detail 
       ? JSON.stringify(error.response.data.detail) 
       : error.message;
 
-    res.status(error.response?.status || 500).json({
+    return res.status(error.response?.status || 500).json({
       success: false,
       message: "AI Analysis failed",
       error: errorMessage

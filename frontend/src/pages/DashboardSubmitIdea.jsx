@@ -81,15 +81,7 @@ const DashboardSubmitIdea = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // 1. Basic Validation
-    if (!title || !category || !description || !locationName) {
-      toast({
-        variant: "destructive",
-        title: "Missing Fields",
-        description: "Please fill in the Title, Category, Location, and Description.",
-      });
-      return;
-    }
+    
 
     // 2. Prepare Data Object for Backend
     const ideaData = {
@@ -124,11 +116,15 @@ const DashboardSubmitIdea = () => {
 
     } catch (error) {
       console.error("Submission Error:", error);
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: error?.data?.message || "Something went wrong while submitting.",
-      });
+
+      // Extract the dynamic message from Axios' response object
+      const serverMessage = error.response?.data?.message || "Something went wrong while submitting.";
+
+      toast({ 
+          title: "Validation Error",
+          description: error.response?.data?.message || "Field is missing",
+          
+        });
     }
   };
 
