@@ -4,7 +4,7 @@ import { setIsAuthenticated, setLoading, setUser } from "../features/userSlice";
 export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: fetchBaseQuery({ 
-    baseUrl: '/api',credentials: "include",}),
+    baseUrl:  `${import.meta.env.VITE_API_URL}/api/v1` ||'/api',credentials: "include",}),
     tagTypes:["User"],
   endpoints: (builder) => ({
 

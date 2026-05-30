@@ -20,7 +20,8 @@ dotenv.config({path: 'backend/config/config.env'})
 connectDatabase();
 
 app.use(cors({
-  origin: "http://localhost:5173", // your frontend URL
+  origin: ["http://localhost:5173",
+  'https://your-frontend-name.vercel.app'], // your frontend URL
   credentials: true
 }));
 app.use(express.json({ limit: "10mb" }));

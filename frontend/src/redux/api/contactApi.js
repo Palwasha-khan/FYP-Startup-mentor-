@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const contactApi = createApi({
     reducerPath: "contactApi",
-    baseQuery: fetchBaseQuery({ baseUrl:'/api',credentials: "include",}),
+    baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_API_URL}/api/v1` ||'/api',credentials: "include",}),
     tagTypes: ["Contact"],
     endpoints: (builder) => ({
          submitContact: builder.mutation({
