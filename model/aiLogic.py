@@ -7,30 +7,25 @@ import pickle
 import numpy as np
 from typing import List
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from openai import OpenAI
 
 app = FastAPI()
 
-# -----------------------------
-# CONFIGURE CLIENTS
-# -----------------------------
-# client = OpenAI(
-#     base_url="https://openrouter.ai/api/v1",
-#     api_key="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"  # 🔐 Use environment variable
-# )
-
+env_path = Path(__file__).resolve().parent.parent / 'backend' / 'config' / 'config.env'
+load_dotenv(dotenv_path=env_path)
 ## 1. Get the directory where your script is located
-current_dir = Path(__file__).resolve().parent
+# current_dir = Path(__file__).resolve().parent
 
-# 2. Path to config.env
-env_path = current_dir.parent / "backend" / "config" / "config.env"
+# # 2. Path to config.env
+# env_path = current_dir.parent / "backend" / "config" / "config.env"
 
-# 3. Load the env
-if env_path.exists():
-    load_dotenv(dotenv_path=env_path)
-else:
-    print(f"❌ ERROR: Could not find config.env at {env_path}")
+# # 3. Load the env
+# if env_path.exists():
+#     load_dotenv(dotenv_path=env_path)
+# else:
+#     print(f"❌ ERROR: Could not find config.env at {env_path}")
 
 # 4. Access the key (Double check the spelling/case in your .env file!)
 model_api_key = os.getenv("MODEL_API_KEY")
@@ -50,6 +45,13 @@ MODEL_PATH = os.path.join(BASE_DIR, "startup_model.pkl")
 # Load the trained model
 with open(MODEL_PATH, "rb") as f:
     trained_model = pickle.load(f)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # -----------------------------
 # REQUEST SCHEMA
@@ -150,57 +152,5 @@ Your task is to validate this idea, check for category-description alignment, an
         return ai_result
     except Exception as e:
         return {"error": str(e), "model_status": model_prediction}
-  
-
-
-
-
-
-
-# @app.post("/predict")
-# def predict(input_data: StartupInput):
-#     print(">>> [DEBUG 1] Route hit. Starting ML Prediction...") # Check terminal
-    
-#     try:
-#         # 1. Get prediction from trained model
-#         model_prediction = get_prediction(input_data)
-#         print(f">>> [DEBUG 2] ML Model Result: {model_prediction}")
-#     except Exception as ml_err:
-#         print(f">>> [DEBUG ERROR] ML Model Failed: {ml_err}")
-#         return {"error": "ML Model Crash", "details": str(ml_err)}
-
-#     # 2. Prepare Prompt
-#     prompt = f""" ... your prompt here ... """
-
-#     try:
-#         print(">>> [DEBUG 3] Calling OpenRouter API...")
-#         response = client.chat.completions.create(
-#             model="meta-llama/llama-3-8b-instruct",
-#             messages=[{"role": "user", "content": prompt}],
-#             temperature=0.3
-#         )
-        
-#         raw_content = response.choices[0].message.content
-#         print(">>> [DEBUG 4] API Response Received!")
-#         print(f">>> [RAW CONTENT]: {raw_content}") # See if limit is hit or JSON is bad
-
-#         # 3. Extract JSON
-#         match = re.search(r'\{.*\}', raw_content, re.DOTALL)
-#         if match:
-#             ai_result = json.loads(match.group())
-#             return ai_result
-#         else:
-#             print(">>> [DEBUG ERROR] No JSON found in response.")
-#             return {"error": "Invalid LLM format", "raw": raw_content}
-
-#     except Exception as e:
-#         # IMPORTANT: This will tell you if the API key is invalid or limit is full
-#         print(f">>> [DEBUG ERROR] API or JSON Logic Failed: {str(e)}")
-#         return {
-#             "error": "LLM/Connection Error", 
-#             "message": str(e), 
-#             "model_status": model_prediction
-#         }
-
   
     # uvicorn aiLogic:app --reload --port 8080
