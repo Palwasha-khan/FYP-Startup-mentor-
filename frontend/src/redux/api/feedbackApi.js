@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const feedbackApi = createApi({
     reducerPath: "feedbackApi",
-    baseQuery: fetchBaseQuery({ baseUrl:  `${import.meta.env.VITE_API_URL}/api/v1` ||"/api",credentials: "include",}),
+    baseQuery: fetchBaseQuery({ baseUrl:  `${import.meta.env.VITE_API_URL}/api` ||"/api",credentials: "include",}),
     tagTypes: ["Feedback"],
     endpoints: (builder) => ({
          submitFeedback: builder.mutation({
