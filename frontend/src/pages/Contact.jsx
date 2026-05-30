@@ -70,7 +70,7 @@ const Contact = () => {
       toast({
         variant: "destructive",
         title: "Submission Failed",
-        description: err?.data?.message || "Something went wrong. Please try again.",
+        description: err?.data?.message  ,
       });
     }
   };
