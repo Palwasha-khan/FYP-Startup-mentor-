@@ -45,7 +45,7 @@ if (missingField) {
   try {
     // 2. Call FastAPI Service Layer
     const predictionResponse = await axios.post(
-      "http://127.0.0.1:8080/predict",
+      process.env.AI_SERVICE_URL,
       {
         title,
         category,

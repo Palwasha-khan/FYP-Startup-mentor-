@@ -2,13 +2,13 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const ideaApi = createApi({
     reducerPath: "ideaApi",
-    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:4000/api/idea",credentials: "include",}),
+    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:4000/api",credentials: "include",}),
     tagTypes: ["Idea"],
     endpoints: (builder) => ({
 
         submitIdea: builder.mutation({
         query: (body) => ({
-        url: "/new",
+        url: "/idea/new",
         method: "POST",
         body,
         }),
@@ -16,13 +16,13 @@ export const ideaApi = createApi({
         }),
 
         getideas: builder.query({
-            query: (params) => "/all",
+            query: (params) => "/idea/all",
             providesTags: ["Idea"], 
         }),
 
         deleteIdea: builder.mutation({
         query: (id) => ({
-            url: `/delete/${id}`,
+            url: `/idea/delete/${id}`,
             method: "DELETE",
         }),
         invalidatesTags: ["Idea"],

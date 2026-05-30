@@ -34,11 +34,11 @@ import feedbackRoute from "./routes/feedback.js"
 import userRoute from "./routes/userRoutes.js"
 import contactRoute from "./routes/conatcUs.js"
 
-app.use('/api/idea',ideaRoute)
-app.use("/api/feedback", feedbackRoute);
+app.use('/api',ideaRoute)
+app.use("/api", feedbackRoute);
 app.use("/api", predictionRoutes);
 app.use("/api", userRoute);
-app.use("/api/contact", contactRoute);
+app.use("/api", contactRoute);
 
 //using error middleware
 app.use(errorMiddleware)

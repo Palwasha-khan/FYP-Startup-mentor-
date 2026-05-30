@@ -4,8 +4,8 @@ import { isAuthenticated } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
-router.get("/all",isAuthenticated,getMyIdeas);
-router.post("/new", isAuthenticated, submitIdea); 
-router.delete("/delete/:id", isAuthenticated, deleteIdea);
+router.get("idea//all",isAuthenticated,getMyIdeas);
+router.post("idea//new", isAuthenticated, submitIdea); 
+router.delete("idea//delete/:id", isAuthenticated, deleteIdea);
 
 export default router;

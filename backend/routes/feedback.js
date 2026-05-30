@@ -4,7 +4,7 @@ import { isAuthenticated } from '../middlewares/authMiddleware.js';
 
 const router = express.Router();
 
-router.post('/submit',isAuthenticated, submitFeedback); 
-router.get('/all', getAllFeedback); 
+router.post('/feedback/submit',isAuthenticated, submitFeedback); 
+router.get('feedback/all', getAllFeedback); 
 
 export default router;
