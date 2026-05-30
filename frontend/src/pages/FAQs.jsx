@@ -76,7 +76,7 @@ const FAQs = () => {
           <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
           <h3 className="text-xl font-semibold mb-2 text-foreground">Still have questions?</h3>
           <p className="text-muted-foreground mb-6">Can't find what you're looking for? We're here to help!</p>
-          <Link to="/dashboard/contact">
+          <Link to="/contact">
             <Button className="gradient-button text-white rounded-xl px-8 py-3">
               Contact Support
             </Button>
