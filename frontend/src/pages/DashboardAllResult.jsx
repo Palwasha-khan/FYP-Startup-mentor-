@@ -23,20 +23,21 @@ const DashboardAllResult = () => {
 
       if (window.confirm("Are you sure you want to delete this idea?")) {
         try {
-          await deleteIdea(id).unwrap();
+         const res =  await deleteIdea(id).unwrap();
             toast({
         title: "Idea Deleted",
-        description: res.message || "Idea removed successfully",
+        description: res?.message || "Idea removed successfully",
       }); 
         } catch (error) {
           toast({
           title: "Error",
-          description: "Failed to delete idea",
+          description: error?.data?.message || "Failed to delete idea",
           variant: "destructive",
         });
         }
       }
     };
+ 
   return (
       <DashboardLayout> 
         <div className="max-w-6xl mx-auto space-y-6">
@@ -92,7 +93,7 @@ const DashboardAllResult = () => {
                     <div className="text-right">
                       <div className="flex items-center gap-1 text-cyan">
                         <TrendingUp className="w-4 h-4" />
-                        <span className="font-bold">{idea.prediction?.innovationScore}%</span>
+                        <span className="font-bold">{idea.prediction?.success_probability}%</span>
                       </div>
                       <span className="text-xs text-muted-foreground capitalize">
                         {idea.status}

@@ -62,7 +62,7 @@ const DashboardSubmitIdea = () => {
   // --- Hooks ---
   const navigate = useNavigate();
   const { toast } = useToast();
-  const [submitIdea, { isLoading }] = useSubmitIdeaMutation();
+  const [submitIdea, { isLoading ,error }] = useSubmitIdeaMutation();
 
   const readinessChoices = category ? marketReadinessOptions[category] ?? [] : [];
   const marketReadinessLevel = readinessChecked.length;
@@ -118,11 +118,11 @@ const DashboardSubmitIdea = () => {
       console.error("Submission Error:", error);
 
       // Extract the dynamic message from Axios' response object
-      const serverMessage = error.response?.data?.message || "Something went wrong while submitting.";
+      const serverMessage = error?.data?.message || "Something went wrong while submitting.";
 
       toast({ 
           title: "Validation Error",
-          description: error.response?.data?.message || "Field is missing",
+          description: serverMessage,
           
         });
     }
