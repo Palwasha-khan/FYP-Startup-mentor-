@@ -21,7 +21,7 @@ connectDatabase();
 
 app.use(cors({
   origin: ["http://localhost:5173",
-  'https://startup-mentor.vercel.app'], // your frontend URL
+  'https://startup-mentor-sm.vercel.app'], // your frontend URL
   credentials: true
 }));
 app.use(express.json({ limit: "10mb" }));
