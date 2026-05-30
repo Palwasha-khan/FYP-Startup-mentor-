@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const feedbackApi = createApi({
     reducerPath: "feedbackApi",
-    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:4000/api",credentials: "include",}),
+    baseQuery: fetchBaseQuery({ baseUrl: "/api",credentials: "include",}),
     tagTypes: ["Feedback"],
     endpoints: (builder) => ({
          submitFeedback: builder.mutation({

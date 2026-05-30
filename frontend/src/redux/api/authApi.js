@@ -4,7 +4,7 @@ import { userApi } from "./userApi";
 
 export const authApi = createApi({
   reducerPath: "authApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:4000/api",credentials: "include", }),
+  baseQuery: fetchBaseQuery({ baseUrl: '/api',credentials: "include", }),
    
   endpoints: (builder) => ({
 
