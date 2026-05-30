@@ -2,7 +2,9 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const contactApi = createApi({
     reducerPath: "contactApi",
-    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:4000/api",credentials: "include",}),
+    baseQuery: fetchBaseQuery({ baseUrl: process.env.NODE_ENV === 'development' 
+    ? 'http://localhost:4000/api' 
+    : '/api',credentials: "include",}),
     tagTypes: ["Contact"],
     endpoints: (builder) => ({
          submitContact: builder.mutation({
