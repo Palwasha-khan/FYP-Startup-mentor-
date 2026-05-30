@@ -12,6 +12,7 @@
       "dest": "backend/app.js",
       "headers": {
         "Access-Control-Allow-Origin": "https://startup-mentor-sm.vercel.app",
+        "Access-Control-Allow-Credentials": "true",
         "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
         "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With, Accept"
       }
