@@ -1,6 +1,6 @@
 import catchAsyncErrors from "../middlewares/catchAsyncErrors.js";
 import Idea from "../models/idea.js";
-import Prediction from "../models/Prediction.js";
+import Prediction from "../models/prediction.js";
 import axios from "axios";
 
 // create new idea => /api/new/ideas
