@@ -17,52 +17,71 @@ const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  
   const [login, loginResult] = useLoginMutation();
   const [register, registerResult] = useRegisterMutation();
- 
-  const { data: loginData, error: loginError, isLoading: loginLoading } = loginResult;
+  
+  const { data: loginData, error: loginError, isLoading: loginLoading, isSuccess: loginSuccess } = loginResult;
   const { data: registerData, error: registerError, isLoading: registerLoading } = registerResult;
- 
- 
+
+  // 1. Handle Errors
   useEffect(() => {
     if (loginError) {
       toast({
         title: "Login failed!",
-        description: loginError?.data?.message || "Please try again.",});}
+        description: loginError?.data?.message || "Please try again.",
+      });
+    }
     if (registerError) {
-    toast({
-      title: "Registration failed!",
-      description: registerError?.data?.message || "Please try again.",
-    });
-  }}, [loginError, registerError]);
+      toast({
+        title: "Registration failed!",
+        description: registerError?.data?.message || "Please try again.",
+      });
+    }
+  }, [loginError, registerError]);
 
-
+  // 2. Handle Successful Registration
   useEffect(() => { 
     if (registerData) { 
-       toast({
-      title: "Account created successfully!",
-      description: "You can now login to your account.",
+      toast({
+        title: "Account created successfully!",
+        description: "You can now login to your account.",
       });
       setIsLogin(true); 
     }
-  }, [  registerData, ]);
+  }, [registerData]);
 
-  const handleSubmit =async (e) => {
-    e.preventDefault();
-
-    if (isLogin) {
-      const result = await login({ email, password }).unwrap();
- 
-      dispatch(setUser(result.user));
+  // 🌟 3. Handle Successful Login Redirection Safely
+  useEffect(() => {
+    if (loginSuccess && loginData) {
+      dispatch(setUser(loginData.user));
       dispatch(setIsAuthenticated(true));
       dispatch(setLoading(false));
+      
       toast({
         title: "Login successfully!",
         description: "You can now start validating your ideas.",
       }); 
+      
+      // Navigate inside the side-effect tracker
       navigate("/dashboard");
+    }
+  }, [loginSuccess, loginData, dispatch, navigate]);
+
+  // 4. Clean and simple Submit Handler
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (isLogin) {
+      // Just fire the mutation. The useEffect above will catch the success state change
+      try {
+        await login({ email, password }).unwrap();
+      } catch (err) {
+        console.error("Login trigger error:", err);
+      }
     } else {
       register({ name, email, password });
     }
