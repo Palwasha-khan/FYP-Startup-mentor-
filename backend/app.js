@@ -47,8 +47,8 @@ import contactRoute from "./routes/conatcUs.js"
 app.use('/api',ideaRoute)
 app.use("/api", feedbackRoute);
 app.use("/api", predictionRoutes);
-app.use("/api", userRoute);
-app.use("/api", contactRoute);
+app.use("/api/v1", userRoute);
+app.use("/api/v1", contactRoute);
 
 //using error middleware
 app.use(errorMiddleware)

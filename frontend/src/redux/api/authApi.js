@@ -4,7 +4,7 @@ import { userApi } from "./userApi";
 
 export const authApi = createApi({
   reducerPath: "authApi",
-  baseQuery: fetchBaseQuery({ baseUrl:  `${import.meta.env.VITE_API_URL}/api` ||'/api',credentials: "include", }),
+  baseQuery: fetchBaseQuery({ baseUrl:'/api/v1',credentials: "include", }),
    
   endpoints: (builder) => ({
 
