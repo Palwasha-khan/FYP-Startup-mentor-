@@ -67,6 +67,7 @@ const Contact = () => {
       setSubject("");
       setMessage("");
     } catch (err) {
+       console.log(err)
       toast({
         variant: "destructive",
         title: "Submission Failed",

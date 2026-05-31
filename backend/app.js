@@ -44,20 +44,24 @@ import feedbackRoute from "./routes/feedback.js"
 import userRoute from "./routes/userRoutes.js"
 import contactRoute from "./routes/conatcUs.js"
 
-app.use('/api',ideaRoute)
-app.use("/api", feedbackRoute);
-app.use("/api", predictionRoutes);
+app.use('/api/v1',ideaRoute)
+app.use("/api/v1", feedbackRoute);
+app.use("/api/v1", predictionRoutes);
 app.use("/api/v1", userRoute);
 app.use("/api/v1", contactRoute);
 
 //using error middleware
 app.use(errorMiddleware)
  
-// Only start the server if we are NOT on Vercel
-if (process.env.NODE_ENV !== 'PRODUCTION') {
-  const server = app.listen(process.env.PORT || 3000, () => {
-    console.log(`Server started on port: ${process.env.PORT || 3000}  in ${process.env.NODE_ENV} mode`);
+// 🌟 Only start the server if we are NOT running on Vercel cloud hosting
+if (!process.env.VERCEL) {
+  // Frontend 4000 use kar raha hai, toh local fallback default port 4000 rakh lein
+  const PORT = process.env.PORT || 4000; 
+  
+  const server = app.listen(PORT, () => {
+    console.log(`Server started on port: ${PORT} in ${process.env.NODE_ENV || 'DEVELOPMENT'} mode`);
   });
+  
   server.timeout = 600000;
 }
 

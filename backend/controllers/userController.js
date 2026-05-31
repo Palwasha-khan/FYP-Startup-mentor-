@@ -60,9 +60,7 @@ export const logoutUser =catchAsyncErrors(async (req, res,next) => {
     // If token is in cookie, clear it
     res.cookie("token", null, {
         expires: new Date(Date.now()),
-        httpOnly: true,
-        secure: true,       // 🌟 CRUCIAL FOR VERCEL PRODUCTION
-         sameSite: "none",
+        httpOnly: true, 
     });
 
     res.status(200).json({

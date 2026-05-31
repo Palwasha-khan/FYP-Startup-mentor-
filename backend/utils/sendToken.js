@@ -6,8 +6,8 @@ export default (user, statusCode, res) => {
       Date.now() + Number(process.env.COOKIE_EXPIRES_TIME) * 24 * 60 * 60 * 1000
     ),
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "lax"
+    secure: process.env.NODE_ENV === 'PRODUCTION', 
+    sameSite: process.env.NODE_ENV === 'PRODUCTION' ? 'none' : 'lax'
   };
 
   res

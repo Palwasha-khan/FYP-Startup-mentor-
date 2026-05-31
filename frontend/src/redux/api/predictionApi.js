@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const predictionApi = createApi({
     reducerPath: "predictionApi",
-    baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_API_URL}/api` || '/api',credentials: "include",}),
+    baseQuery: fetchBaseQuery({ baseUrl:'http://localhost:4000/api/v1',credentials: "include",}),
     tagTypes: ["Prediction"],
     endpoints: (builder) => ({
         getPrediction: builder.query({
