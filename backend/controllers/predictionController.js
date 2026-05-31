@@ -1,4 +1,4 @@
-import Prediction from "../models/Prediction.js";
+import Prediction from "../models/prediction.js";
 
 export const getPredictionByIdea = async (req, res, next) => {
   // Find prediction by Idea ID and 'populate' the linked 'idea' field
