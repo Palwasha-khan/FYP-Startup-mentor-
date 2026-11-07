@@ -4,7 +4,6 @@ import Prediction from "../models/prediction.js";
 import axios from "axios";
 
 // create new idea => /api/new/ideas
-// create new idea => /api/new/ideas
 export const submitIdea = catchAsyncErrors(async (req, res, next) => {
    
 // 1. Sirf un fields ki list jo required hain
@@ -61,6 +60,8 @@ if (missingField) {
     );
 
     const aiResult = predictionResponse.data;
+
+    console.log(aiResult)
 
     // 3. Save Idea Document to MongoDB
     const idea = await Idea.create({

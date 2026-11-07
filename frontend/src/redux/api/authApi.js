@@ -1,6 +1,7 @@
 
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { userApi } from "./userApi";
+import { setUser, setIsAuthenticated, setLoading } from "../features/userSlice";
 
 export const authApi = createApi({
   reducerPath: "authApi",
@@ -18,18 +19,15 @@ export const authApi = createApi({
           
       async onQueryStarted(args, { dispatch, queryFulfilled }) {
         try {
-          // 1. Wait for the login/register response
+          
           await queryFulfilled; 
-
-          // 2. Trigger getMe and CAPTURE the result
-          // forceRefetch is vital so it doesn't use the old 'logged out' cache
+ 
           const result = await dispatch(
             userApi.endpoints.getMe.initiate(null, { subscribe: false, forceRefetch: true })
           );
-
-          // 3. Update the userSlice IMMEDIATELY
+ 
           if (result.data) {
-            dispatch(setUser(result.data)); // Result.data is already just 'user' because of transformResponse
+            dispatch(setUser(result.data));  
             dispatch(setIsAuthenticated(true));
             dispatch(setLoading(false));
           }
