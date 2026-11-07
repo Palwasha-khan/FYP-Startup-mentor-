@@ -131,7 +131,10 @@ startup-mentor/
 │   │   ├── redux/        # RTK Query API slices
 │   │   └── pages/        # Dashboard, Profile, Landing
 └── ml_model/             # Python scripts and trained datasets
+
+
 👩‍💻 The Team
+
 Palwasha Khan - Lead Full Stack Developer & ML Integration
 
 Sana - Team Member
